@@ -1,0 +1,14 @@
+* top level
+
+words
+numbers
+containers
+keys
+species (classes)
+methods
+sets
+dicts
+arrays
+
+table?
+index?
