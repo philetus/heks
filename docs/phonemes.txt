@@ -1,45 +1,43 @@
-* 0
+* 0-
     [l]-lamp
     [r]-road
     
-* 1
+* 1-
     [v]-vent
     [b]-big
   
-* 2
+* 2-
     [y]-yet
     [j]-jack
 
-* 3
+* 3-
     [z]-zoo
     [s]-state
     [Z]-genre, vision, measure
     **
     [S]-sheep
 
-* 4
+* 4-
     [t]-truck
     **
     [T]-think, thought, bath, path 
     [D]-then
 
-* 5
+* 5-
     [k]-cat, kit
     **
     [C]-chip
 
-* 6
+* 6-
     [g]-goat
     **
     [h]-house
     
-* 7
-    [d]-door
-    
-* 8
-    [p]-pear
-    **
+* 7-
     [f]-fish
+    
+* 8-
+    [p]-pear
 
 * 9
     [d]-door
@@ -60,19 +58,21 @@
     [A:]-shot, caught, father, balm, talk, tall, law, slaw, follow
     *[r] 
     [?ar]-dollar, car, hard, part, sharp
+    *[y]
+    [I]-fight
+
     
 * d
     [u]-cut, stuck, struck, front
     [oo]-wood
     [a..]-arrest, again, away, afire
     **
-    [E]-meet
     
 * e
     [i]-sit
     [e]-set
     **
-    [I]-fight
+    [E]-meet
     *[r]
     [3r']-bird, word, burn, fern 
     [..r']-center, theater, realtor, inventor

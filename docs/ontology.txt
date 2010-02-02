@@ -12,3 +12,8 @@ arrays
 
 table?
 index?
+
+value
+ * word
+ * number
+
