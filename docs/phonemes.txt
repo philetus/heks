@@ -1,83 +1,67 @@
-* 0-
-    [l]-lamp
-    [r]-road
+* 0 - 'aht'
+    [a]-cat
+    **
+    [A]-plate
+    *[h]
+    [A:]-shot, caught, father, balm, talk, tall, law, slaw, follow
+    [?ar]-dollar, car, hard, part, sharp
+    *[y]
+    [I]-fight
     
-* 1-
-    [v]-vent
-    [b]-big
-  
-* 2-
-    [y]-yet
-    [j]-jack
-
-* 3-
-    [z]-zoo
-    [s]-state
-    [Z]-genre, vision, measure
-    **
-    [S]-sheep
-
-* 4-
-    [t]-truck
-    **
-    [T]-think, thought, bath, path 
-    [D]-then
-
-* 5-
+* 1 - 'kak'
     [k]-cat, kit
     **
     [C]-chip
 
-* 6-
-    [g]-goat
-    **
-    [h]-house
-    
-* 7-
-    [f]-fish
-    
-* 8-
-    [p]-pear
+* 2- 'yaa'
+    [y]-yet
+    [j]-jack
 
-* 9
-    [d]-door
-    
-* a
-    [m]-map
-    
-* b
-    [w]-wet
+* 3 - 'lah'
+    [l]-lamp
+    [r]-road
 
--------------------------------------------------
-
-* c
-    [a]-cat
-    **
-    [A]-plate
-    *[w]
-    [A:]-shot, caught, father, balm, talk, tall, law, slaw, follow
-    *[r] 
-    [?ar]-dollar, car, hard, part, sharp
-    *[y]
-    [I]-fight
-
-    
-* d
-    [u]-cut, stuck, struck, front
-    [oo]-wood
-    [a..]-arrest, again, away, afire
-    **
-    
-* e
-    [i]-sit
+* 4 - 'ek'
     [e]-set
+    [i]-sit
     **
     [E]-meet
     *[r]
     [3r']-bird, word, burn, fern 
     [..r']-center, theater, realtor, inventor
+
+* 5 - 'hah'
+    [h]-house    
+
+* 6 - 'esss'
+    [z]-zoo
+    [s]-state
+    [Z]-genre, vision, measure
+    **
+    [S]-sheep
+    ***
+    [s]-hiss
+
+* 7 - 'wahmb'
+    [w]-wet
     
-* f
+* 8 - 'uh'
+    [u]-cut, stuck, struck, front
+    [oo]-wood
+    [a..]-arrest, again, away, afire
+
+* 9 - 'bam'
+    [v]-vent
+    [b]-big
+    [p]-pear
+
+* a - 'mo'
+    [m]-map
+    
+* b - 'dab'
+    [d]-door
+
+* c - 'oow'
     [O]-boat
     **
     [U]-food
@@ -88,5 +72,16 @@
     [ou]-loud 
     *[y]
     [oi]-void 
+
+* d - 'gah'
+    [g]-goat
     
+* e - 'foo'
+    [f]-fish
+
+* f - 'tah'
+    [t]-truck
+    **
+    [T]-think, thought, bath, path 
+    [D]-then
 
