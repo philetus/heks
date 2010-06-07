@@ -55,11 +55,14 @@
     [b]-big
     [p]-pear
 
-* a - 'mo'
-    [m]-map
+* a - 'nee'
+    [n]-nap
     
-* b - 'dab'
-    [d]-door
+* b - 'tah'
+    [t]-truck
+    **
+    [T]-think, thought, bath, path 
+    [D]-then
 
 * c - 'oow'
     [O]-boat
@@ -73,15 +76,13 @@
     *[y]
     [oi]-void 
 
-* d - 'gah'
-    [g]-goat
+* d - 'dab'
+    [d]-door
     
 * e - 'foo'
     [f]-fish
-
-* f - 'tah'
-    [t]-truck
     **
-    [T]-think, thought, bath, path 
-    [D]-then
+    [g]-go, dog, ogg
 
+* f - 'mo'
+    [m]-map
