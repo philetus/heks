@@ -1,53 +1,39 @@
 class Word:
-    """stores characters of a word and draws them with a brush
+    """stores characters of a word and draws glyphs with a brush
     """
     
     # list of x, y pairs for drawing each glyph, in cells
     GLYPHS = { 'a' : [(0, 0), (5, 0), (7, 6), (11, 6), (13, 0)],
                'k' : [(0, 0), (9, 4), (9, 6), (5, 6), (5, 0), (13, 0)],
-               'y' : [],
-               'l' : [(0, 2), (7, 2), (7, 0), (11, 0), (9, 4), (11, 6), (7, 6)],
+               'y' : [(0, 4), (13, 2), (13, 6), (9, 6), (9, 0), (5, 0), 
+                      (5, 6)],
+               'l' : [(0, 2), (7, 2), (7, 0), (11, 0), (9, 4), (11, 6), 
+                      (7, 6)],
                'e' : [(0, 6), (9, 6), (9, 0), (13, 0)],
-               'h' : [(0, 6), (5, 6), (7, 0), (9, 4), (13, 2), (11, 6)],
+               't' : [(0, 6), (11, 6), (11, 2), (9, 0), (7, 2), (13, 4)],
                's' : [(0, 0), (13, 2), (9, 4), (13, 6)],
-               'w' : [],
-               'u' : [],
+               'w' : [(0, 0), (9, 0), (9, 2), (11, 2), (11, 4), (13, 4),
+                      (13, 6)],
+               'u' : [(0, 4), (13, 0), (11, 6), (9, 4), (5, 6)],
                'b' : [(0, 4), (9, 4), (9, 6), (13, 6), (13, 0), (9, 2)],
-               'm' : [],
-               'd' : [],
-               'o' : [],
-               't' : [(0, 2), (13, 2), (5, 6), (5, 0)],
-               'f' : [],
-               'g' : [] }
-               
-    CELL = 2.0 # base cell size in pixels
-    STROKE = 1.5 # stroke width in cells
+               'h' : [(0, 6), (5, 6), (7, 0), (9, 4), (13, 2), (11, 6)],
+               'n' : [(0, 6), (13, 6), (13, 0), (9, 0), (9, 4)],
+               'o' : [(0, 0), (5, 0), (9, 4), (5, 6), (7, 0)],
+               'd' : [(0, 2), (13, 2), (5, 6), (5, 0)],
+               'f' : [(0, 4), (13, 4), (13, 0), (9, 0), (9, 6), (7, 6), (7, 2)],
+               'm' : [(0, 0), (0, 9), (13, 4), (11, 6), (5, 6)] }
+    
     GLYPH_SPACE = 3.0 # space between glyphs in cells
     GLYPH_LENGTH = 6.0 # vertical dimension of glyph in cells
     GLYPH_DEPTH = 13.0 # horizontal dimension of glyph in cells
-    BASE_OFFSET = 2.0 # base line horizontal offset in cells
     
-    def __init__(self, anchor_x, anchor_y, zoom=1.0):
-        self.anchor = [float(a) for a in (anchor_x, anchor_y)] # x, y pos in px
-        self.chars = []
-        self.length = self.GLYPH_SPACE # length of word in cells
-        self.depth = self.GLYPH_DEPTH
-        self.zoom = zoom # current zoom ratio
-        
-        self.base_color = (1.0, 1.0, 1.0, 0.8)
-        self.glyph_color = (1.0, 1.0, 1.0, 1.0)
-        
+    def __init__(self, string=""):
+        self.chars = [str(c) for c in string]
+        self.anchor = [0, 0] # position in cells
+                
     def __str__( self ):
         return "".join( self.chars )
-        
-    def pxls( self, cells ):
-        return cells * self.CELL * self.zoom
-    
-    def get_size( self ):
-        """returns w, h of word in pixels
-        """
-        return (self.pxls(self.depth), self.pxls(self.length))
-            
+                    
     def append( self, char ):
         """add glyph at end of word by char
         """
@@ -60,40 +46,58 @@ class Word:
             raise ValueError( "error: '" + str(char) + "' not a known glyph!" )
         
         self.chars.insert( offset, char )
-        self.length += self.GLYPH_LENGTH + self.GLYPH_SPACE
         
-    def handle_draw( self, brush ):
+    @property
+    def depth( self ):
+        """horizontal size of word in cells
+        """
+        return self.GLYPH_DEPTH
+            
+    @property
+    def length( self ):
+        """vertical size of word in cells
+        """
+        if len(self.chars) < 1:
+            return 0
+            
+        return self.GLYPH_SPACE + ((self.GLYPH_SPACE + self.GLYPH_LENGTH)
+                                   * len(self.chars))
+        
+    def handle_draw( self, brush, style ):
         """draw word with brush
         """
         if len(self.chars) < 1:
             return
         
+        print "drawing word"
+        
         # set brush size and color
-        brush.size = self.pxls(self.STROKE)
-        brush.color = self.base_color
+        brush.size = style.pixels(style.base_stroke)
+        brush.color = style.base_color
         
         # draw baseline
-        brush.move_to( self.anchor[0] - self.pxls(self.BASE_OFFSET),
-                       self.anchor[1] )
-        brush.path_by( 0, self.pxls(self.length) )
+        brush.move_to( style.pixels(self.anchor[0] - style.base_offset),
+                       style.pixels(self.anchor[1]) )
+        brush.path_by( 0, style.pixels(self.length) )
         brush.stroke_path()
         brush.clear_path()
         
-        # draw characters
-        brush.color = self.glyph_color
+        # draw glyph
+        brush.size = style.pixels(style.glyph_stroke)
+        brush.color = style.glyph_color
         for i, char in enumerate(self.chars):
             v_off = (self.GLYPH_SPACE 
                      + (i * (self.GLYPH_LENGTH + self.GLYPH_SPACE)))
             
             # get points and move to first one
             points = self.GLYPHS[char]
-            brush.move_to( self.anchor[0] - self.pxls(points[0][0]),
-                           self.anchor[1] + self.pxls(v_off + points[0][1]) )
+            brush.move_to( style.pixels(self.anchor[0] - points[0][0]),
+                           style.pixels(self.anchor[1] + v_off + points[0][1]) )
             
             # connect rest
             for x, y in points[1:]:
-                brush.path_to( self.anchor[0] - self.pxls(x),
-                               self.anchor[1] + self.pxls(v_off + y) )
+                brush.path_to( style.pixels(self.anchor[0] - x),
+                               style.pixels(self.anchor[1] + v_off + y) )
             
             # stroke path and then reset
             brush.stroke_path()
