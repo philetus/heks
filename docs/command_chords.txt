@@ -6,16 +6,18 @@ four command buttons begin command chords:
   - expand
   - collapse
 > glyphs
-  - word / phrase (series)
+  - word / phrase (series) / heading / paragraph
   - phrasecode (like a macro expansion)
-  - pos number (null => bool true)
-  - neg number (null => bool false)
+  - pos number (null => bool true) (nested => pos exponent)
+  - neg number (null => bool false) (nested => neg exponent)
 > container
   - buffer (document) (empty => command line)
   - blessing (heading is blessing?) (and/or) (if...then)
   - (method) call (provides space for args)
   - variable dereference (name in text?) (empty -> containing object)
     (nested - package)
+  - heading
+  - paragraph
 > edit
   - toggle select
   - cut / clear
