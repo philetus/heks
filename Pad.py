@@ -1,56 +1,10 @@
 import gtk
-from l33tC4D.gui.Canvas import Canvas
+from Canvas import Canvas
 from Cursor import Cursor
 from Style import Style
 
 class Pad( Canvas ):
-    """heks text editor window
-       
-       document structure:
-       
-       > metadata
-         * title
-         * authors (automagic)
-         * package
-         * species
-           - class
-             ? doc
-           - script
-             ? doc
-           - narrative
-             ? summary
-           - verse
-           - report
-             ? abstract
-           - note (report with one implicit section)
-             ? summary
-       
-       > body
-         * section
-           ? heading
-           - paragraph (list of phrases)
-             . phrase
-           - list
-             . phrase
-             . list
-             . paragraph
-           - stanza (list of verses)
-             . verse
-         * method
-           ? name
-           ? doc
-           - loop
-             ? iterator
-             ? guard
-           - test
-           - verse (one line/instruction)
-             . call (method)
-             . assignment
-             . bless (instantiate class)
-             . list
-             . dictionary
-             . set
-         
+    """heks text editor window         
     """
     
     BACKGROUND = (0.2, 0.2, 0.2, 1.0) # gray background

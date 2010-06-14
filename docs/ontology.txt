@@ -17,3 +17,50 @@ value
  * word
  * number
 
+----------------------------------------------------
+
+document structure:
+
+> metadata
+ * title
+ * authors (automagic)
+ * package
+ * species
+   - class
+     ? doc
+   - script
+     ? doc
+   - narrative
+     ? summary
+   - verse
+   - report
+     ? abstract
+   - note (report with one implicit section)
+     ? summary
+
+> body
+ * section
+   ? heading
+   - paragraph (list of phrases)
+     . phrase
+   - list
+     . phrase
+     . list
+     . paragraph
+   - stanza (list of verses)
+     . verse
+ * method
+   ? name
+   ? doc
+   - loop
+     ? iterator
+     ? guard
+   - test
+   - verse (one line/instruction)
+     . call (method)
+     . assignment
+     . bless (instantiate class)
+     . list
+     . dictionary
+     . set
+
