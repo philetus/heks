@@ -6,6 +6,8 @@ class Canvas(object):
 
        the window is filled with a 2d drawing surface that can be drawn to
        using the brush interface
+       
+       coords u, v are measured from upper right corner of canvas
 
        a draw handler taking a brush as an argument must be provided by
        subclasses to allow the canvas to redraw the window in a separate thread
@@ -145,22 +147,25 @@ class Canvas(object):
     def _on_configure(self, drawing, event):
         # just mark lock as callbacks are already inside gtk thread
         with self._gooey.lock_marker:
+            # update local size
+            rect = self._drawing_area.get_allocation()
+            self._size = rect.width, rect.height
             self.handle_resize()
 
     def _on_motion(self, drawing_area, event):
         # just mark lock as callbacks are already inside gtk thread
         with self._gooey.lock_marker:
-            self.handle_motion(event.x, event.y)
+            self.handle_motion(self._size[0] - event.x, event.y)
 
     def _on_press(self, drawing_area, event):
         # just mark lock as callbacks are already inside gtk thread
         with self._gooey.lock_marker:
-            self.handle_press(event.x, event.y)
+            self.handle_press(self._size[0] - event.x, event.y)
 
     def _on_release( self, drawing_area, event ):
         # just mark lock as callbacks are already inside gtk thread
         with self._gooey.lock_marker:
-            self.handle_release(event.x, event.y)
+            self.handle_release(self._size[0] - event.x, event.y)
 
     ###
     ### properties
@@ -189,12 +194,7 @@ class Canvas(object):
     def size(self):
         """width, height of canvas drawing area
         """
-        if self._window is None:
-            return self._size
-        
-        with self._gooey.lock:
-            rect = self._drawing_area.get_allocation()
-            return rect.width, rect.height
+        return self._size
     
     @size.setter
     def size(self, value):

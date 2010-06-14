@@ -29,7 +29,7 @@ class Brush( object ):
     SQUARE = 0
     ROUND = 1
 
-    def __init__( self, context, size ):
+    def __init__(self, context, size):
         # cairo context to draw to
         self._context = context 
 
@@ -43,18 +43,21 @@ class Brush( object ):
         self._offset = (0, 0)
         self._mask_size = size
 
-    def move_to( self, x, y ):
+    def move_to(self, x, y):
         """move brush to given coordinates
         """
+        x = self._mask_size[0] - x
+
         self._context.move_to( self._offset[0] + x, self._offset[1] + y )
 
-    def move_by( self, dx=0.0, dy=0.0 ):
+    def move_by(self, dx=0.0, dy=0.0):
         """move brush relative to current position by given delta coordinates
         """
-        self._context.rel_move_to( dx, dy )
+        dx = -dx
+        self._context.rel_move_to(dx, dy)
 
-    def path_to( self, x, y, c0_x=None, c0_y=None, c1_x=None, c1_y=None,
-                 text=None ):
+    def path_to(self, x, y, c0_x=None, c0_y=None, c1_x=None, c1_y=None,
+                text=None):
         """generate path using absolute coordinates
 
            > if only x and y coords are given generates a straight path
@@ -62,25 +65,32 @@ class Brush( object ):
            > if text string is given generates font path along straight
              or curved line
         """
+        x = self._mask_size[0] - x
+        
+        if c0_x is not None:
+            c0_x = self._mask_size[0] - c0_x
+        if c1_x is not None:
+            c1_x = self._mask_size[0] - c1_x
+            
         # font paths not implemented yet
         if text is not None:
             raise NotImplementedError( "font paths not implemented yet" )
 
         # if control points given generate bezier curve
-        if self._vet_control_points( c0_x, c0_y, c1_x, c1_y ):
-            self._context.curve_to( self._offset[0] + c0_x,
-                                    self._offset[1] + c0_y,
-                                    self._offset[0] + c1_x,
-                                    self._offset[1] + c1_y,
-                                    self._offset[0] + x,
-                                    self._offset[1] + y )
+        if self._vet_control_points(c0_x, c0_y, c1_x, c1_y):
+            self._context.curve_to(self._offset[0] + c0_x,
+                                   self._offset[1] + c0_y,
+                                   self._offset[0] + c1_x,
+                                   self._offset[1] + c1_y,
+                                   self._offset[0] + x,
+                                   self._offset[1] + y)
 
         # otherwise generate sraight path
         else:
             self._context.line_to( self._offset[0] + x, self._offset[1] + y )
 
-    def path_by( self, dx, dy, c0_dx=None, c0_dy=None, c1_dx=None, c1_dy=None,
-                 text=None ):
+    def path_by(self, dx, dy, c0_dx=None, c0_dy=None, c1_dx=None, c1_dy=None,
+                text=None):
         """generate path using relative coordinates
 
            > if only dx and dy coords are given generates a straight path
@@ -88,17 +98,23 @@ class Brush( object ):
            > if text string is given generates font path along straight
              or curved line
         """
+        dx = -dx
+        if c0_dx is not None:
+            c0_dx = -c0_dx
+        if c1_dx is not None:
+            c1_dx = -c1_dx
+
         # font paths not implemented yet
         if text is not None:
-            raise NotImplementedError( "font paths not implemented yet" )
+            raise NotImplementedError("font paths not implemented yet")
 
         # if control points given generate bezier curve
-        if self._vet_control_points( c0_dx, c0_dy, c1_dx, c1_dy ):
-            self._context.rel_curve_to( c0_dx, c0_dy, c1_dx, c1_dy, dx, dy )
+        if self._vet_control_points(c0_dx, c0_dy, c1_dx, c1_dy):
+            self._context.rel_curve_to(c0_dx, c0_dy, c1_dx, c1_dy, dx, dy)
 
         # otherwise generate sraight path
         else:
-            self._context.rel_line_to( dx, dy )
+            self._context.rel_line_to(dx, dy)
 
     def close_path( self ):
         """joins beginning and end of current subpath so that they will be
@@ -128,17 +144,17 @@ class Brush( object ):
         """
         self._context.new_path()
 
-    def push_mask( self, x0, y0, x1, y1 ):
+    def push_mask(self, x0, y0, x1, y1):
         """reset origin to x0, y0 and limit drawing to within rectangular area
         """
         # push current context state onto stack
         self._context.save()
 
         # create rectangular path
-        self.move_to( x0, y0 )
-        self.path_to( x0, y1 )
-        self.path_to( x1, y1 )
-        self.path_to( x1, y0 )
+        self.move_to(x0, y0)
+        self.path_to(x0, y1)
+        self.path_to(x1, y1)
+        self.path_to(x1, y0)
         self.close_path()
 
         # create mask from path
@@ -147,7 +163,7 @@ class Brush( object ):
         # push new origin onto offset stack
         self._offset_stack.append( ((x0, y0), (x1, y1)) )
         self._offset = self._offset[0] + x0, self._offset[1] + y0
-        self._mask_size = x1 - x0, y1 - y0
+        self._mask_size = abs(x1 - x0), abs(y1 - y0)
 
     def pop_mask( self ):
         """remove most recently pushed mask from brush drawing area
@@ -250,8 +266,11 @@ class Brush( object ):
 
     def _get_position( self ):
         return self._context.get_current_point()
-
-    def _get_mask_size( self ):
+    
+    @property
+    def mask_size(self):
+        """(width, height) of current drawing area mask
+        """
         return self._mask_size
 
     ###
@@ -280,5 +299,4 @@ class Brush( object ):
                           doc="font weight in range 0.0-1.0" )
     position = property( _get_position,
                          doc="current brush position" )
-    mask_size = property( _get_mask_size,
-                          doc="(width, height) of current drawing area mask" )
+
