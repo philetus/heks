@@ -64,3 +64,23 @@ document structure:
      . dictionary
      . set
 
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+
+*** canon
+
+tables:
+> symbol - a set of glyphs
+  * key - symbol (string encoding glyphs)
+  * value - list of wordkeys
+> word - a particular meaning and syntax associated with one or more
+  * key - a ranked symbol (symbol, int)
+> blessing - 
+
+> phrase - set of words (and blessings)
+
+> statement
+
+
+  
