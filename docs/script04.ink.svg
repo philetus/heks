@@ -13,7 +13,7 @@
    height="708.66138"
    id="svg3573"
    version="1.1"
-   inkscape:version="0.47 r22583"
+   inkscape:version="0.48.0 r9654"
    sodipodi:docname="script04.ink.svg">
   <defs
      id="defs3575">
@@ -1349,16 +1349,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.1757813"
-     inkscape:cx="861.44453"
-     inkscape:cy="615.73693"
+     inkscape:cx="1215.8818"
+     inkscape:cy="632.67593"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer8"
+     inkscape:current-layer="layer5"
      showgrid="true"
-     inkscape:window-width="1440"
-     inkscape:window-height="825"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
+     inkscape:window-width="766"
+     inkscape:window-height="434"
+     inkscape:window-x="1"
+     inkscape:window-y="68"
+     inkscape:window-maximized="0"
      units="mm"
      borderlayer="false"
      inkscape:snap-object-midpoints="false"
@@ -1456,7 +1456,7 @@
          id="tspan3107-0-1-2"
          x="1098.2721"
          y="35.433048"
-         style="font-size:6px">2 chains     [y]/[j]            'yaa'</tspan></text>
+         style="font-size:6px">2 chains     [y] **[j]          'yaa'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1467,7 +1467,7 @@
          id="tspan3107-8-7-7"
          x="1098.2721"
          y="42.519657"
-         style="font-size:6px">3 bud          [l]/[r]            'lah'</tspan></text>
+         style="font-size:6px">3 bud          [l] **[r]         'lah'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1489,7 +1489,7 @@
          id="tspan3107-9-3-8"
          x="1098.2721"
          y="56.69289"
-         style="font-size:6px">5 horns       [t] **[D]       'teh'</tspan></text>
+         style="font-size:6px">5 horns       [t] **[T]       'teh'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1500,7 +1500,7 @@
          id="tspan3107-4-9-7"
          x="1098.2721"
          y="63.779495"
-         style="font-size:6px">6 tongue     [s]/[z] **[S]  'esss'</tspan></text>
+         style="font-size:6px">6 tongue     [s] **[z]        'es'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1511,7 +1511,7 @@
          id="tspan3107-2-5-7"
          x="1098.2721"
          y="70.866119"
-         style="font-size:6px">7 wing        [w]                'wahmb'</tspan></text>
+         style="font-size:6px">7 wing        [w] **[v]       'wahmb'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1522,7 +1522,7 @@
          id="tspan3107-33-1-6"
          x="1098.2721"
          y="77.952736"
-         style="font-size:6px">8 shaft        [u]                'uhh'</tspan></text>
+         style="font-size:6px">8 shaft        [u] **[U]       'uhh'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1533,7 +1533,7 @@
          id="tspan3107-3-4-2-3"
          x="1098.1191"
          y="85.122322"
-         style="font-size:6px">9 hammer  [b]/[v] **[p]   'bal'</tspan></text>
+         style="font-size:6px">9 hammer  [b] **[p]        'babb'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1566,7 +1566,7 @@
          id="tspan3107-37-8-0-8"
          x="1098.1191"
          y="106.38215"
-         style="font-size:6px">c tear          [o] **[U]       'os'</tspan></text>
+         style="font-size:6px">c tear          [o]                 'os'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1577,7 +1577,7 @@
          id="tspan3107-9-0-7-1"
          x="1098.1191"
          y="113.4688"
-         style="font-size:6px">d tower       [d]                'dam'</tspan></text>
+         style="font-size:6px">d tower       [d]/[D]          'dann'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"
@@ -1588,7 +1588,7 @@
          id="tspan3107-4-4-7-6"
          x="1098.1191"
          y="120.55539"
-         style="font-size:6px">e flower       [f]/[T]           'foo'</tspan></text>
+         style="font-size:6px">e flower       [f]                'foo'</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:10px;font-style:normal;font-weight:normal;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Bitstream Vera Sans"

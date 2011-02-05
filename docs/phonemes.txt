@@ -1,88 +1,96 @@
-* 0 - 'aht'
+> 0x0 {a} - 'aht' - <cup>
     [a]-cat
     **
     [A]-plate
-    *[h]
+    *{h}
     [A:]-shot, caught, father, balm, talk, tall, law, slaw, follow
+    *{hr}
     [?ar]-dollar, car, hard, part, sharp
-    *[y]
+    *{y}
     [I]-fight
     
-* 1 - 'kak'
+> 0x1 {k} - 'kak' - <bullet>
     [k]-cat, kit
     **
     [C]-chip
 
-* 2- 'yaa'
+> 0x2 {y} - 'yaa' - <chains>
     [y]-yet
+    **
     [j]-jack
+    *{uu}
+    [jU]-mute
 
-* 3 - 'lah'
+> 0x3 {r}(l) - 'lah' - <bud>
     [l]-lamp
+    **
     [r]-road
 
-* 4 - 'ek'
+> 0x4 {e}(i) - 'ek' - <grave>
     [e]-set
     [i]-sit
     **
     [E]-meet
-    *[r]
+    *{hr}
     [3r']-bird, word, burn, fern 
     [..r']-center, theater, realtor, inventor
 
-* 5 - 'hah'
-    [h]-house    
-
-* 6 - 'esss'
-    [z]-zoo
-    [s]-state
-    [Z]-genre, vision, measure
-    **
-    [S]-sheep
-    ***
-    [s]-hiss
-
-* 7 - 'wahmb'
-    [w]-wet
-    
-* 8 - 'uh'
-    [u]-cut, stuck, struck, front
-    [oo]-wood
-    [a..]-arrest, again, away, afire
-
-* 9 - 'bam'
-    [v]-vent
-    [b]-big
-    [p]-pear
-
-* a - 'nee'
-    [n]-nap
-    
-* b - 'tah'
+> 0x5 {t} - 'teh' - <horns>
     [t]-truck
     **
     [T]-think, thought, bath, path 
-    [D]-then
 
-* c - 'oow'
-    [O]-boat
+> 0x6 {s} - 'es' - <tongue>
+    [s]-state, hiss
+    **
+    [z]-zoo
+    [Z]-genre, vision, measure
+    *{h}
+    [S]-sheep
+
+> 0x7 {w} - 'wahmb' - <wing>
+    [w]-wet
+    **
+    [v]-vent    
+    
+> 0x8 {u} - 'uh' - <shaft>
+    [u]-cut, stuck, struck, front
+    [oo]-wood
+    [a..]-arrest, again, away, afire
     **
     [U]-food
-    [jU]-mute
-    *[r]
+
+> 0x9 {b} - 'babb' - <hammer>
+    [b]-big
+    **
+    [p]-pear
+
+> 0xa {h} - 'hah' - <flame> 
+    [h]-house    
+
+> 0xb {n} - 'mo' - <mountain>
+    [n]-nap
+    **
+    [m]-map
+    
+
+> 0xc {o} - 'os' - <tear>
+    [O]-boat
+    *[hr]
     [o]-corn, fork, four 
     *[w]
     [ou]-loud 
     *[y]
     [oi]-void 
 
-* d - 'dab'
+> 0xd {d} - 'dann' - <tower>
     [d]-door
-    
-* e - 'foo'
-    [f]-fish
     **
-    [g]-go, dog, ogg
+    [D]-then
 
-* f - 'mo'
-    [m]-map
+> 0xe {f} - 'foo' - <flower>
+    [f]-fish
+
+> 0xf {g} - 'gah' - <eruption>
+    [g]-go, dog, ogg
+    
