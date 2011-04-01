@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="360.2424"
-     inkscape:cy="-214.84779"
+     inkscape:cx="395.69606"
+     inkscape:cy="-258.65513"
      inkscape:document-units="px"
      inkscape:current-layer="g3172"
      showgrid="false"
@@ -115,7 +115,7 @@
                id="tspan4119-5"
                x="284.78519"
                y="920.92633"
-               style="text-align:end;text-anchor:end">tok</tspan></text>
+               style="text-align:end;text-anchor:end">sek</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -155,7 +155,7 @@
                id="tspan4119-7"
                x="286.09769"
                y="894.34766"
-               style="text-align:end;text-anchor:end">breath</tspan></text>
+               style="text-align:end;text-anchor:end">ment</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -195,7 +195,7 @@
                id="tspan4119-9"
                x="285.11331"
                y="867.91907"
-               style="text-align:end;text-anchor:end">bit</tspan></text>
+               style="text-align:end;text-anchor:end">while</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -235,7 +235,7 @@
                id="tspan4119-3"
                x="286.09769"
                y="842.93359"
-               style="text-align:end;text-anchor:end">sesh</tspan></text>
+               style="text-align:end;text-anchor:end">hahr</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -275,7 +275,7 @@
                id="tspan4119-5-8"
                x="284.78519"
                y="947.08118"
-               style="text-align:end;text-anchor:end">tik</tspan></text>
+               style="text-align:end;text-anchor:end">tok</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -315,7 +315,7 @@
                id="tspan4119-5-8-2"
                x="286.20706"
                y="975.50977"
-               style="text-align:end;text-anchor:end">tik-1</tspan></text>
+               style="text-align:end;text-anchor:end">tik</tspan></text>
           <text
              xml:space="preserve"
              style="font-size:16px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -1401,39 +1401,39 @@
            sodipodi:role="line"
            x="20"
            y="1392.9336"
-           id="tspan5126">sesh -&gt; 16-1 -&gt; 2 505 000m</tspan><tspan
+           id="tspan5126">hahrbub -&gt; 16-1 -&gt; 2 505 000m</tspan><tspan
            sodipodi:role="line"
            x="20"
            y="1412.9336"
-           id="tspan5130">bit -&gt; 16-2 -&gt; 156 500m</tspan><tspan
+           id="tspan5130">whilebub -&gt; 16-2 -&gt; 156 500m</tspan><tspan
            sodipodi:role="line"
            x="20"
            y="1432.9336"
-           id="tspan5132">breath -&gt; 16-3 -&gt; 9 784m</tspan><tspan
+           id="tspan5132">mentbub -&gt; 16-3 -&gt; 9 784m</tspan><tspan
            sodipodi:role="line"
            x="20"
            y="1452.9336"
-           id="tspan5134">tok -&gt; 16-4 -&gt; 611.5m</tspan><tspan
+           id="tspan5134">sekbub -&gt; 16-4 -&gt; 611.5m</tspan><tspan
            sodipodi:role="line"
            x="20"
            y="1472.9336"
-           id="tspan5136">tik -&gt; 16-5 -&gt; 38.22m</tspan><tspan
+           id="tspan5136">tokbub -&gt; 16-5 -&gt; 38.22m</tspan><tspan
            sodipodi:role="line"
            x="20"
            y="1492.9336"
-           id="tspan5138">tik-1 -&gt; 16-6 -&gt; 2.389m</tspan><tspan
+           id="tspan5138">(tikbub) cell / mat / pole -&gt; 16-6 -&gt; 2.389m</tspan><tspan
            sodipodi:role="line"
            x="20"
            y="1512.9336"
-           id="tspan5140">tik-2 -&gt; 16-7 -&gt; 149.3mm</tspan><tspan
+           id="tspan5140">hand -&gt; 16-7 -&gt; 149.3mm</tspan><tspan
            sodipodi:role="line"
            x="20"
            y="1532.9336"
-           id="tspan5142">tik-3 -&gt; 16-8 -&gt; 9.331mm</tspan><tspan
+           id="tspan5142">fink -&gt; 16-8 -&gt; 9.331mm</tspan><tspan
            sodipodi:role="line"
            x="20"
            y="1552.9336"
-           id="tspan5144">tik-4 -&gt; 16-9 -&gt; 0.5832mm</tspan></text>
+           id="tspan5144">mite -&gt; 16-9 -&gt; 0.5832mm</tspan></text>
     </g>
   </g>
 </svg>

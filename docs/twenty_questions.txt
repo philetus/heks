@@ -1,0 +1,6 @@
+> twenty questions interface
+  - state which talent is to be applied to which vittles
+  - one or more suggestions returned
+  - can be accepted or redirected or panned (and restarted)
+  
+> simple enough
