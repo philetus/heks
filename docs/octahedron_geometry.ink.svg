@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.1 r9760"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="octahedron_geometry.ink.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="415.57461"
-     inkscape:cy="626.31274"
+     inkscape:zoom="1.979899"
+     inkscape:cx="309.09884"
+     inkscape:cy="922.16632"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -50,7 +50,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -239,5 +239,22 @@
        id="path3011-2-9"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="89.90358"
+       y="79.585281"
+       id="text4536"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4538"
+         x="89.90358"
+         y="79.585281"
+         style="font-size:12px">kwant mag [deks|sehks] &lt;number&gt; ? [deks|sehks] &lt;number&gt; nehts &lt;name&gt;</tspan><tspan
+         sodipodi:role="line"
+         x="89.90358"
+         y="94.585281"
+         style="font-size:12px"
+         id="tspan4540">k* m* [d|s]* &lt;number&gt; ?* [d|s]* &lt;number&gt; n* &lt;name&gt;</tspan></text>
   </g>
 </svg>

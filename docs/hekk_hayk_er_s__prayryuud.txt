@@ -1,0 +1,135 @@
+((
+*a[nd]
+*ak[ssun] -> method
+*k[ahnnehnt]
+*y[ank] -> end last started
+*r[en] -> start parenthetical
+*l[est] -> start list
+*e[ksbbanssun]
+*t[eytul]
+*tt[eenn]
+*s[tansyu]
+*w[eyl]
+*u[bbs]
+*b[uk]
+*h[ass] -> start hash
+*n[nuppet] -> class
+*o[r]
+*d[eks]
+*f[yers]
+*fyetul -> data object
+*g[ruubb] -> start group
+
+(kwant forms ->)
+a[t]__*k[want]__k_r (+mag, +pos) (0x1.3 * 0x10^0x0)
+y[aa]__*t[wee]__d_ss  (-mag, +pos) (0xd.66 * 0x10^-0x2)
+b[ab]__*f[aa]__r_ul_s   (-mag, -pos) (-0x7.836 * 0x10^-0x9)
+f[uu]__*g[leek]__d_ss  (+mag, -pos)  (-0xd.66 * 0x10^0xf)
+...
+
+(deks forms ->)
+*d[eks]__k_aa_ak (+int) (0x10001)
+*u[bbs]__sss (-int) (-0x666)
+))
+
+*t[eytul]__
+| hekk_heyk_ur_sy__preyluud__
+*y[ank]
+
+*tt[eenn]
+| ddu_entrodukssun_tuu_*luus_ddu_hekkheykursy_geyd_
+| | tuu_ddu_galaksee_*y[ank]__
+| bey__*luus_hed__duhgluhs__aduhms__*y[ank]
+*y[ank]
+
+(*b[uk]__)
+(| *t[eytul]__)
+(| *tt[eenn]__)
+(both title and theme can take a single phrase)
+
+*s[tansyu]__
+(| *t[eytul]__)
+(| *tt[eenn]__)
+| *fy[ers]__
+| | far__oot__en__ddu__un_kkart_ed__bak_water_sy__ufy__ddu__
+| | un_fassun_ubul__end__ufy__ddu__west_urn__speyral__arnn__uf__
+| | ddu__galaksee__leys__u__snnal__un_reegard_ed__yelo__sun
+
+*s[tansyu]__
+| *fy[ers]__
+| | orbet_eng__ddes__at__u__destans__ufy__ruflee__
+| | *s[as]_b[uum][0x6++]__t_rn[0x57b]__nneyls__
+| | esy__an__uterlee__en_segnefekant__letul__bluu_green__
+| | bblanet__huusy__aabb_deesend_ed__leyf_fornns__ar__so__
+| | ameysyeng_lee__bbremetev__ddat__ddaa__stel__ttenk__
+| | degetul__wakk_s__ar__u__bbretee__neet__eydeeu
+
+*s[tansyu]__
+| *fy[ers]__
+| | ddes__branet__hasy__*r[en]__or__radder__had__*y[ank]__a__bbrabryum___wekk__
+| | wusy__ddes__*e[hkspanssun]__
+| *fy[ers]__
+| | most of the people on it were unhappy for pretty much of the time. 
+| *fy[ers]__
+| | nnenee__soryuussun_s__wer__sugyest_ed__vor__ddes__bbrabryum, but most of these were largely concerned with the movements of small green pieces of paper, which is odd because on the whole it wasn't the small green pieces of paper that were unhappy.
+
+*s[tansyu]__
+| *fy[ers]__
+| | And so the problem remained; lots of the people were mean, and most of them were miserable, even the ones with digital watches.
+
+*s[tansyu]__
+| *fy[ers]__
+| | Many were increasingly of the opinion that they'd all made a big mistake in coming down from the trees in the first place. 
+| *fy[ers]__
+| | And some said that even the trees had been a bad move, and that no one should ever have left the oceans.
+
+*s[tansyu]__
+| *fy[ers]__
+| | And then, one Thursday, nearly two thousand years after one man had been nailed to a tree for saying how great it would be to be nice to people for a change, one girl sitting on her own in a small cafe in Rickmansworth suddenly realized what it was that had been going wrong all this time, and she finally knew how the world could be made a good and happy place. 
+| *fy[ers]__
+| | This time it was right, it would work, and no one would have to get nailed to anything.
+
+*s[tansyu]__
+| *fy[ers]__
+| | Sadly, however, before she could get to a phone to tell anyone about it, a terribly stupid catastrophe occurred, and the idea was lost forever.
+
+*s[tansyu]__
+| *fy[ers]__
+| | This is not her story.
+ 
+*s[tansyu]__
+| *fy[ers]__
+| | But it is the story of that terrible stupid catastrophe and some of its consequences.
+
+*s[tansyu]__
+| *fy[ers]__
+| | It is also the story of a book, a book called The Hitch Hiker's Guide to the Galaxy - not an Earth book, never published on Earth, and until the terrible catastrophe occurred, never seen or heard of by any Earthman.
+
+*s[tansyu]__
+| *fy[ers]__
+| | Nevertheless, a wholly remarkable book.
+
+*s[tansyu]__
+| *fy[ers]__
+| | In fact it was probably the most remarkable book ever to come out of the great publishing houses of Ursa Minor - of which no Earthman had ever heard either.
+
+*s[tansyu]__
+| *fy[ers]__
+| | Not only is it a wholly remarkable book, it is also a highly successful one - more popular than the Celestial Home Care Omnibus, better selling than Fifty More Things to do in Zero Gravity, and more controversial than Oolon Colluphid's trilogy of philosophical blockbusters Where God Went Wrong, Some More of God's Greatest Mistakes and Who is this God Person Anyway?
+
+*s[tansyu]__
+| *fy[ers]__
+| | In many of the more relaxed civilizations on the Outer Eastern Rim of the Galaxy, the Hitch Hiker's Guide has already supplanted the great Encyclopedia Galactica as the standard repository of all knowledge and wisdom, for though it has many omissions and contains much that is apocryphal, or at least wildly inaccurate, it scores over the older, more pedestrian work in two important respects.
+
+*s[tansyu]__
+| *fy[ers]__
+| | First, it is slightly cheaper; and secondly it has the words Don't Panic inscribed in large friendly letters on its cover.
+
+*s[tansyu]__
+| *fy[ers]__
+| | But the story of this terrible, stupid Thursday, the story of its extraordinary consequences, and the story of how these consequences are inextricably intertwined with this remarkable book begins very simply.
+
+*s[tansyu]__
+| *fy[ers]__
+| | It begins with a house.
+

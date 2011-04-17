@@ -1,0 +1,319 @@
+pronouns:
+
+I / me              nnee
+we                  nneeal
+you                 yuu
+you all             yuual
+he / she            ddaa
+they                ddaaal
+
+numbers:
+
+units:
+
+words:
+
+'a'                 u
+'about'             uboot
+'after'             aftur
+'all'               al
+'already'           alredee
+'also'              also
+'amazingly'         unnaasyenglee
+'an'                an
+'and'               and
+'any'               enee
+'anyone'            eneewun
+'anything'          eneetteng
+'anyway'            eneewaa
+'apedescended'      aabbdeesended
+'apocryphal'        ubbakruful
+'are'               ar
+'arm'               arnn
+'as'                asy
+'at'                at
+'awesome'           asunn
+'backwaters'        bakwatersy
+'bad'               bad
+'bag'               baag
+'be'                bee
+'because'           beekasy
+'been'              ben
+'before'            beefor
+'beg'               baag
+'begins'            beegens
+'bend'              bend
+'better'            betur
+'big'               beg
+'bind'              beynd
+'bitter'            betur
+'blockbusters'      blakbustursy
+'blue'              bluu
+'book'              buk
+'box'               baks
+'boxes'             baksesy
+'buck'              buk
+'but'               but
+'buy'               boo
+'by'                boo
+'cafe'              kafaa
+'called'            kald
+'care'              kaar
+'catastrophe'       kutastrufee
+'celestial'         seleskkul
+'change'            kkaangg
+'cheaper'           kkeebbur
+'civilizations'     seffeleysyaassunsy
+'clock'             klak
+'colluphid'         kalufed
+'come'              kunn
+'coming'            kunneng
+'concerned'         kansurnd
+'consequences'      kansekwehnsesy
+'contains'          kantaans
+'controversial'     kantroffurssul
+'controversy'       kantroffursee
+'cook'              kuk
+'cookie'            kukee
+'could'             kud
+'cover'             kuvur
+'digital'           deggetul
+'distance'          destans
+'do'                duu
+'don't'             dont
+'down'              doon
+'ear'               eer
+'earned'            urnd
+'earth'             urtt
+'earthman'          urttnnan
+'eastern'           eesturn
+'either'            eyddur
+'encyclopedia'      enseyklopeedeea
+'end'               end
+'even'              eeffen
+'ever'
+'extraordinary'
+'fact'              fakt
+'fair'              faar
+'far'               far
+'finally'           feynulee
+'first'             furst
+'for'               for
+'forever'           foreffur
+'forms'
+'friendly'
+'from'
+'galactica'
+'galaxy'
+'get'
+'girl'
+'god'
+'going'
+'good'
+'gravity'
+'great'
+'greatest'
+'green'
+'guide'
+'had'
+'happy'
+'has'               hasy
+'have'
+'heard'
+'her'
+'highly'
+'hiker'             hookehr
+'his'               hesy
+'hitch'             hekk
+'home'              honn
+'hot'               hat
+'house'             hoos
+'houses'            hoosesy
+                    hoosyesy
+'how'               hoo
+'however'           hooeffur
+'icky'              ekee
+'idea'              eydeea
+'important'         ennportent
+'in'                en
+'inaccurate'        enakyuret
+'increasingly'      enkreesenglee
+'ineffable'         enefabul
+'inextricably'      enekstrekablee
+'inscribed'         enskreybd
+'insignificant'     ensegnefekent
+'intertwined'       enturthheynd
+'is'                esy
+'issue'             essuu
+'it'                et
+'its'               ets
+'knew'              nuu
+'knowledge'         nalegg
+'kooky'             kuukee
+'kush'              kuss
+'large'             largg
+'largely'           largglee
+'least'             leest
+'left'              left
+'letters'           letursy
+'lies'              leysy
+'life'              leyf
+'little'            letul
+'lost'              last
+'lots'              lats
+'made'              nnaad
+'man'               nnan
+'many'              nnanee
+'mean'              nneen
+'miles'             nneylsy
+'million'           nnelyun
+'minor'             nneynur
+'miserable'         nnesyurabul
+'mistake'           nnestaak
+'mistakes'          nnestaaks
+'more'              nnor
+'most'              nnost
+'move'              nnuuv
+'movements'         nnuuvnnents
+'much'              nnukk
+'nailed'            naald
+'nearly'            neerlee
+'neat'              neet
+'never'             neffur
+'nevertheless'
+'nice'
+'no'
+'not'
+'occurred'
+'oceans'
+'odd'
+'of'
+'older'
+'omissions'
+'omnibus'
+'on'
+'one'
+'ones'
+'only'
+'oolon'
+'opinion'
+'or'
+'orbiting'
+'out'
+'outer'
+'over'
+'own'
+'panic'
+'paper'
+'pedestrian'
+'peel'              bbeel
+'people'            bbeebbul
+'person'            bbursuhn
+'philosophical'     felosofekul
+'phone'
+'pieces'
+'place'
+'planet'
+'pool'              bbuul
+'popular'
+'pretty'
+'primitive'
+'probably'
+'problem'
+'published'
+'publishing'
+'raccoon'           rakuun
+'rather'
+'realized'
+'relaxed'
+'remained'
+'remarkable'
+'repository'
+'respects'
+'rickmansworth'
+'right'
+'rim'
+'roughly'
+'sadly'
+'said'
+'saying'
+'scores'
+'secondly'
+'seen'
+'selling'
+'she'
+'should'
+'simply'
+'sitting'
+'skull'             skul
+'slightly'
+'small'
+'so'
+'solutions'
+'some'
+'spiral'
+'standard'
+'still'
+'story'
+'stupid'
+'successful'
+'suddenly'
+'suggested'
+'sun'
+'supplanted'
+'tell'
+'terrible'
+'terribly'
+'than'
+'that'
+'the'
+'them'
+'then'
+'these'
+'they'
+'they'd'
+'things'
+'think'
+'this'
+'though'
+'thousand'
+'thursday'
+'time'
+'to'
+'tree'
+'trees'
+'trilogy'
+'two'
+'uncharted'
+'unfashionable'
+'unhappy'
+'unregarded'
+'until'
+'ursa'
+'utterly'
+'very'
+'was'
+'wasn't'
+'watches'
+'went'
+'were'
+'western'
+'what'
+'where'
+'which'
+'who'
+'whole'
+'wholly'
+'whose'
+'wildly'
+'wisdom'
+'with'
+'words'
+'work'
+'world'
+'would'
+'wrong'
+'years'             yeersy
+'yellow'            yelo
+'zero'              syero
+'zoo'               syuu
