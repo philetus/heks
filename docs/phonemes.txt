@@ -6,27 +6,28 @@ glyphs
 0x0 - {a} - 'at'    - <hole>
 0x1 - {k} - 'kak'   - <bullet>
 0x2 - {y} - 'yaa'   - <chains>
-0x3 - {l} - 'lah'   - <bud>
+0x3 - {l} - 'la'    - <bud>
 0x4 - {e} - 'ek'    - <grave>
 0x5 - {t} - 'tat'   - <horns>
 0x6 - {s} - 'ses'   - <tongue>
 0x7 - {r} - 'rapt'  - <wing>
 0x8 - {u} - 'ug'    - <shaft>
-0x9 - {b} - 'bab'   - <tower>
-0xa - {h} - 'hoo'   - <flame> 
+0x9 - {b} - 'babl'  - <tower>
+0xa - {h} - 'haat'  - <flame> 
 0xb - {n} - 'nann'  - <mountain>
 0xc - {o} - 'os'    - <tear>
 0xd - {d} - 'do'    - <hammer>
-0xe - {f} - 'fuu'   - <flower>
+0xe - {f} - 'faaff' - <flower>
 0xf - {g} - 'gee'   - <eruption>
 
 phonemes 
+--------
+
 <phoneme and frequency data references:
   http://myweb.tiscali.co.uk/wordscape/wordlist/phonfreq.html
   http://lincs.ed.gov/nifl-assessment/2002/0093.html
   http://www.truespel.com/phonemes2.html
 >
---------
 
 {e}             - <9.49%>
      - [~i]     - <7.01%>   - sit, infant
