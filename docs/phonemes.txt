@@ -1,0 +1,85 @@
+glyphs
+------
+
+(glyphs represent both letters and numbers)
+
+0x0 - {a} - 'at'    - <hole>
+0x1 - {k} - 'kak'   - <bullet>
+0x2 - {y} - 'yaa'   - <chains>
+0x3 - {l} - 'la'    - <bud>
+0x4 - {e} - 'ek'    - <skull>
+0x5 - {t} - 'tat'   - <horns>
+0x6 - {s} - 'ses'   - <tongue>
+0x7 - {r} - 'rapt'  - <wing>
+0x8 - {u} - 'ug'    - <nail>
+0x9 - {b} - 'babl'  - <tower>
+0xa - {h} - 'haat'  - <flame> 
+0xb - {n} - 'nann'  - <mountain>
+0xc - {o} - 'os'    - <tear>
+0xd - {d} - 'do'    - <cup>
+0xe - {f} - 'ffaaf' - <flower>
+0xf - {g} - 'gee'   - <eruption>
+
+phonemes 
+--------
+
+<phoneme and frequency data references:
+  http://myweb.tiscali.co.uk/wordscape/wordlist/phonfreq.html
+  http://lincs.ed.gov/nifl-assessment/2002/0093.html
+  http://www.truespel.com/phonemes2.html
+>
+
+{e}             - <9.49%>
+     - [~i]     - <7.01%>   - sit, infant
+     - [~e]     - <2.48%>   - set, get, gentle
+{u}             - <7.80%>
+     - [~u]     - <6.76%>   - cut, stuck, struck, front, of, america, mother
+     - [~oo]    - <1.04%>   - wood, would, wool, full, put
+     - [?](a..)             - arrest, again, away, afire
+{n}  - [~n]     - <7.94%>   - nap, knight, benign
+{t}  - [~t]     - <7.06%>   - truck, time, start, attack
+{a}             - <5.63%>  
+     - [~a]     - <3.45%>   - cat, bad, and, apt
+     - [~aa]    - <1.55%>   - father, hop, knock
+     - [~au]    - <0.63%>   - author, awful, boss, ball, thought
+{s}  - [~s]     - <4.50%>   - state, hiss, insane, pieces
+{d}  - [~d]     - <4.47%>   - door, dirty, indeed
+{ee} - [~ee]    - <4.46%>   - meet, sweet, sea
+{ey} - [~ie]    - <3.97%>   - fight, cry, glide
+{l}  - [~l]     - <3.84%>   - lamp, will, believe
+{dd} - [~th]    - <3.18%>   - then, the, breathing
+{sy} - [~z]     - <2.97%>   - zoo, bazaar, business, choices
+{k}  - [~k]     - <2.95%>   - cat, kit, back, inquest
+{r}  - [~r]     - <2.84%>   - road, rare, crane
+{nn} - [~m]     - <2.76%>   - map, immune, tomorrow
+{hh} - [~w]     - <2.41%>   - wet, why, once, reward, awhile
+{ur} - [~er]    - <2.34%>   - bird, word, burn, fern, sir
+     - [?](..r')-           - center, theater, realtor, inventor
+{f}  - [~v]     - <2.05%>   - vent, vivacious, prove, envy, invade, of
+{uu} - [~ue]    - <2.05%>   - food, true, new, suit, huge, balloon
+{bb} - [~p]     - <1.98%>   - pear, pop, implore, apply
+{g}  - [~g]     - <1.81%>   - go, dog, ogg
+{b}  - [~b]     - <1.78%>   - big, born, bobble
+{ff} - [~f]     - <1.73%>   - fish, offer, fan
+{h}  - [~h]     - <1.68%>   - house, hurt, inhale, behave, hex
+{aa} - [~ae]    - <1.51%>   - plate, make, paid
+{o}  - [~oe]    - <1.19%>   - boat, go, know, don't, toe, road
+{y}  - [~y]     - <1.13%>   - yet, yes, beyond, hue
+{ss} - [~sh]    - <0.77%>   - sheep, insure, precious
+{or} - [~or]    - <0.68%>   - corn, fork, four, floor, hoard 
+{oo}            - <0.68%>
+     - [~ou]    - <0.58%>   - loud, out, how, proud, down
+     - [~oi]    - <0.10%>   - void, toil, point, boy
+{tt} - [~thh]   - <0.66%>   - think, thought, bath, path 
+{kk} - [~ch]    - <0.59>    - chip, chain, patch
+{aar}- [~air]   - <0.54%>   - air, hair, bear, stare
+{gg} - [~j]     - <0.51%>   - jack, ingested, jungle, budge
+{gy} - [~zh]    - <0.05%>   - genre, vision, measure
+{yuu}- [~y~ue]              - mute, compute
+{ar} - [~aa~r]              - car, hard, part, sharp
+{eyr}- [~ie~r]              - ire, fire
+{eer}- [~ee~r]              - ear, hear, beer
+{oor}- [~ou~r]              - hour, sour
+       [~oi~r]              - 
+{rr} - [~rq]                - ('rolled' r) arriba
+
