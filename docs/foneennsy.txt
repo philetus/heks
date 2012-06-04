@@ -17,7 +17,7 @@ glyphs
 0xb - {n} - 'nann'  - <mountain>
 0xc - {o} - 'os'    - <tear>
 0xd - {d} - 'do'    - <cup>
-0xe - {f} - 'ffaaf' - <flower>
+0xe - {f} - 'faab' - <flower>
 0xf - {g} - 'gee'   - <eruption>
 
 phonemes 
