@@ -55,9 +55,9 @@ phonemes
 {hh} - [~w]     - <2.41%>   - wet, why, once, reward, awhile
 {ur} - [~er]    - <2.34%>   - bird, word, burn, fern, sir
      - [?](..r')-           - center, theater, realtor, inventor
-{f}  - [~v]     - <2.05%>   - vent, vivacious, prove, envy, invade, of
 {uu} - [~ue]    - <2.05%>   - food, true, new, suit, huge, balloon
-{bb} - [~p]     - <1.98%>   - pear, pop, implore, apply
+{bb} - [~v]     - <2.05%>   - vent, vivacious, prove, envy, invade, of
+{f}  - [~p]     - <1.98%>   - pear, pop, implore, apply
 {g}  - [~g]     - <1.81%>   - go, dog, ogg
 {b}  - [~b]     - <1.78%>   - big, born, bobble
 {ff} - [~f]     - <1.73%>   - fish, offer, fan
