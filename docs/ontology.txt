@@ -1,0 +1,75 @@
+scope:
+
+> idol -: a collective personality that seeks to establish a consistent
+          perspective through internal debate expressed through a canon
+          of dialogs with plikos, and through klashes with other idols
+          defending (their or others) dialogs within spectrums
+
+> pliko -: individual who engages in a dialog with an idol by posing verses
+           and expansions
+
+> meta_idol -: [alt: soup_idol] a collective personality that attempts to
+               establish ontological authority through the mediation of a
+               responsive and evolving super_spectrum encompassing the
+               perspectives of all recognized idols
+
+> super_spectrum :- [alt: soup] set of hierarchichal spectrums mediated by a
+                    soup_idol, intended to convey the breadth of valid
+                    perspectives
+
+> angel -: (as in fallen_angel) an idol cast out of a super_spectrum by a
+           soup_idol for a perceived failure to contribute to the project
+           of discerning meaning in the world
+
+> troll -: pliko cast out of canon for failure to engage in dialog sincerely
+           and constructively
+
+> cake -: (as in angel food cake) raw, unmediated super_spectrum (potentially
+          featuring input from angels and trolls)
+
+> sauce -: (as in troll sauce) canon mediated by an angel (an idol branded
+           by a soup_idol)
+
+> canon -: a series of dialogs mediated by a single idol, particularly as
+           currently expressed (a canon contains a complete history of
+           its proposed expansions and verses
+
+> thread -: a conversation between an idol and a pliko not expressed in a canon
+            (often serving to explain canon through allusion and tongues)
+            can be tied to a canon (without being expressed) as well as
+            mediated into a dialog by the canons idol
+
+> spectrum -: an analysis of a collection of thematically linked dialogs,
+              chosen with the intent of demonstrating the range of opinion
+              that has been expressed on a particular issue
+  
+  > klash -: an exchange between two or more idols defending contrasting
+             dialogs within a spectrum
+
+  > dialog -: contains verses within a series of expansions on a theme,
+              mediated by a single idol
+  
+    > formulation -: root-level expansion of one or more verses defining 
+                     scope of dialog
+    
+    > expansion -: references part or all of parent verse and contains
+                   one or more verses expanding on a theme
+      
+      > theme -: each expansion may optionally feature a single verse that
+                 serves to state the theme of that expansion (as a title or 
+                 subtitle, depending on the context)
+    
+    > flower -: a collection of proposed versions of a verse, of which at
+                least one is expressed in the current canon
+    
+    > bud -: a collection of proposed versions of a verse, none of which are
+             expressed
+    
+    > vine -: an expansion that is contains at least one expressed verse
+    
+    > stump -: an expansion that contains no expressed verses
+    
+    > verse -: a block of text posted by a single entity (either an idol or
+               pliko) containing not more than <16?> leaves [neems, tuuds,
+               peys, luussuns, tungs, tags...] organized into one or more
+               frasyes
