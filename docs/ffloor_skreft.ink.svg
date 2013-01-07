@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="leeff_taagsy.ink.svg">
+   sodipodi:docname="ffloor_skreft.ink.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,17 +24,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7075"
-     inkscape:cx="449.92791"
-     inkscape:cy="493.35941"
+     inkscape:zoom="1.415"
+     inkscape:cx="469.7148"
+     inkscape:cy="784.33102"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="true"
      inkscape:snap-object-midpoints="true"
      inkscape:snap-global="true"
-     inkscape:window-width="1855"
-     inkscape:window-height="1056"
-     inkscape:window-x="65"
+     inkscape:window-width="1024"
+     inkscape:window-height="576"
+     inkscape:window-x="0"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
      inkscape:snap-nodes="true"
@@ -59,7 +59,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1267,6 +1267,25 @@
          id="path17939-6-9"
          d="m 378.97135,463.28738 -2.0552,3.13029 -3.04632,0.68207 -0.52453,2.56327 -2.39898,0.44776 0.34104,2.61328 2.53826,-0.35353 0.91558,2.03293 4.23014,-0.48613 0,3.54329 -7.47684,9.64867 3.65382,2.41213 2.73063,-3.76828 -6.24071,-3.73401 -4.94126,2.52809 -0.58644,8.38952 -3.22634,3.50359 -2.29923,-6.62935 2.65395,-1.608 0.42503,2.88263 -4.89257,5.58225 -1.2802,-6.80572 2e-5,-3.54326 3.41159,-11.60491 3.52356,-0.86678 -0.72277,3.48408 2.25171,1.62065 -2.65708,2.83537 -5.807,-6.09833 -3.06861,1.77165 -4.75803,4.56666 0.87985,1.70853 2.78874,1.13424 -0.34039,3.7537 -3.96006,1.80071 -2.63806,-1.76471 0.46127,-3.25366 -1.497,-2.42388 -3.21072,1.56504 -4.69869,11.92257 -1.02198,-2.10412 -2.27003,-0.32653 1.62763,-1.78734 0.0169,-2.394 6.34619,5.3193 1e-5,3.54332 -4.69872,11.9226 -1.02198,-2.10412 -2.27003,-0.32653 1.62763,-1.78734 0.0169,-2.394 6.34619,5.3193 36.82313,-15.94485 0,3.5433"
          style="color:#000000;fill:none;stroke:#000000;stroke-width:2.21456695;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+      <path
+         sodipodi:nodetypes="cccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="path17881-7-46-7"
+         d="m 477.16635,112.49996 -4.75805,4.56665 0.87985,1.70855 2.78874,1.13424 -0.34038,3.75369 -3.96005,1.8007 -2.63806,-1.76469 0.46127,-3.25368 -1.497,-2.42387 -3.21072,1.56504 -8.33504,11.53817 2.26113,2.1141 2.17573,-2.51698 -4.70765,-4.72574 2.19149,-2.29109 6.41437,6.51145 12.27437,-1.77166 0,3.54331"
+         style="color:#000000;fill:none;stroke:#000000;stroke-width:2.21456695;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
     </g>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Nimbus Sans L;-inkscape-font-specification:Nimbus Sans L"
+       x="414.56689"
+       y="-515.5238"
+       id="text3750-5-9-8"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,1,-1,0,0,0)"><tspan
+         sodipodi:role="line"
+         x="414.56689"
+         y="-515.5238"
+         id="tspan3754-4-0-7"
+         style="font-size:14px">ey fut uh sfel an yoo</tspan></text>
   </g>
 </svg>

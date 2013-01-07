@@ -1,6 +1,8 @@
 yuunets
 -------
 
+equatorial circumference of the earth in meters [wikipedia] -> 40 075 017
+
 0x0 - {a} - 'at'    >> 7 :
 0x1 - {k} - 'kak'   >> 6 :
 0x2 - {y} - 'yaa'   >> 5 :
