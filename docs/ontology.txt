@@ -1,3 +1,10 @@
+contexts:
+
+> leaf contexts
+  - sint
+  - 
+
+
 scope:
 
 > idol -: a collective personality that seeks to establish a consistent

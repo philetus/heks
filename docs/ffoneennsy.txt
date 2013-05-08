@@ -10,14 +10,14 @@ glyphs
 0x4 - {e} - 'ek'    - <skull>
 0x5 - {t} - 'tat'   - <horns>
 0x6 - {s} - 'ses'   - <tongue>
-0x7 - {r} - 'rapt'  - <wing>
+0x7 - {r} - 'raft'  - <wing>
 0x8 - {u} - 'ug'    - <cup>
 0x9 - {b} - 'babl'  - <tower>
-0xa - {h} - 'haat'  - <flame> 
+0xa - {h} - 'ha'  - <flame> 
 0xb - {n} - 'nann'  - <mountain>
 0xc - {o} - 'os'    - <tear>
 0xd - {d} - 'do'    - <hammer>
-0xe - {f} - 'ffaf'  - <flower>
+0xe - {f} - 'faff'  - <flower>
 0xf - {g} - 'gee'   - <eruption>
 
 phonemes 
