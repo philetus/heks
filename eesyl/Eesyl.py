@@ -18,11 +18,14 @@ class Eesyl:
        with interpreter
     """
 
-    def __init__(self, width=256, height=256):
+    def __init__(self, width=256, height=256, title='eesyl'):
         self._size = (width, height)
         
         # thread to run event loop
         self._event_thread = None
+        
+        # lock to protect x server
+        self._x_lock = Lock()
         
         # dirty flag to trigger window redraw
         self._dirty = True
@@ -55,20 +58,17 @@ class Eesyl:
             self._x_root.root_visual,
             CW.BackPixel | CW.EventMask,
             [ self._x_root.white_pixel, 
-              EventMask.PointerMotion       # request events here
+              # request events here
+              EventMask.PointerMotion       
               | EventMask.ButtonPress 
               | EventMask.ButtonRelease
-              | EventMask.KeyPress
+              #| EventMask.KeyPress # heks key model is instant on release
               | EventMask.KeyRelease
-              | EventMask.Exposure ])
+              | EventMask.Exposure
+              | EventMask.ResizeRedirect ])
 
-        # create a pixmap for cairo drawing buffer
-        self._x_con.core.CreatePixmap(
-            self._x_root.root_depth,
-            self._pixmap,
-            self._x_root.root,
-            self._size[0],
-            self._size[1])
+        # set window title
+        self.set_title(title)
 
         # simple xcb graphics context for copying the pixmap buffer to window
         self._x_con.core.CreateGC(
@@ -77,6 +77,14 @@ class Eesyl:
             GC.Foreground | GC.Background,
             [ self._x_root.black_pixel, self._x_root.white_pixel ])
 
+        # create a pixmap for cairo drawing buffer
+        self._x_con.core.CreatePixmap(
+            self._x_root.root_depth,
+            self._pixmap,
+            self._x_root.root,
+            self._size[0],
+            self._size[1])
+            
         # create a cairo surface tied to pixmap buffer
         self._surface = cairo.XCBSurface(
             self._x_con,
@@ -84,6 +92,36 @@ class Eesyl:
             self._x_root.allowed_depths[0].visuals[0],
             self._size[0],
             self._size[1])
+            
+    def _on_resize(self, width, height):
+        """handle window resize event
+        """
+        print("on resizing!")
+        
+        self._size = (width, height)
+        
+        # create a pixmap for cairo drawing buffer
+        self._x_con.core.CreatePixmap(
+            self._x_root.root_depth,
+            self._pixmap,
+            self._x_root.root,
+            self._size[0],
+            self._size[1])
+            
+        # create a cairo surface tied to pixmap buffer
+        self._surface = cairo.XCBSurface(
+            self._x_con,
+            self._pixmap,
+            self._x_root.allowed_depths[0].visuals[0],
+            self._size[0],
+            self._size[1])
+        
+        self._x_con.core.ConfigureWindow(
+            self._window,
+            ConfigWindow.Width | ConfigWindow.Height,
+            [width, height])
+
+        self._on_draw()
                         
     def start(self):
         """start event handling (and rendering) loop
@@ -120,20 +158,37 @@ class Eesyl:
         """
         raise NotImplementedError()
 
-    def set_title(self, string):
+    def set_title(self, title):
         """set new window title
         """
-        raise NotImplementedError()
+        self._x_con.core.ChangeProperty(
+            PropMode.Replace, 
+            self._window, 
+            Atom.WM_NAME, 
+            Atom.STRING,
+            8,
+            len(title),
+            title)
+         
+        # flush x server request
+        self._x_con.flush()
 
     def get_size(self):
         """returns current window size as (width, height)
         """
         return self._size[0], self._size[1]
     
-    def set_size(self, size):
+    def set_size(self, width, height):
         """takes (width, height) for new window size
         """
-        raise NotImplementedError()
+        self._size = (width, height)
+        
+        self._x_con.core.ConfigureWindow(
+            self._window,
+            ConfigWindow.Width | ConfigWindow.Height,
+            [width, height])
+        
+        self._x_con.flush()
 
     def get_position(self):
         raise NotImplementedError()
@@ -181,6 +236,7 @@ class Eesyl:
         """clear window, call handle draw to generate content, send to x
         """
         # create krsr with new cairo context and pass to handle draw method
+        # handle draw method writes new screen image to buffer
         krsr = Krsr(cairo.Context(self._surface), self._size)
         self.handle_draw(krsr)
                 
@@ -228,6 +284,12 @@ class Eesyl:
             elif isinstance(event, NoExposureEvent): # ???
                 pass
             
+            elif isinstance(event, ResizeRequestEvent):
+                self._on_resize(event.width, event.height)
+                #print("resize event!")
+                #print("width: %s" % event.width)
+                #print("height: %s" % event.height)
+            
             # pointer motion events
             elif isinstance(event, MotionNotifyEvent):
                 self.handle_motion(self._size[0] - event.event_x, 
@@ -242,14 +304,10 @@ class Eesyl:
                 self.handle_release(self._size[0] - event.event_x,
                                     event.event_y)
             
-            # key events
-            elif isinstance(event, KeyPressEvent):
-                print("key pressed!")
-                print(dir(event))
-                print("detail: %s" % event.detail)
-            
+            # key events            
             elif isinstance(event, KeyReleaseEvent):
-                pass
+                self._on_key(event.detail)
+                #print("key released: %s" % event.detail)
             
             else:
                 print("unhandled event! %s" % str(event))
