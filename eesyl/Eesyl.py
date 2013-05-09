@@ -17,6 +17,32 @@ class Eesyl:
        runs event handling loop in a separate thread to allow interaction
        with interpreter
     """
+    
+    # mapping from x server key codes to glish charset
+    KEES = {
+        38: 'a',
+        45: 'k',
+        29: 'y',
+        46: 'l',
+
+        26: 'e',
+        28: 't',
+        39: 's',
+        27: 'r',
+ 
+        30: 'u',
+        56: 'b',
+        43: 'h',
+        57: 'n',
+ 
+        32: 'o',
+        40: 'd',
+        41: 'f',
+        42: 'g',
+
+        37: '<heks>', # [l_ctrl]
+        65: '<trgr>'  # [space]
+    }
 
     def __init__(self, width=256, height=256, title='eesyl'):
         self._size = (width, height)
@@ -65,7 +91,8 @@ class Eesyl:
               #| EventMask.KeyPress # heks key model is instant on release
               | EventMask.KeyRelease
               | EventMask.Exposure
-              | EventMask.ResizeRedirect ])
+              #| EventMask.ResizeRedirect 
+              ])
 
         # set window title
         self.set_title(title)
@@ -100,7 +127,16 @@ class Eesyl:
         
         self._size = (width, height)
         
+        # release old surface and pixmap
+        if self._surface is not None:
+            self._surface.finish()
+            self._surface = None
+        if self._pixmap is not None:
+            self._x_con.core.FreePixmap(self._pixmap)
+            self._pixmap = None
+                
         # create a pixmap for cairo drawing buffer
+        self._pixmap = self._x_con.generate_id()
         self._x_con.core.CreatePixmap(
             self._x_root.root_depth,
             self._pixmap,
@@ -187,6 +223,31 @@ class Eesyl:
             self._window,
             ConfigWindow.Width | ConfigWindow.Height,
             [width, height])
+
+        # release old surface and pixmap
+        if self._surface is not None:
+            self._surface.finish()
+            self._surface = None
+        if self._pixmap is not None:
+            self._x_con.core.FreePixmap(self._pixmap)
+            self._pixmap = None
+                
+        # create a [new] pixmap for cairo drawing buffer
+        self._pixmap = self._x_con.generate_id()
+        self._x_con.core.CreatePixmap(
+            self._x_root.root_depth,
+            self._pixmap,
+            self._x_root.root,
+            self._size[0],
+            self._size[1])
+            
+        # create a [new] cairo surface tied to pixmap buffer
+        self._surface = cairo.XCBSurface(
+            self._x_con,
+            self._pixmap,
+            self._x_root.allowed_depths[0].visuals[0],
+            self._size[0],
+            self._size[1])
         
         self._x_con.flush()
 
@@ -222,15 +283,10 @@ class Eesyl:
         """
         pass
     
-    def handle_keypress(self, key):
-        """do something when key is pressed
-        """
-        pass
-
-    def handle_keyrelease(self, key):
+    def handle_key(self, key):
         """do something when key is released
         """
-        pass
+        print(key)
     
     def _on_draw(self):
         """clear window, call handle draw to generate content, send to x
@@ -249,6 +305,12 @@ class Eesyl:
 
         # flush requests to x server
         self._x_con.flush()
+    
+    def _on_key(self, key_index):
+        """handle key event
+        """
+        if key_index in self.KEES:
+            self.handle_key(self.KEES[key_index])
         
     def _event_loop(self):
         """runs event loop in a separate thread
