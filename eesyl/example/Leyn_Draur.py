@@ -1,4 +1,4 @@
-from eesyl.Eesyl import Eesyl
+from heks.eesyl.Eesyl import Eesyl
 
 class Leyn_Draur(Eesyl):
     """a simple line drawing application to test eesyl lib
