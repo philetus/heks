@@ -4,7 +4,7 @@ class Leyn_Draur(Eesyl):
     """a simple line drawing application to test eesyl lib
     """
     def __init__(self):
-        Eesyl.__init__(self)
+        Eesyl.__init__(self, width=512, height=512, title="straight line draw test app")
 
         # flag tracks whether pointer is down
         self.pressed_flag = False
@@ -24,10 +24,6 @@ class Leyn_Draur(Eesyl):
 
         # background color to draw
         self.background_color = (1.0, 1.0, 1.0, 1.0) # opaque white
-
-        # TODO
-        # set window title
-        #self.title = "pyguuee: straight line draw test app"
         
     def handle_press(self, x, y):
         """set anchor and flag when pointer is pressed
