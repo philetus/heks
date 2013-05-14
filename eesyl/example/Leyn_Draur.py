@@ -4,7 +4,7 @@ class Leyn_Draur(Eesyl):
     """a simple line drawing application to test eesyl lib
     """
     def __init__(self):
-        Eesyl.__init__(self, width=512, height=512, title="straight line draw test app")
+        Eesyl.__init__(self, width=256, height=512, title="straight line draw test app")
 
         # flag tracks whether pointer is down
         self.pressed_flag = False
@@ -25,17 +25,17 @@ class Leyn_Draur(Eesyl):
         # background color to draw
         self.background_color = (1.0, 1.0, 1.0, 1.0) # opaque white
         
-    def handle_press(self, x, y):
+    def handle_press(self, y, x):
         """set anchor and flag when pointer is pressed
         """
         self.pressed_flag = True
-        self.first_point = (x, y)
+        self.first_point = (y, x)
 
-    def handle_release(self, x, y):
+    def handle_release(self, y, x):
         """finalize line when pointer is released
         """
         # append new line to list of lines
-        self.lines.append((self.first_point, (x, y)))
+        self.lines.append((self.first_point, (y, x)))
 
         # clear mouse pressed flag and rubber band line coords
         self.pressed_flag = False
@@ -45,11 +45,11 @@ class Leyn_Draur(Eesyl):
         # trigger canvas to redraw itself
         self.redraw()
 
-    def handle_motion(self, x, y):
+    def handle_motion(self, y, x):
         """follow depressed pointer with rubber band line
         """
         if self.pressed_flag:
-            self.last_point = (x, y)
+            self.last_point = (y, x)
 
             # trigger canvas to redraw itself
             self.redraw()
@@ -62,21 +62,14 @@ class Leyn_Draur(Eesyl):
         """        
         # draw background
         krsr.set_color(*self.background_color)
-        width, height = self.get_size()
-        krsr.move_to(0, 0)
-        krsr.path_to(width, 0)
-        krsr.path_to(width, height)
-        krsr.path_to(0, height)
-        krsr.close_path()
-        krsr.fill_path()
-        krsr.clear_path()
+        krsr.wipe()
                 
         # draw all lines in lines list
         krsr.set_color(*self.line_color)
         krsr.set_size(self.line_thickness)
-        for (x0, y0), (x1, y1) in self.lines:
-            krsr.move_to( x0, y0 ) # move to beginning of line
-            krsr.path_to( x1, y1 ) # make path to end of line
+        for a, b in self.lines:
+            krsr.move_to(*a) # move to beginning of line
+            krsr.path_to(*b) # make path to end of line
             krsr.stroke_path() # stroke line with current color and thickness
             krsr.clear_path() # clear line path we just drew
 
