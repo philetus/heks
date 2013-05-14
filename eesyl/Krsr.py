@@ -23,52 +23,49 @@ class Krsr:
     SQUARE = 0
     ROUND = 1
 
-    def __init__(self, context, size):
+    def __init__(self, context):
         # cairo context to draw to
-        self._context = context 
-        self._size = tuple(i for i in size)
+        self._context = context
 
-    def move_to( self, x, y ):
+    def move_to(self, y, x):
         """move krsr to given coordinates
         """
-        self._context.move_to(self._size[0] - x, y)
+        self._context.move_to(y, x)
 
-    def move_by(self, dx=0.0, dy=0.0):
+    def move_by(self, dy=0.0, dx=0.0):
         """move krsr relative to current position by given delta coordinates
         """
-        self._context.rel_move_to(-dx, dy)
+        self._context.rel_move_to(dy, dx)
 
-    def path_to(self, x, y, c0_x=None, c0_y=None, c1_x=None, c1_y=None):
-        """generate path using absolute coordinates
+    def path_to(self, y, x, c0_y=None, c0_x=None, c1_y=None, c1_x=None):
+        """generate path to absolute coords (y, x[, c0_y, c0_x, c1_y, c1_x])
 
-           > if only x and y coords are given generates a straight path
+           > if only (y, x) coords are given generates a straight path
            > if control points are given generates a bezier curve
         """
 
         # if control points given generate bezier curve
-        if self._vet_control_points( c0_x, c0_y, c1_x, c1_y ):
-            self._context.curve_to(self._size[0] - c0_x, c0_y,
-                                   self._size[0] - c1_x, c1_y,
-                                   self._size[0] - x, y )
+        if self._vet_control_points(c0_x, c0_y, c1_x, c1_y):
+            self._context.curve_to(c0_x, c0_y, c1_x, c1_y, x, y)
 
         # otherwise generate straight path
         else:
-            self._context.line_to(self._size[0] - x, y)
+            self._context.line_to(y, x)
 
-    def path_by(self, dx, dy, c0_dx=None, c0_dy=None, c1_dx=None, c1_dy=None):
-        """generate path using relative coordinates
+    def path_by(self, dy, dx, c0_dy=None, c0_dx=None, c1_dy=None, c1_dx=None):
+        """generate to relative coords (dy, dx[, c0_dy, c0_dx, c1_dy, c1_dx])
 
-           > if only dx and dy coords are given generates a straight path
+           > if only (dy, dx) coords are given generates a straight path
            > if control points are given generates a bezier curve
         """
 
         # if control points given generate bezier curve
         if self._vet_control_points(c0_dx, c0_dy, c1_dx, c1_dy):
-            self._context.rel_curve_to(-c0_dx, c0_dy, -c1_dx, c1_dy, -dx, dy)
+            self._context.rel_curve_to(c0_dx, c0_dy, c1_dx, c1_dy, dx, dy)
 
         # otherwise generate straight path
         else:
-            self._context.rel_line_to(-dx, dy)
+            self._context.rel_line_to(dy, dx)
 
     def close_path(self):
         """joins beginning and end of current subpath so that they will be
@@ -91,6 +88,11 @@ class Krsr:
         """clear current path
         """
         self._context.new_path()
+    
+    def wipe(self):
+        """wipe screen by filling window with current color
+        """
+        self._context.paint()
 
     @staticmethod
     def _vet_control_points(x0, y0, x1, y1):
@@ -122,7 +124,7 @@ class Krsr:
 
     def get_position(self):
         x, y = self._context.get_current_point()
-        return self._size[0] - x, y
+        return y, x
     
     def set_shape(self, shape):
         raise NotImplementedError
