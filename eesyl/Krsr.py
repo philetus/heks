@@ -93,7 +93,37 @@ class Krsr:
         """wipe screen by filling window with current color
         """
         self._context.paint()
-
+    
+    def push(self):
+        """push current state to stored state stack
+        """
+        self._context.save()
+    
+    def pop(self):
+        """pop last pushed state off of state stack
+        """
+        self._context.restore()
+    
+    def transform(self, matrix):
+        """applies given matrix to current krsr transform
+        """
+        self._context.transform(matrix)
+    
+    def translate(self, ty, tx):
+        """applies translation matrix to current krsr transform
+        """
+        self._context.translate(ty, tx)
+    
+    def scale(self, sy, sx):
+        """applies scale matrix to current krsr transform
+        """
+        self._context.scale(sy, sx)
+    
+    def rotate(self, radians):
+        """applies rotation matrix to current krsr transform
+        """
+        self._context.rotate(radians)
+        
     @staticmethod
     def _vet_control_points(x0, y0, x1, y1):
         """check if path should be curved
@@ -123,7 +153,7 @@ class Krsr:
         return self._context.get_line_width()
 
     def get_position(self):
-        x, y = self._context.get_current_point()
+        y, x = self._context.get_current_point()
         return y, x
     
     def set_shape(self, shape):
