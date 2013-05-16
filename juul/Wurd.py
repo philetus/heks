@@ -19,9 +19,6 @@ class Wurd:
         elif grams is not None:
             for gram in grams:
                 self._data.append(gram)
-        
-        else:
-            raise ValueError("wurd must be initialized with a value!")
     
     def __repr__(self):
         return "Wurd('" + "_".join(str(g) for g in self._data) + "')"
@@ -37,4 +34,10 @@ class Wurd:
     
     def __len__(self):
         return self._data.__len__()
+    
+    def delete_gram(self, index):
+        self._data.pop(index)
+    
+    def insert_gram(self, index):
+        self._data.insert(index, Gram())
         

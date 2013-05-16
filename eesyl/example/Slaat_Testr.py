@@ -10,21 +10,21 @@ class Slaat_Testr(Slaat):
                        scale=6.0, 
                        title="slaat testr")
 
-        self.leyn_buffr.append(
-            [
-                Wurd('ey_nn'),
-                Wurd('gun_u'),
-                Wurd('eet'),
-                Wurd('yor'),
-                Wurd('braans')
-            ])
-        self.leyn_buffr.append(
-            [
-                Wurd('and'),
-                Wurd('steel'),
-                Wurd('yor'),
-                Wurd('nalegg')
-            ])
+    #    self.leyn_buffr.append(
+    #        [
+    #            Wurd('ey_nn'),
+    #            Wurd('gun_u'),
+    #            Wurd('eet'),
+    #            Wurd('yor'),
+    #            Wurd('braans')
+    #        ])
+    #    self.leyn_buffr.append(
+    #        [
+    #            Wurd('and'),
+    #            Wurd('steel'),
+    #            Wurd('yor'),
+    #            Wurd('nalegg')
+    #        ])
 
 if __name__ == "__main__":
     slaat = Slaat_Testr()

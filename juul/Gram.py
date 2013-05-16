@@ -26,9 +26,6 @@ class Gram:
                 except TypeError:
                     raise ValueError("'i' is not rabek for a glef!" % str(i))
         
-        else:
-            raise ValueError("gram must be initialized with one or more glefs!")
-
     def __repr__(self):
         return  "Gram('" + ''.join(self.GLEFS[i] for i in self._data) + "')"
     
@@ -56,4 +53,12 @@ class Gram:
 
     def __len__(self):
         return self._data.__len__()
+    
+    def insert_glef(self, index, gless):
+        """insert new gram at given index
+        """
+        self._data.insert(index, self.GLEFS.index(gless))
+    
+    def delete_glef(self, index):
+        self._data.pop(index)
             
