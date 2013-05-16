@@ -6,16 +6,24 @@ class Slaat_Testr(Slaat):
     """
     def __init__(self):
         Slaat.__init__(self, 
-                       height=512, width=256,
-                       scale=8.0, 
+                       height=512, width=640,
+                       scale=6.0, 
                        title="slaat testr")
 
         self.leyn_buffr.append(
             [
-                Wurd('a'),
-                Wurd('k'),
-                Wurd('ak'), 
-                Wurd('ak_ak')
+                Wurd('ey_nn'),
+                Wurd('gun_u'),
+                Wurd('eet'),
+                Wurd('yor'),
+                Wurd('braans')
+            ])
+        self.leyn_buffr.append(
+            [
+                Wurd('and'),
+                Wurd('steel'),
+                Wurd('yor'),
+                Wurd('nalegg')
             ])
 
 if __name__ == "__main__":
