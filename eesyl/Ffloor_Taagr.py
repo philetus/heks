@@ -50,72 +50,76 @@ class Ffloor_Taagr:
     
     # 0x0
     m = Matrix()
+    m.scale(-1.0, 1.0) # flip vertical
+    m.rotate(2.0*pi/3.0) # rotate 120 degrees
     GRAM_TRANSFORMS.append(m)
     
     # 0x1
     m = Matrix()
-    m.translate(4.0, 0.0)
-    m.scale(-1.0, 1.0) # flip vertical
-    m.rotate(2.0*pi/3.0) # rotate 120 degrees
+    m.translate(2.00, 3.46)
     GRAM_TRANSFORMS.append(m)
     
     # 0x02
     m = Matrix()
     m.translate(6.00, 3.46)
-    m.scale(-1.0, 1.0) # flip vertical
-    m.rotate(2.0*pi/3.0) # rotate 120 degrees
     GRAM_TRANSFORMS.append(m)
     
     # 0x03
     m = Matrix()
-    m.translate(6.50, 6.06)
-    m.rotate(pi) # rotate 180 degrees
+    m.translate(8.50, 2.60)
+    m.scale(-1.0, 1.0) # flip vertical
+    m.rotate(5.0*pi/3.0) # rotate 300 degrees
     GRAM_TRANSFORMS.append(m)
 
     # 0x04
     m = Matrix()
-    m.translate(4.00, 6.93)
+    m.translate(8.00, 0.00)
+    GRAM_TRANSFORMS.append(m) 
+
+    # 0x05
+    m = Matrix()
+    m.translate(12.00, 0.00)
     m.scale(-1.0, 1.0) # flip vertical
     m.rotate(2.0*pi/3.0) # rotate 120 degrees
     GRAM_TRANSFORMS.append(m)
 
-    # 0x05
-    m = Matrix()
-    m.translate(6.00, 10.39)
-    GRAM_TRANSFORMS.append(m)
-
     # 0x06
     m = Matrix()
-    m.translate(10.00, 10.39)
+    m.translate(14.00, 3.46)
+    m.scale(-1.0, 1.0) # flip vertical
+    m.rotate(2.0*pi/3.0) # rotate 120 degrees
     GRAM_TRANSFORMS.append(m)
 
-    # paths to finish grams of varying numbers of glefs
+    # paths to finish grams with varying numbers of glefs
     TAALS = [
-        [(4.00, 0.00)],
-        [(6.00, 3.44), (9.27, 3.00), (8.00, 0.00), (9.00, 0.00)],
-        [(8.00, 7.21), (11.32, 6.73), (8.00, 0.00), (9.00, 0.00)],
-        [(4.27, 7.35), (11.52, 6.43), (8.00, 0.00), (9.00, 0.00)],
+        [(2.00, 3.46), (5.25, 3.03), (4.00, 0.00), (5.00, 0.00)],
+        [(5.25, 3.03), (4.00, 0.00), (5.00, 0.00)],
+        [(7.00, 0.00), (8.00, 0.00)],
+        [(8.00, 0.00)],
         
-        [(6.75, 10.82), (13.54, 9.50), (8.00, 0.00), (9.00, 0.00)],
-        [(12.00, 6.93), (8.00, 0.00), (9.00, 0.00)],
-        [(8.00, 0.00), (9.00, 0.00)],
-        [],
+        [(12.00, 0.00)],
+        [(12.75, 3.90), (13.75, 5.12), (17.00, 2.60), (16.00, 0.00),
+         (17.00, 0.00)],
+        [(16.00, 6.93), (19.25, 6.50), (16.00, 0.00), (17.00, 0.00)],
+        [(12.25, 7.36), (19.25, 6.50), (16.00, 0.00), (17.00, 0.00)],
         
-        [],
-        [],
-        [],
-        [],
+        [(16.00, 6.92), (19.25, 6.50), (16.00, 0.00), (17.00, 0.00)],
+        [(18.00, 10.39), (21.25, 9.96), (16.00, 0.00), (17.00, 0.00)],
+        [(20.00, 13.86), (23.25, 13.42), (16.00, 0.00), (17.00, 0.00)],
+        [(16.25, 14.29), (23.25, 13.42), (16.00, 0.00), (17.00, 0.00)],
         
-        [],
-        [],
-        [],
-        []]
+        [(12.50, 9.53), (8.50, 9.53), (11.25, 14.29), (24.00, 13.86), 
+         (16.00, 0.00), (17.00, 0.00)],
+        [(9.50, 11.26), (11.25, 14.29), (24.00, 13.86), (16.00, 0.00), 
+         (17.00, 0.00)],
+        [(9.50, 14.29), (24.00, 13.86), (16.00, 0.00), (17.00, 0.00)],
+        [(9.50, 14.29), (24.00, 13.86), (16.00, 0.00), (17.00, 0.00)]]
     
     # heights of grams of varying lengths
-    HEIGHTS = [ 4.0,  9.0,  9.0,  9.0,
-                9.0,  9.0,  9.0,  9.0,
-               13.0, 13.0, 17.0, 17.0,
-               17.0, 17.0, 17.0, 16.0]
+    HEIGHTS = [ 5.0,  5.0,  8.0,  8.0,
+               12.0, 17.0, 17.0, 17.0,
+               17.0, 17.0, 17.0, 17.0,
+               17.0, 17.0, 17.0, 17.0]
     
     def __init__(self, krsr, scale=1.0):
         """takes a krsr to draw with and an optional scale factor
