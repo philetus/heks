@@ -7,7 +7,7 @@ class Slaat_Testr(Slaat):
     def __init__(self):
         Slaat.__init__(self, 
                        height=512, width=640,
-                       scale=16.0, 
+                       scale=12.0, 
                        title="slaat testr")
 
         self.handle_key('e')
@@ -56,6 +56,11 @@ class Slaat_Testr(Slaat):
         self.handle_key('a')
         self.handle_key('a')
         self.handle_key('n')
+
+        # advance gram with hexed g
+        self.handle_key('<heks>')
+        self.handle_key('g')
+
         self.handle_key('s')
 
         # advance line

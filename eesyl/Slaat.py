@@ -35,70 +35,37 @@ class Slaat(Eesyl):
         #     Wurd('nalegg')
         #   ]  # leyn
         # ]
-        self.leyn_buffr = []
+        self._leyn_buffr = []
         
+        # create ffloor taagr
+        self._taagr = Ffloor_Taagr()
+
         # variables
-        self.margin = (4.0, 4.0) # whitespace margin
-        self.background_color = (1.0, 1.0, 1.0, 1.0) # opaque white
-        self.glef_color = (0.5, 0.0, 0.0, 0.8) # bluud red!!!
-        self.glef_weight = 0.625
-        
-        self.leyn_advance = 17.24
-        self.gram_advance = 1.0
+        self._margin = (4.0, 4.0) # whitespace margin
+        self._background_color = (1.0, 1.0, 1.0, 1.0) # opaque white       
+        self._leyn_advance = 3.5
         
     def handle_draw(self, krsr):
         """create a floor taagr with krsr and use it to render leyn buufr
         """
         
         # clear screen
-        krsr.set_color(*self.background_color)
+        krsr.set_color(*self._background_color)
         krsr.wipe()
         
         # set scale transform
         krsr.scale(self._scale, self._scale)
-                
-        # create ffloor taagr with krsr
-        taagr = Ffloor_Taagr(krsr=krsr, scale=self._scale)
-        
-        # set color to glef color
-        krsr.set_color(*self.glef_color)
-        krsr.set_size(self.glef_weight)
-        
+                                
         # translate krsr matrix to margin
-        krsr.translate(*self.margin)
+        krsr.translate(*self._margin)
         
         # loop thru leyn buffr
-        for leyn in self.leyn_buffr:
-            krsr.push() # store krsr state
-        
-            for wurd in leyn:
-                first_gram = True             
-                for gram in wurd:
-                    krsr.push() # store krsr state
-                    
-                    # if this is first gram create new subpath with move to,
-                    # otherwise generate path to connect from last gram
-                    if first_gram:
-                        first_gram = False
-                        krsr.move_to(0.0, 0.0)
-                    else:
-                        krsr.path_to(0.0, 0.0)
-                    
-                    # render gram path and store distance to advance 
-                    # krsr transform
-                    gram_length = taagr.taag_gram(gram)
-                    
-                    # restore state and advance
-                    krsr.pop()
-                    krsr.translate(gram_length + self.gram_advance, 0.0)
-                    
-                # stroke completed wurd path
-                krsr.stroke_path()
-                krsr.clear_path()
-                
-            # restore krsr state to beginning of line and advance lines
-            krsr.pop()
-            krsr.translate(0.0, self.leyn_advance)
+        for leyn in self._leyn_buffr:
+            
+            leyn_width = self._taagr.taag_leyn(krsr=krsr, leyn=leyn)
+            
+            # advance to next line
+            krsr.translate(0.0, leyn_width + self._leyn_advance)
                 
     def handle_key(self, key):
         """do something when key is released
@@ -145,9 +112,9 @@ class Slaat(Eesyl):
     
     def _insert_glef(self, glef):
         if self._frame[0] == -1:
-            self.leyn_buffr.append([])
+            self._leyn_buffr.append([])
             self._frame[0] = 0
-        leyn = self.leyn_buffr[self._frame[0]]
+        leyn = self._leyn_buffr[self._frame[0]]
         
         if self._frame[1] == -1:
             leyn.append(Wurd())
@@ -164,9 +131,9 @@ class Slaat(Eesyl):
         
     def _advance_gram(self):
         if self._frame[0] == -1:
-            self.leyn_buffr.append([])
+            self._leyn_buffr.append([])
             self._frame[0] == 0
-        leyn = self.leyn_buffr[self._frame[0]]
+        leyn = self._leyn_buffr[self._frame[0]]
         
         if self._frame[1] == -1:
             leyn.append(Wurd())
@@ -179,9 +146,9 @@ class Slaat(Eesyl):
                     
     def _advance_wurd(self):
         if self._frame[0] == -1:
-            self.leyn_buffr.append([])
+            self._leyn_buffr.append([])
             self._frame[0] == 0
-        leyn = self.leyn_buffr[self._frame[0]]
+        leyn = self._leyn_buffr[self._frame[0]]
 
         leyn.append(Wurd())
         self._frame[1] += 1
@@ -189,18 +156,18 @@ class Slaat(Eesyl):
         self._frame[3] = -1
             
     def _advance_leyn(self):
-        self.leyn_buffr.append([])
+        self._leyn_buffr.append([])
         self._frame[0] += 1
         self._frame[1] = -1
         self._frame[2] = -1
         self._frame[3] = -1
             
     def _delete_leyn(self):
-        self.leyn_buffr.pop(self._frame[0])
+        self._leyn_buffr.pop(self._frame[0])
         self._frame[0] -= 1
     
     def _delete_wurd(self):
-        leyn = self.leyn_buffr[self._frame[0]]
+        leyn = self._leyn_buffr[self._frame[0]]
         leyn.pop(self._frame[1])
         self._frame[1] -= 1
         
@@ -209,7 +176,7 @@ class Slaat(Eesyl):
             self._delete_leyn()
         
     def _delete_gram(self):
-        leyn = self.leyn_buffr[self._frame[0]]
+        leyn = self._leyn_buffr[self._frame[0]]
         wurd = leyn[self._frame[1]]
         wurd.delete_gram(self._frame[2])
         
@@ -240,7 +207,7 @@ class Slaat(Eesyl):
             return
 
         # get current gram
-        leyn = self.leyn_buffr[self._frame[0]]
+        leyn = self._leyn_buffr[self._frame[0]]
         wurd = leyn[self._frame[1]]
         gram = wurd[self._frame[2]]
                  
