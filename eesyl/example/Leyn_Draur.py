@@ -66,7 +66,7 @@ class Leyn_Draur(Eesyl):
                 
         # draw all lines in lines list
         krsr.set_color(*self.line_color)
-        krsr.set_size(self.line_thickness)
+        krsr.set_weight(self.line_thickness)
         for a, b in self.lines:
             krsr.move_to(*a) # move to beginning of line
             krsr.path_to(*b) # make path to end of line
@@ -76,7 +76,7 @@ class Leyn_Draur(Eesyl):
         # if we are currently drawing a line draw rubber band
         if (self.first_point is not None) and (self.last_point is not None):
             krsr.set_color(*self.rubber_line_color)
-            krsr.set_size(self.rubber_line_thickness)
+            krsr.set_weight(self.rubber_line_thickness)
             krsr.move_to(*self.first_point)
             krsr.path_to(*self.last_point)
             krsr.stroke_path()

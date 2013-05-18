@@ -146,10 +146,10 @@ class Krsr:
     def set_color(self, r, g, b, a=1.0):
         self._context.set_source_rgba(r, g, b, a)
 
-    def set_size(self, pixels):
+    def set_weight(self, pixels):
         self._context.set_line_width(pixels)
 
-    def get_size(self):
+    def get_weight(self):
         return self._context.get_line_width()
 
     def get_position(self):
