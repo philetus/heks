@@ -9,7 +9,10 @@ class Slaat_Testr(Slaat):
                        height=512, width=640,
                        scale=12.0, 
                        title="slaat testr")
-
+    
+    def braan_s(self):
+        """print amusing aafforesynn about braan_s
+        """
         self.handle_key('e')
         self.handle_key('y')
         
@@ -75,7 +78,6 @@ class Slaat_Testr(Slaat):
         self.handle_key('<heks>')
         self.handle_key('<trgr>')
 
-
         self.handle_key('s')
         self.handle_key('t')
         self.handle_key('e')
@@ -99,21 +101,9 @@ class Slaat_Testr(Slaat):
         self.handle_key('g')
         self.handle_key('g')
 
-    #    self.leyn_buffr.append(
-    #        [
-    #            Wurd('ey_nn'),
-    #            Wurd('gun_u'),
-    #            Wurd('eet'),
-    #            Wurd('yor'),
-    #            Wurd('braans')
-    #        ])
-    #    self.leyn_buffr.append(
-    #        [
-    #            Wurd('and'),
-    #            Wurd('steel'),
-    #            Wurd('yor'),
-    #            Wurd('nalegg')
-    #        ])
+        # advance line
+        self.handle_key('<heks>')
+        self.handle_key('<trgr>')
 
 if __name__ == "__main__":
     slaat = Slaat_Testr()
