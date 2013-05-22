@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="ffloor_skreft.ink.svg">
+   sodipodi:docname="ffluur_skreft.ink.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -24,14 +24,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.48574385"
-     inkscape:cx="313.7054"
-     inkscape:cy="667.79401"
+     inkscape:zoom="0.9714877"
+     inkscape:cx="443.9808"
+     inkscape:cy="841.27817"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer4"
      showgrid="true"
      inkscape:snap-object-midpoints="true"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      inkscape:window-width="1024"
      inkscape:window-height="576"
      inkscape:window-x="0"
@@ -70,8 +70,8 @@
      id="layer3"
      inkscape:label="grid"
      style="display:inline"
-     sodipodi:insensitive="true"
-     transform="translate(0,-2.5390623e-6)">
+     transform="translate(0,-2.5390623e-6)"
+     sodipodi:insensitive="true">
     <g
        id="g5352"
        inkscape:tile-cx="412.72589"
@@ -435,6 +435,52 @@
       <path
          inkscape:connector-curvature="0"
          id="path4578-7-1-9-6"
+         d="m 406.5887,151.47636 0,12.40157 10.74008,-6.20078 0,-12.40158 z"
+         style="fill:#00ff00;fill-opacity:1;stroke:none"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+    <g
+       style="display:inline"
+       id="g5352-59"
+       inkscape:tile-cx="412.72589"
+       inkscape:tile-cy="153.24801"
+       inkscape:tile-w="12.27437"
+       inkscape:tile-h="21.25984"
+       inkscape:tile-x0="406.5887"
+       inkscape:tile-y0="142.61809"
+       transform="translate(-0.76714854,-41.190943)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5348-0"
+         d="m 405.82155,151.03344 0,14.17323 12.27438,-7.08661 0,-14.17323 z"
+         style="fill:#ffe500;fill-opacity:1;stroke:none"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4578-0"
+         d="m 406.5887,151.47636 0,12.40157 10.74008,-6.20078 0,-12.40158 z"
+         style="fill:#00ff00;fill-opacity:1;stroke:none"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+    <g
+       style="display:inline"
+       id="g5352-9-3"
+       inkscape:tile-cx="412.72589"
+       inkscape:tile-cy="153.24801"
+       inkscape:tile-w="12.27437"
+       inkscape:tile-h="21.25984"
+       inkscape:tile-x0="406.5887"
+       inkscape:tile-y0="142.61809"
+       transform="translate(-0.76714854,-27.017713)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5348-3-5"
+         d="m 405.82155,151.03344 0,14.17323 12.27438,-7.08661 0,-14.17323 z"
+         style="fill:#ffe500;fill-opacity:1;stroke:none"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4578-7-3"
          d="m 406.5887,151.47636 0,12.40157 10.74008,-6.20078 0,-12.40158 z"
          style="fill:#00ff00;fill-opacity:1;stroke:none"
          sodipodi:nodetypes="ccccc" />
@@ -2459,6 +2505,19 @@
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cccccccccccccccccccccccccccccccccc" />
     </g>
+    <path
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2.21456695;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 414.97103,107.05435 -2.33655,3.21404 0.77267,3.92107 -4.43259,-1.21206 0.62853,3.53917 -2.1836,3.00243"
+       id="path4719"
+       inkscape:connector-curvature="0"
+       transform="translate(0,2.5390623e-6)"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:2.21456695;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 411.49041,123.19809 -3.85234,2.37415 1.78698,5.37892 5.4688,-1.60445 -0.81409,-5.66471 -6.76388,9.98587"
+       id="path4727"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc" />
   </g>
   <g
      inkscape:label="Layer 1"
@@ -2526,198 +2585,6 @@
        id="path3883-1-2-71-7-4-5-1-6-9-9-96-0-7-19"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="159.44879"
-       id="text7027"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029"
-         x="429.60315"
-         y="159.44879"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x0 - {a} - 'at'    - &lt;hol&gt; </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="173.62202"
-       id="text7027-1"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-6"
-         x="429.60315"
-         y="173.62202"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x1 - {k} - 'kak'  - &lt;bulet&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="187.79526"
-       id="text7027-3"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-7"
-         x="429.60315"
-         y="187.79526"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x2 - {y} - 'yaa'  - &lt;kkaan_s&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="201.96848"
-       id="text7027-0"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-8"
-         x="429.60315"
-         y="201.96848"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x3 - {l}  - 'lah'     - &lt;bud&gt; </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="216.14171"
-       id="text7027-01"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-4"
-         x="429.60315"
-         y="216.14171"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x4 - {e} - 'ek'    - &lt;skul&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="230.31494"
-       id="text7027-7"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-73"
-         x="429.60315"
-         y="230.31494"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x5 - {t}  - 'tat'   - &lt;horn_s&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="244.48816"
-       id="text7027-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-5"
-         x="429.60315"
-         y="244.48816"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x6 - {s} - 'ses'   - &lt;tung&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="258.66141"
-       id="text7027-8"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-58"
-         x="429.60315"
-         y="258.66141"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x7 - {r} - 'raft'  - &lt;hhng&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="272.83463"
-       id="text7027-72"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-89"
-         x="429.60315"
-         y="272.83463"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x8 - {u} - 'ug'    - &lt;kup&gt; </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="287.00787"
-       id="text7027-94"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-78"
-         x="429.60315"
-         y="287.00787"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x9 - {b} - 'babl'  - &lt;tuur&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="301.18109"
-       id="text7027-1-7"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-6-4"
-         x="429.60315"
-         y="301.18109"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xa - {h} - 'hho'  - &lt;flaann&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="315.35431"
-       id="text7027-3-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-7-9"
-         x="429.60315"
-         y="315.35431"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xb - {n} - 'nann' - &lt;nnuuntn&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="329.52753"
-       id="text7027-0-0"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-8-9"
-         x="429.60315"
-         y="329.52753"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xc - {o} - 'os'    - &lt;teer&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="343.70078"
-       id="text7027-01-9"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-4-0"
-         x="429.60315"
-         y="343.70078"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xd - {d} - 'duu'    - &lt;hannr&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="357.87399"
-       id="text7027-7-3"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-73-4"
-         x="429.60315"
-         y="357.87399"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xe - {f}  - 'oof' - &lt;ffluur&gt;</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
-       x="429.60315"
-       y="372.04721"
-       id="text7027-9-8"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan7029-5-2"
-         x="429.60315"
-         y="372.04721"
-         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xf - {g} - 'gee'   - &lt;eerupssn&gt;</tspan></text>
     <g
        id="g3529"
        transform="translate(72.111953,2.6574802)">
@@ -4959,5 +4826,242 @@
          y="257.16644"
          style="font-size:2px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;font-family:Sans;-inkscape-font-specification:Sans"
          id="tspan4687-2"> (2.95, 1.02), (2.30, 0.50), (3.25, 0.00)]</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="explainer">
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="159.44879"
+       id="text7027"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029"
+         x="429.60315"
+         y="159.44879"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x0 - {a} - 'at'    - &lt;hol&gt; </tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="173.62202"
+       id="text7027-1"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-6"
+         x="429.60315"
+         y="173.62202"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x1 - {k} - 'kak'  - &lt;bulet&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="187.79526"
+       id="text7027-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-7"
+         x="429.60315"
+         y="187.79526"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x2 - {y} - 'yaa'  - &lt;kkaan_s&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="201.96848"
+       id="text7027-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-8"
+         x="429.60315"
+         y="201.96848"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x3 - {l}  - 'lah'     - &lt;bud&gt; </tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="216.14171"
+       id="text7027-01"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-4"
+         x="429.60315"
+         y="216.14171"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x4 - {e} - 'ek'    - &lt;skul&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="230.31494"
+       id="text7027-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-73"
+         x="429.60315"
+         y="230.31494"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x5 - {t}  - 'tat'   - &lt;horn_s&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="244.48816"
+       id="text7027-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-5"
+         x="429.60315"
+         y="244.48816"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x6 - {s} - 'ses'   - &lt;tung&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="258.66141"
+       id="text7027-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-58"
+         x="429.60315"
+         y="258.66141"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x7 - {r} - 'raft'  - &lt;hhng&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="272.83463"
+       id="text7027-72"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-89"
+         x="429.60315"
+         y="272.83463"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x8 - {u} - 'ug'    - &lt;kup&gt; </tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="287.00787"
+       id="text7027-94"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-78"
+         x="429.60315"
+         y="287.00787"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0x9 - {b} - 'babl'  - &lt;tuur&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="301.18109"
+       id="text7027-1-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-6-4"
+         x="429.60315"
+         y="301.18109"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xa - {h} - 'hho'  - &lt;flaann&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="315.35431"
+       id="text7027-3-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-7-9"
+         x="429.60315"
+         y="315.35431"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xb - {n} - 'nann' - &lt;nnuuntn&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="329.52753"
+       id="text7027-0-0"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-8-9"
+         x="429.60315"
+         y="329.52753"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xc - {o} - 'os'    - &lt;teer&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="343.70078"
+       id="text7027-01-9"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-4-0"
+         x="429.60315"
+         y="343.70078"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xd - {d} - 'duu'    - &lt;hannr&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="357.87399"
+       id="text7027-7-3"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-73-4"
+         x="429.60315"
+         y="357.87399"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xe - {f}  - 'oof' - &lt;ffluur&gt;</tspan></text>
+    <text
+       transform="translate(0,-2.5390623e-6)"
+       xml:space="preserve"
+       style="display:inline;font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.60315"
+       y="372.04721"
+       id="text7027-9-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-5-2"
+         x="429.60315"
+         y="372.04721"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">0xf - {g} - 'gee'   - &lt;eerupssn&gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.27667"
+       y="113.8673"
+       id="text7027-32"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-3"
+         x="429.27667"
+         y="113.8673"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">[trgr] keystroke - {!}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Courier New;-inkscape-font-specification:Courier New"
+       x="429.27667"
+       y="128.04054"
+       id="text7027-1-5"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan7029-6-7"
+         x="429.27667"
+         y="128.04054"
+         style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Sans;-inkscape-font-specification:Sans">[heks] keystroke - {*}</tspan></text>
   </g>
 </svg>
