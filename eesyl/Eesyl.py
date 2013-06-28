@@ -20,37 +20,37 @@ class Eesyl:
        with interpreter
     """
     
-    # mapping from x server key codes to glish charset
+    # mapping from x server key codes to gless charset
     KEES = {
-        38: 'a', # 0x0
-        45: 'k', # 0x1
-        29: 'y', # 0x2
-        46: 'l', # 0x3
+        38: 0x0,  # <a>
+        45: 0x1,  # <k>
+        29: 0x2,  # <y>
+        46: 0x3,  # <l>
 
-        26: 'e', # 0x4
-        28: 't', # 0x5
-        39: 's', # 0x6
-        27: 'r', # 0x7
+        26: 0x4,  # <e>
+        28: 0x5,  # <t>
+        39: 0x6,  # <s>
+        27: 0x7,  # <r>
  
-        30: 'u', # 0x8
-        56: 'b', # 0x9
-        43: 'h', # 0xa
-        57: 'n', # 0xb
+        30: 0x8,  # <u>
+        40: 0x9,  # <d>
+        43: 0xa,  # <h>
+        41: 0xb,  # <f>
  
-        32: 'o', # 0xc
-        40: 'd', # 0xd
-        41: 'f', # 0xe
-        42: 'g', # 0xf
+        32: 0xc,  # <o>
+        56: 0xd,  # <b>
+        57: 0xe,  # <n>
+        42: 0xf,  # <g>
 
-        37: '<heks>', # [l_ctrl]
-        65: '<trgr>'  # [space]
+        37: 0x10, # <heks> [l_ctrl]
+        65: 0x11  # <trgr> [space]
     }
     
-    def __init__(self, height=512, width=256, title='eesyl'):
-        self._title = title
+    def __init__(self, heyt=512, hhedtt=256, teytl='eesyl'):
+        self._title = teytl
         
         # origin -> top right; +x -> down; +y -> left
-        self._size = (height, width) 
+        self._size = (heyt, hhedtt) 
         self._position = (0, 0)
         
         # thread to run event loop
@@ -150,11 +150,11 @@ class Eesyl:
     def reposition(self, position):
         raise NotImplementedError()
 
-    def handle_draw(self, krsr):
+    def handl_dra(self, krsr):
         """called to draw eesyl contents with krsr
         """
         raise NotImplementedError(
-            "eesyl subclasses must implement a handle_draw method")
+            "eesyl subclasses must implement a handl_dra method")
 
     def handle_motion(self, y, x):
         """do something when pointer is moved over canvas
@@ -176,16 +176,16 @@ class Eesyl:
         """
         pass
     
-    def handle_key(self, key):
+    def handl_kee(self, kee):
         """do something when key is released
         """
-        print(key)
+        print(kee)
     
-    def _on_key(self, key_index):
+    def _an_kee(self, kee_endeks):
         """handle key event
         """
-        if key_index in self.KEES:
-            self.handle_key(self.KEES[key_index])
+        if kee_endeks in self.KEES:
+            self.handl_kee(self.KEES[kee_endeks])
     
     def _control_loop(self):
         """drives x connection from a single thread
@@ -287,7 +287,7 @@ class Eesyl:
         # create krsr with new context and pass it to handle draw method
         # to allow subclass to fill draw buffer
         krsr = Krsr(context)
-        self.handle_draw(krsr)
+        self.handl_dra(krsr)
                 
         # copy buffer to screen  
         self._x_con.core.CopyArea(
@@ -439,7 +439,7 @@ class Eesyl:
             
             # key events            
             elif isinstance(event, KeyReleaseEvent):
-                self._on_key(event.detail)
+                self._an_kee(event.detail)
             
             # random unhelpful events
             elif isinstance(event, NoExposureEvent): # ???

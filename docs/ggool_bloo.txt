@@ -5,14 +5,35 @@ ggool
   - other atomic docs are deks (index of docs) and fanl (graphics/video)
   - collection of atomic docs is a hord
 
+* implements slekt_ubl interface:
+    . esy_reyt_ubl() -> (False, unless also reyt_ubl)
+
+    . eksfand_ffokus()
+    . raasy_ffokus()
+    . lour_ffokus()
+    . kantrakt_ffokus()
+    
+    . kleer_slekssn()
+    . gotoo_preebbeeus_slekssn()
+    . gotoo_nekst_slekssn()
+    . tagl_slekssn()
+    
+    . doof()
+    . nnakk(kut_feeld)
+
+* implements reyt_ubl interface:
+    . esy_reyt_ubl() -> True
+        
+    . enet_nod(kee)
+    . ensrt_glef(kee)
+
+    . kut()
+    . faast(kut_feeld)
+
+
 * ggool nodes:
   - initiated by <heks><[glef]> sequence
   - <l>eyn: as in poetic verse, or a sentence
-  - <h>eks(/heyper?): list/function, a series of raa_s and optionally a blest 
-                    (function name)
-                    . link can be in or out (in ggool graph), before or after 
-                      (in a serialization defined by a series deks)
-  - <b>lest: variable in a namespace, can be a link, function, type, etc
   - <r>aa: a subphrase, an item in a list, constituent element of leyns and spels
   - <f>ala: a word (palabra [latin parable]), composed of leaf nodes
           > (gram)
@@ -29,14 +50,20 @@ ggool
   - <t>ood: numeric magnitude
   - <d>asyo: numeric fraction (pedazo - piece)
   - <n>not: emote/mode/emphasis
-            {f} -> <3
             {d} -> !
-            {o} -> :(
             {l} -> ?
-            {s} -> :P
+
             {u} -> :)
+            {o} -> :(
+            {s} -> :P
             {g} -> ;)
             {b} -> :/
+            {f} -> <3
+            
+            {k} -> marked as unique
+            {a} -> link to mark
+            {h} -> tagged as kind
+            
   
 * key input (heks board has 16 glefs, <heks> and <trgr> keys
   - can be implemented with nintendo controller (4-way D-pad, A & B buttons)
@@ -69,8 +96,9 @@ ggool
                 (each discrete non-contiguous selekssun is replaced)
     . <heks><n> nnakk_s top of faast buffr and adds matches to selection
     . <heks><b> opens faast buffr (<heks><y> breaks out of it)
-                 # <heks><e> and <heks><u> rotate buffr (rotating off top 
-                   creates new blank entry
+                 # <heks><a> creates new blank field at top
+                 # <heks><o> deletes current field
+                 # <heks><e> and <heks><u> rotate buffr
                  # <trgr> opens current field for editing (<heks><s> deletes
                    at focus, <heks><y> breaks all the way out of buffr) 
     

@@ -1,0 +1,110 @@
+sess
+====
+
+handles input session to hord of ggools
+
+* taak_s u streenn ubb ennf_s asy enfut <a|k|y|l|e|t|s|r|u|b|h|n|o|d|f|g|*|!>
+
+* dak stak has nnetadeks at taf, deks, ggools, kut buffr, kut ggool
+
+* constant ennf controls:
+  - <*><*> undo
+  - <*><!> redo
+  - <*><y> pap dak stak
+  - <*><s> tagl slekt nnod
+  - <*><h> tagl helf nnod
+  - <*><g> puss noo ggool (context sensitive) antoo dak stak
+  - <*><l> lag sess (bring up log buffr to commit current changes)
+
+  (previous and next are defined in relation to containing deks)
+  - <*><a> freebbeeus ggool
+  - <*><o> nekst ggool
+  - <*><e> back in time (version)
+  - <*><u> forward in time (version)
+
+* in slekt nnod:
+  - <a> eksfand_ffokus
+  - <e> raasy_ffokus
+  - <u> lour_ffokus
+  - <o> kontrakt_ffokus
+
+  - <!> tagl_slekssn
+  - <k> kut
+  - <d> doof
+  - <f> faast
+  - <n> nnakk (select by matching top of kut buffr)    
+  - <r> fuss lenk target an dak stak  
+  - <y> kleer_slekssn  
+  - <b> puss kut buffr an dak stak
+
+* in reyt nnod:
+  - <!> enet_s deeffalt noo nod ffor kantekst
+  - <*><[r|f|k|b|t|d|n]> enet_s noo nod
+  - <[glef]> ensrt_s glef in current nod
+
+* ennf:
+  <*> heks nekst ennf
+    <**> un_doo
+  <!>[reyt] enet trgr nod  
+    <!>[slekt] tagl slekssn
+    <!*> ree_doo
+    
+  <a>[reyt] ensrt gleff
+    <a>[slekt] eksfand ffokus
+    <a*> eksfand ffokus
+  <k>[reyt] ensrt gleff
+    <k>[slekt] kut
+    <k*>[reyt] enet kwant nod
+    <k*>[slekt] ensrt kwant nod
+  <y>[reyt] ensrt gleff   
+    <y>[slekt] kleer slekssn
+    <y*> pap dak stak
+  <l>[reyt] ensrt gleff
+    <l>[slekt] ?
+    <l*> lag sess
+    
+  <e>[reyt] ensrt gleff
+    <e>[slekt] raasy ffokus
+    <e*> freebbeeus ggool
+  <t>[reyt] ensrt gleff
+    <t>[slekt] ?
+    <t*>[reyt] enet tood nod
+    <t*>[slekt] ?
+  <s>[reyt] ensrt gleff
+    <s>[slekt] ?
+    <s*> tagl slekt nnod
+  <r>[reyt] ensrt gleff
+    <r>[slekt] puss lenk
+    <r*>[reyt] enet raa nod
+    <r*>[slekt] ?
+
+  <u>[reyt] ensrt gleff
+    <u>[slekt] lour ffokus
+    <u*> nekst ggool
+  <b>[reyt] ensrt gleff
+    <b>[slekt] puss kut buffr
+    <b*>[reyt] enet babl nod
+    <b*>[slekt] ?
+  <h>[reyt] ensrt gleff
+    <h>[slekt] ?
+    <h*> tagl helf nnod
+  <n>[reyt] ensrt gleff
+    <n>[slekt] nnakk
+    <n*>[reyt] enet nnot nod
+    <n*>[slekt] ?
+
+  <o>[reyt] ensrt gleff
+    <o>[slekt] kontrakt ffokus
+    <o*> kontrakt ffokus
+  <d>[reyt] ensrt gleff
+    <d>[slekt] doof
+    <d*>[reyt] enet dasyo nod
+    <d*>[slekt] ?
+  <f>[reyt] ensrt gleff
+    <f>[slekt] faast
+    <f*>[reyt] enet fala nod
+    <f*>[slekt] ?
+  <g>[reyt] ensrt gleff
+    <g>[slekt] ? 
+    <*><g> puss noo ggool
+  

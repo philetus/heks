@@ -27,17 +27,17 @@ class Krsr:
         # cairo context to draw to
         self._context = context
 
-    def move_to(self, y, x):
+    def moobb_too(self, y, x):
         """move krsr to given coordinates
         """
         self._context.move_to(y, x)
 
-    def move_by(self, dy=0.0, dx=0.0):
+    def moobb_bey(self, dy=0.0, dx=0.0):
         """move krsr relative to current position by given delta coordinates
         """
         self._context.rel_move_to(dy, dx)
 
-    def path_to(self, y, x, c0_y=None, c0_x=None, c1_y=None, c1_x=None):
+    def patt_too(self, y, x, c0_y=None, c0_x=None, c1_y=None, c1_x=None):
         """generate path to absolute coords (y, x[, c0_y, c0_x, c1_y, c1_x])
 
            > if only (y, x) coords are given generates a straight path
@@ -52,7 +52,7 @@ class Krsr:
         else:
             self._context.line_to(y, x)
 
-    def path_by(self, dy, dx, c0_dy=None, c0_dx=None, c1_dy=None, c1_dx=None):
+    def patt_bey(self, dy, dx, c0_dy=None, c0_dx=None, c1_dy=None, c1_dx=None):
         """generate to relative coords (dy, dx[, c0_dy, c0_dx, c1_dy, c1_dx])
 
            > if only (dy, dx) coords are given generates a straight path
@@ -67,59 +67,59 @@ class Krsr:
         else:
             self._context.rel_line_to(dy, dx)
 
-    def close_path(self):
+    def klosy_patt(self):
         """joins beginning and end of current subpath so that they will be
            stroked smoothly, adding a new path segment if the first and
            last points are not the same
         """
         self._context.close_path()
         
-    def fill_path(self):
+    def ffel_patt(self):
         """fill current path with current brush settings
         """
         self._context.fill_preserve()
 
-    def stroke_path(self):
+    def strok_patt(self):
         """stroke current path with current brush settings
         """
         self._context.stroke_preserve()
 
-    def clear_path(self):
+    def kleer_patt(self):
         """clear current path
         """
         self._context.new_path()
     
-    def wipe(self):
+    def weyf(self):
         """wipe screen by filling window with current color
         """
         self._context.paint()
     
-    def push(self):
+    def puss(self):
         """push current state to stored state stack
         """
         self._context.save()
     
-    def pop(self):
+    def pap(self):
         """pop last pushed state off of state stack
         """
         self._context.restore()
     
-    def transform(self, matrix):
+    def transyffornn(self, matrix):
         """applies given matrix to current krsr transform
         """
         self._context.transform(matrix)
     
-    def translate(self, ty, tx):
+    def transylaat(self, ty, tx):
         """applies translation matrix to current krsr transform
         """
         self._context.translate(ty, tx)
     
-    def scale(self, sy, sx):
+    def skaal(self, sy, sx):
         """applies scale matrix to current krsr transform
         """
         self._context.scale(sy, sx)
     
-    def rotate(self, radians):
+    def rotaat(self, radians):
         """applies rotation matrix to current krsr transform
         """
         self._context.rotate(radians)
@@ -143,19 +143,19 @@ class Krsr:
 
         return True
 
-    def set_color(self, r, g, b, a=1.0):
+    def sfek_kulr(self, r, g, b, a=1.0):
         self._context.set_source_rgba(r, g, b, a)
 
-    def set_weight(self, pixels):
+    def sfek_waat(self, pixels):
         self._context.set_line_width(pixels)
 
-    def get_weight(self):
+    def feek_waat(self):
         return self._context.get_line_width()
 
-    def get_position(self):
+    def feek_fosyessn(self):
         y, x = self._context.get_current_point()
         return y, x
     
-    def set_shape(self, shape):
+    def sfek_ssaaf(self, ssaaf):
         raise NotImplementedError
 

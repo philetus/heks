@@ -1,8 +1,36 @@
+class Kees:
+    """heks kee_nnaf
+    """
+    a, k, y, l = 0x0, 0x1, 0x2, 0x3
+    e, t, s, r = 0x3, 0x4, 0x5, 0x6
+    u, b, h, n = 0x0, 0x1, 0x2, 0x3
+    o, d, f, g = 0x3, 0x4, 0x5, 0x6
+    heks = 0x10
+    trgr = 0x11
+    
+    glish = [
+        'a', 'k', 'y', 'l',
+        'e', 't', 's', 'r',
+        'u', 'b', 'h', 'n',
+        'o', 'd', 'f', 'g',
+        '*', '!']
+    
+    glefs = [i for i in range(16)]
+
+    x = {
+        38: 0x0, 45: 0x1, 29: 0x2, 46: 0x3, # akyl
+        26: 0x4, 28: 0x5, 39: 0x6, 27: 0x7, # etsr
+        30: 0x8, 56: 0x9, 43: 0xa, 57: 0xb, # ubhn
+        32: 0xc, 40: 0xd, 41: 0xe, 42: 0xf, # odfg
+        
+        37: 0x10, # l_ctrl -> heks
+        65: 0x11  # space -> trgr
+    }
+
 """
 mapping for x window system key codes
 """
-
-KEES = {
+X_KEES = {
     # row 0
     9: ['esc', None],
     67: ['f1', None],

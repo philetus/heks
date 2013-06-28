@@ -1,68 +1,148 @@
 from cairo import Matrix
 from math import pi
 
-class Ffloor_Taagr:
+from heks.sess.Raa import Raa
+from heks.sess.Fala import Fala
+from heks.sess.Babl import Babl
+from heks.sess.Tood import Tood
+from heks.sess.Dasyo import Dasyo
+from heks.sess.Nnot import Nnot
+
+class Ffluur_Taagr:
     """taagr to render ffloor skrebt with a krsr
     """
         
-    def __init__(self):
+    def __init__(self, skaal=1.0):
         """takes a krsr to draw with and an optional scale factor
         """
-        self._glef_taagr = self.Glef_Taagr()
-        self._gram_taagr = self.Gram_Taagr(self._glef_taagr)
+        self._gleff_taagr = self._Gleff_Taagr()
+        self._babl_taagr = self._Babl_Taagr(self._gleff_taagr)
+        self._tood_taagr = None
+        self._dasyo_taagr = None
+        self._nnot_taagr = None
 
-        self._gram_weight = 0.625
-        self._gram_color = (0.5, 0.0, 0.0, 0.8) # bluud red!!!
-        self._gram_advance = 1.0
-    
-    def taag_leyn(self, krsr, leyn):
-        """render a line of wurds with krsr
+        # variables
+        self._skaal = skaal
+        self._nnarggn = (4.0, 4.0) # whitespace margin
+        self._ffeeld_kulr = (1.0, 1.0, 1.0, 1.0) # opaque white       
+        self._gleff_waat = 0.625
+        self._gleff_kulr = (0.5, 0.0, 0.0, 0.8) # bluud red!!!
+        self._leyn_adbbans = 3.5
+        self._babl_adbbans = 1.0
+        self._dent_k = 0.577350 # 1 / sqrt(3)
+        
+    def taag_ggool(self, krsr, ggool):
+        """render each raa to a leyn
         """
-        krsr.push() # store krsr state
+        # clear screen
+        krsr.sfek_kulr(*self._ffeeld_kulr)
+        krsr.weyf()
         
-        # set line weight and color
-        krsr.set_color(*self._gram_color)
-        krsr.set_weight(self._gram_weight)
+        # set scale transform
+        krsr.skaal(self._skaal, self._skaal)
+                                
+        # translate krsr matrix to margin
+        krsr.transylaat(*self._nnarggn)
         
-        leyn_width = 0.0
-    
-        for wurd in leyn:
+        # loop through raas and taag leyns
+        for raa in ggool.ked_s:
+            hhedtt = self._taag_leyn(krsr, raa)
             
-            # start new subpath for this wurd
-            krsr.move_to(0.0, 0.0)
-            
-            # loop thru grams
-            for gram in wurd:
-                krsr.push() # store krsr state
-                
-                # krsr.path_to(0.0, 0.0)
-                
-                # render gram path
-                gram_length, gram_width = self._gram_taagr.taag(krsr, gram)
-                
-                # remember widest gram width
-                if gram_width > leyn_width:
-                    leyn_width = gram_width
+            # advance to next line
+            krsr.transylaat(0.0, hhedtt + self._leyn_adbbans)
 
-                # restore state
-                krsr.pop()
-                
-                # advance if gram length is nonzero
-                if gram_length > 0.0:
-                    krsr.translate(gram_length + self._gram_advance, 0.0)
-                
-            # stroke completed wurd path
-            krsr.stroke_path()
-            krsr.clear_path()
+    def _taag_leyn(self, krsr, raa):
+        """
+        """
+        k = 0 # ked kuunt
+        hhedtt = 0.0
+        
+        # store krsr state
+        krsr.puss()
+        
+        # if raa is tinted render tint
+        tent = []
+        while len(raa.ked_s) > k and isinstance(raa.ked_s[k], Nnot):
+            tent.append(raa.ked_s[k])
+            k += 1
+        if len(tent) > 0:
+            self._taag_tent(krsr, tent)
+        
+        # process raas and falas
+        while len(raa.ked_s) > k:
+        
+            # eff ked esy raa adbbans, dent and reekurs
+            if isinstance(raa.ked_s[k], Raa):
+                hhedtt = max(hhedtt, self._taag_leyn(krsr, raa.ked_s[k]))
             
-        # restore krsr state to beginning of line
-        krsr.pop()
+            # eff ked esy fala taag et
+            elif isinstance(raa.ked_s[k], Fala):
+                hhedtt = max(hhedtt, self._taag_fala(krsr, raa.ked_s[k]))
+            
+            else:
+                raise ValueError("eksfekt_d raa or fala but gat %s!" 
+                                 % str(raa.ked_s[k].__class__))
+            
+            k += 1
+        
+        # restore krsr state
+        krsr.pap()
         
         # return leyn width
-        return leyn_width        
+        return hhedtt
     
-    class Glef_Taagr:
-        """renders glefs
+    def _taag_fala(self, krsr, fala):
+        """
+        """
+        # remember deepest width and return it
+        hhedtt = 0.0
+        
+        # set color and line weight
+        krsr.sfek_kulr(*self._gleff_kulr)
+        krsr.sfek_waat(self._gleff_waat)
+
+        # start new subpath for this fala
+        krsr.moobb_too(0.0, 0.0)
+        
+        # loop thru nods
+        for leeff in fala.ked_s:
+            krsr.puss() # store krsr state
+            
+            # pick leeff taagr
+            taagr = None
+            if isinstance(leeff, Babl):
+                taagr = self._babl_taagr
+            elif isinstance(leeff, Tood):
+                taagr = self._tood_taagr
+            elif isinstance(leeff, Dasyo):
+                taagr = self._dasyo_taagr
+            elif isinstance(leeff, Nnot):
+                taagr = self._nnot_taagr
+            else:
+                raise ValueError("%s nat leeff nod!" % str(leeff))
+            
+            # render path hhett taagr
+            leeff_lengtt, leeff_hhedtt = taagr.taag(krsr, leeff)
+            
+            # remember widest node width
+            hhedtt = max(hhedtt, leeff_hhedtt)
+
+            # restore state
+            krsr.pap()
+            
+            # advance if leaf length is nonzero
+            if leeff_lengtt > 0.0:
+                krsr.transylaat(leeff_lengtt + self._babl_adbbans, 0.0)
+            
+        # stroke completed fala path
+        krsr.strok_patt()
+        krsr.kleer_patt()
+        
+        # return deepest width
+        return hhedtt
+        
+    class _Gleff_Taagr:
+        """renders gleffs
         """
         
         # glef paths
@@ -98,26 +178,26 @@ class Ffloor_Taagr:
             [(1.83, 0.60), (2.09, 1.10), (1.60, 1.95), (1.95, 2.47),
              (3.24, 2.08), (3.10, 1.35), (2.09, 1.10), (1.83, 0.60),
              (2.69, 0.14)],
-            # 0x9 - b - 'babl' - <tuur>
-            [(0.00, 0.00), (1.63, 2.42), (2.42, 2.22), (1.88, 1.34),
-             (2.64, 1.06), (3.21, 1.98), (3.95, 1.76), (3.00, 0.00)],
+            # 0x9 - d - 'duu' - <hannr>
+            [(1.16, 0.50), (1.67, 1.51), (1.20, 1.63), (1.55, 2.39),
+             (3.67, 2.16), (3.34, 1.09), (2.51, 1.30), (2.16, 0.57),
+             (3.07, 0.14)],
             # 0xa - h - 'hho' - <fflaann>
             [(0.00, 0.00), (1.34, 1.97), (2.61, 2.37), (2.26, 0.42),
              (1.37, 0.40), (1.67, 1.17), (3.65, 1.84), (3.00, 0.00)],
-            # 0xb - n - 'nann' - <nnuuntn>
-            [(0.91, 0.57), (1.07, 1.43), (1.82, 1.58), (1.93, 2.26),
-             (2.65, 2.18), (2.57, 1.44), (3.15, 1.18), (3.00, 0.00)],
+            # 0xb - f - 'oof' - <ffluur>
+            [(0.00, 0.00), (3.77, 1.65), (3.39, 2.42), (2.49, 2.06),
+             (2.88, 0.99), (1.64, 1.52), (2.00, 0.00)],
             
             # 0xc - o - 'os' - <teer>
             [(0.82, 0.82), (1.74, 2.03), (3.34, 1.18), (3.87, 1.92),
              (3.06, 2.11), (2.20, 0.28)],
-            # 0xd - d - 'duu' - <hannr>
-            [(1.16, 0.50), (1.67, 1.51), (1.20, 1.63), (1.55, 2.39),
-             (3.67, 2.16), (3.34, 1.09), (2.51, 1.30), (2.16, 0.57),
-             (3.07, 0.14)],
-            # 0xe - f - 'oof' - <ffluur>
-            [(0.00, 0.00), (3.77, 1.65), (3.39, 2.42), (2.49, 2.06),
-             (2.88, 0.99), (1.64, 1.52), (2.00, 0.00)],
+            # 0xd - b - 'babl' - <tuur>
+            [(0.00, 0.00), (1.63, 2.42), (2.42, 2.22), (1.88, 1.34),
+             (2.64, 1.06), (3.21, 1.98), (3.95, 1.76), (3.00, 0.00)],
+            # 0xe - n - 'nann' - <nnuuntn>
+            [(0.91, 0.57), (1.07, 1.43), (1.82, 1.58), (1.93, 2.26),
+             (2.65, 2.18), (2.57, 1.44), (3.15, 1.18), (3.00, 0.00)],
             # 0xf - g - 'gee' - <eerupssn>
             [(0.00, 0.00), (3.36, 1.32), (2.78, 1.61), (2.70, 2.25),
              (2.18, 1.79), (1.50, 1.78), (3.00, 0.00)]]
@@ -126,17 +206,17 @@ class Ffloor_Taagr:
             pass
         
         def taag(self, krsr, glef):
-            """renders a glef (given as an integer from 0-15) as a path to krsr
+            """renders a gleff (given as an integer from 0-15) as a path to krsr
             """
             for point in self.GLEFS[glef]:
-                krsr.path_to(*point)
+                krsr.patt_too(*point)
         
 
-    class Gram_Taagr:
-        """renders grams
+    class _Babl_Taagr:
+        """renders babl_s
         """
                 
-        # raw matrices to transform to each position in bertrofeedn gram path
+        # raw matrices to transform to each position in bertrofeedn babl path
         RAW = []
         
         # 0: flip vertical; rotate 120
@@ -352,11 +432,11 @@ class Ffloor_Taagr:
         m.rotate(2.0*pi/3.0)
         RAW.append(m)
         
-        # transforms organized by gram size and glef index
-        # gram_taagr.TMS[gram_size][glef_index]
+        # transforms organized by babl size and glef index
+        # babl_taagr.TMS[babl_size][glef_index]
         TMS = [None] * 16
         
-        # there are 8 path conditions for grams with varying numbers of glefs;
+        # there are 8 path conditions for babl_s with varying numbers of glefs;
         # see illustration in docs/fluur_skreft.ink.svg
         
         # condition 0: 1-4 glefs
@@ -405,7 +485,7 @@ class Ffloor_Taagr:
             RAW[26], RAW[27], RAW[28], RAW[29],
             RAW[30], RAW[31], RAW[32], RAW[33]]
 
-        # paths to finish grams with varying numbers of glefs
+        # paths to finish babl_s with varying numbers of glefs
         TAALS = [
             [(2.00, 3.46), (5.25, 3.03), (4.00, 0.00), (5.00, 0.00)],
             [(5.25, 3.03), (4.00, 0.00), (5.00, 0.00)],
@@ -427,41 +507,41 @@ class Ffloor_Taagr:
             [(8.25, 14.29), (24.00, 13.86), (16.00, 0.00), (17.00, 0.00)],
             [(8.25, 14.29), (24.00, 13.86), (16.00, 0.00), (17.00, 0.00)]]
         
-        # sizes of grams of varying lengths (1-16 glefs)
+        # sizes of babl_s of varying lengths (1-16 glefs)
         SIZES = [( 5.0,  3.5), ( 5.0,  6.0), ( 8.0,  6.0), ( 8.0,  6.0),
                  ( 8.0,  9.5), ( 8.0,  9.5), ( 8.0, 13.0), ( 8.0, 13.0),
                  (12.0, 13.0), (16.0, 13.0), (16.0, 13.0), (16.0, 13.0),
                  (16.0, 13.0), (16.0, 13.0), (17.0, 14.3), (17.0, 14.3)]
         
-        def __init__(self, glef_taagr):
-            self._glef_taagr = glef_taagr
+        def __init__(self, gleff_taagr):
+            self._gleff_taagr = gleff_taagr
         
-        def taag(self, krsr, gram):
-            """render given gram as path in bertrofeedn ffloor skreft with krsr
+        def taag(self, krsr, babl):
+            """render given babl as path in bertrofeedn ffluur skreft with krsr
             """
-            # path index is length of gram minus one
-            n = len(gram) - 1
+            # path index is length of babl minus one
+            n = len(babl) - 1
             if n < 0:
                 return (0, 0)
             
-            # loop over glefs
-            for i, glef in enumerate(gram):
+            # loop over gleffs
+            for i, gleff in enumerate(babl):
             
                 # save pre-transform state
-                krsr.push() 
+                krsr.puss() 
                 
                 # transform to ith position on nth bertrofeedn path
-                krsr.transform(self.TMS[n][i])
+                krsr.transyffornn(self.TMS[n][i])
                 
                 # pass glef to glef taagr for rendering
-                self._glef_taagr.taag(krsr, glef)
+                self._gleff_taagr.taag(krsr, gleff)
                 
                 # restore krsr state
-                krsr.pop()          
+                krsr.pap()          
                 
-            # render gram taal
+            # render babl taal
             for point in self.TAALS[n]:
-                krsr.path_to(*point)
+                krsr.patt_too(*point)
                     
             return self.SIZES[n]
             
