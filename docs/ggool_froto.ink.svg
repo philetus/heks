@@ -24,14 +24,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3738911"
-     inkscape:cx="652.63408"
-     inkscape:cy="920.30773"
+     inkscape:zoom="1.810084"
+     inkscape:cx="652.51748"
+     inkscape:cy="925.39395"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:snap-object-midpoints="true"
-     inkscape:snap-global="true"
+     inkscape:snap-global="false"
      inkscape:window-width="1024"
      inkscape:window-height="576"
      inkscape:window-x="0"
@@ -61,7 +61,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1672,6 +1672,18 @@
        d="m 552.34691,31.889744 0,14.173228"
        id="path7832"
        inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Sans L;-inkscape-font-specification:Nimbus Sans L"
+       x="426.66519"
+       y="275.20361"
+       id="text3681"
+       sodipodi:linespacing="125%"
+       transform="translate(0,2.5390623e-6)"><tspan
+         sodipodi:role="line"
+         id="tspan3683"
+         x="426.66519"
+         y="275.20361">(ey_nn gun_u ((eet yor braan_s) and (steel yor nalegg)))</tspan></text>
   </g>
   <g
      inkscape:label="Layer 1"
@@ -1775,11 +1787,92 @@
        sodipodi:nodetypes="ccccccccccccccccc" />
     <path
        style="color:#000000;fill:none;stroke:#ffff00;stroke-width:2.21456695;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       d="m 724.18817,251.57478 0,-226.771653 -319.13377,0 0,226.771653 z"
+       d="m 724.18817,251.57478 0,-233.858267 -319.13377,0 0,233.858267 z"
        id="path4715"
        inkscape:connector-curvature="0"
        transform="translate(0,2.5390623e-6)"
        sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Sans L;-inkscape-font-specification:Nimbus Sans L"
+       x="546.38348"
+       y="74.507011"
+       id="text3685"
+       sodipodi:linespacing="125%"
+       transform="translate(0,2.5390623e-6)"><tspan
+         sodipodi:role="line"
+         id="tspan3687"
+         x="546.38348"
+         y="74.507011">ankr</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Sans L;-inkscape-font-specification:Nimbus Sans L"
+       x="598.86725"
+       y="53.513512"
+       id="text3689"
+       sodipodi:linespacing="125%"
+       transform="translate(0,2.5390623e-6)"><tspan
+         sodipodi:role="line"
+         id="tspan3691"
+         x="598.86725"
+         y="53.513512">en</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Sans L;-inkscape-font-specification:Nimbus Sans L"
+       x="532.57196"
+       y="101.02512"
+       id="text3693"
+       sodipodi:linespacing="125%"
+       transform="translate(0,2.5390623e-6)"><tspan
+         sodipodi:role="line"
+         id="tspan3695"
+         x="532.57196"
+         y="101.02512">uut</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 614.33613,51.30367 61.59935,15.745126"
+       id="path3697"
+       inkscape:connector-curvature="0"
+       transform="translate(0,2.5390623e-6)"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 570.13929,72.297171 67.40018,16.021357"
+       id="path3699"
+       inkscape:connector-curvature="0"
+       transform="translate(0,2.5390623e-6)"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 549.14578,101.57758 16.02136,25.13695"
+       id="path3701"
+       inkscape:connector-curvature="0"
+       transform="translate(0,2.5390623e-6)"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 677.86909,60.143039 0,141.429901 -114.35933,65.19034 -0.55246,-141.98236 z"
+       id="path3703"
+       inkscape:connector-curvature="0"
+       transform="translate(0,2.5390623e-6)"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 638.71046,88.241438 0.7813,33.986432"
+       id="path3707"
+       inkscape:connector-curvature="0"
+       transform="translate(0,2.5390623e-6)" />
+    <text
+       xml:space="preserve"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Nimbus Sans L;-inkscape-font-specification:Nimbus Sans L"
+       x="624.25647"
+       y="131.01747"
+       id="text3709"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3711"
+         x="624.25647"
+         y="131.01747">lengtt</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
