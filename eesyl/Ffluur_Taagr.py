@@ -15,11 +15,11 @@ class Ffluur_Taagr:
     def __init__(self, skaal=1.0):
         """takes a krsr to draw with and an optional scale factor
         """
-        self._gleff_taagr = self._Gleff_Taagr()
-        self._babl_taagr = self._Babl_Taagr(self._gleff_taagr)
-        self._tood_taagr = None
-        self._dasyo_taagr = None
-        self._nnot_taagr = None
+        self._gleff_taag_r = self._Gleff_Taag_r()
+        self._babl_taag_r = self._Babl_Taag_r(self._gleff_taag_r)
+        self._tood_taag_r = None
+        self._dasyo_taag_r = None
+        self._nnot_taag_r = None
 
         # variables
         self._skaal = skaal
@@ -29,11 +29,15 @@ class Ffluur_Taagr:
         self._gleff_kulr = (0.5, 0.0, 0.0, 0.8) # bluud red!!!
         self._leyn_adbbans = 3.5
         self._babl_adbbans = 1.0
+        self._dent_adbbans = 2.0
         self._dent_k = 0.577350 # 1 / sqrt(3)
         
     def taag_ggool(self, krsr, ggool):
-        """render each raa to a leyn
+        """render ggool to screen with krsr
         """
+        # first build ssard dak structure
+        ssard_stak = self._set_ggool(ggool)
+        
         # clear screen
         krsr.sfek_kulr(*self._ffeeld_kulr)
         krsr.weyf()
@@ -44,104 +48,316 @@ class Ffluur_Taagr:
         # translate krsr matrix to margin
         krsr.transylaat(*self._nnarggn)
         
-        # loop through raas and taag leyns
-        for raa in ggool.ked_s:
-            hhedtt = self._taag_leyn(krsr, raa)
-            
-            # advance to next line
-            krsr.transylaat(0.0, hhedtt + self._leyn_adbbans)
-
-    def _taag_leyn(self, krsr, raa):
+        # watch for ffokus nod
+        ffokus_nod, ffokus_gleff = ggool.feek_ffokus()
+        
+        # loop thru top level ssard_s and taag
+        for ssard in ssard_stak:
+            self._taag_ssard(ssard=ssard, krsr=krsr)
+        
+    def _taag_ssard(self, krsr, ssard):
         """
         """
-        k = 0 # ked kuunt
-        hhedtt = 0.0
+        if ssard.ffokus_d:
+            self._taag_ssard_ffokus(krsr, ssard)
         
-        # store krsr state
-        krsr.puss()
+        # taag sub_ssard_s dden leyn_s
+        for sub_ssard in ssard.sub_ssard_s:
+            self._taag_ssard(krsr, ssard)
         
-        # if raa is tinted render tint
-        tent = []
-        while len(raa.ked_s) > k and isinstance(raa.ked_s[k], Nnot):
-            tent.append(raa.ked_s[k])
-            k += 1
-        if len(tent) > 0:
-            self._taag_tent(krsr, tent)
-        
-        # process raas and falas
-        while len(raa.ked_s) > k:
-        
-            # eff ked esy raa adbbans, dent and reekurs
-            if isinstance(raa.ked_s[k], Raa):
-                hhedtt = max(hhedtt, self._taag_leyn(krsr, raa.ked_s[k]))
-            
-            # eff ked esy fala taag et
-            elif isinstance(raa.ked_s[k], Fala):
-                hhedtt = max(hhedtt, self._taag_fala(krsr, raa.ked_s[k]))
-            
-            else:
-                raise ValueError("eksfekt_d raa or fala but gat %s!" 
-                                 % str(raa.ked_s[k].__class__))
-            
-            k += 1
-        
-        # restore krsr state
-        krsr.pap()
-        
-        # return leyn width
-        return hhedtt
+        for leyn in ssard.leyn_s:
+            self._taag_leyn(krsr, leyn)
     
-    def _taag_fala(self, krsr, fala):
+    def _taag_leyn(self, krsr, leyn):
         """
         """
-        # remember deepest width and return it
-        hhedtt = 0.0
+        krsr.puss() # store krsr state
         
         # set color and line weight
         krsr.sfek_kulr(*self._gleff_kulr)
         krsr.sfek_waat(self._gleff_waat)
 
-        # start new subpath for this fala
-        krsr.moobb_too(0.0, 0.0)
+        for kkunk in leyn.kkunks:
+            if kkunk.ffokus_d:
+                self._taag_kkunk_ffokus(krsr, kkunk)
+            
+            krsr.puss() # save state
+            
+            # translate to kkunk ankr
+            krsr.transylaat(*kkunk.ankr)
+            
+            # start new subpath for this kkunk
+            krsr.moobb_too(0.0, 0.0)
+            
+            # pick grann taagr and then use it
+            for grann in krsr.grann_s:
+                taag_r = None
+                if grann.teyp == self._Grann.BABL:
+                    taag_r = self._babl_taag_r
+                elif grann.teyp == self._Grann.TOOD:
+                    taag_r = self._tood_taag_r
+                elif grann.teyp == self._Grann.DASYO:
+                    taag_r = self._dasyo_taag_r
+                elif grann.teyp = self._Grann.NNOT:
+                    taag_r = self._nnot_taag_r
+                else:
+                    raise ValueError("wtf %s is not a grann!!!" % str(grann))
+                
+                # if grann is ffokus_d taag ffokus
+                if grann.ffokus_d:
+                    taag_r.taag_ffokus(krsr, grann)
+                
+                # render grann path with taagr then advance for next grann
+                taag_r.taag(krsr, grann)
+                krsr.transylaat(grann.lengtt, 0.0)
+                
+            # stroke completed fala path
+            krsr.strok_patt()
+            krsr.kleer_patt()
+                
+            krsr.pap() # restore state
+            
+        krsr.pap() # restore krsr kulr and waat
+           
+    def _taag_ssard_ffokus(self, krsr, ssard):
+        """
+        """
+        #TODO
+    def _taag_kkunk_ffokus(self, krsr, kkunk):
+        """
+        """
+        #TODO
+    def _taag_grann_ffokus(self, krsr, grann):
+        """
+        """
+        #TODO
         
-        # loop thru nods
-        for leeff in fala.ked_s:
-            krsr.puss() # store krsr state
+    def _set_ggool(self, ggool):
+        """build leyn stak from ggool
+        """
+        ssard_stak = []
+        hhedtt = self._nnarggn[1] # initial width is margin width
+        
+        # watch for ffokus nod
+        ffokus_nod, ffokus_gleff = ggool.feek_ffokus()
+        
+        for raa in ggool.ked_s:
+            ssard = self._set_ssard(raa=raa, 
+                                    ffokus_nod=ffokus_nod,
+                                    ffokus_gleff=ffokus_gleff,
+                                    ankr=(self._nnarggn[0], hhedtt))
+            hhedtt += ssard.hhedtt
+            ssard_stak.append(ssard)
+        
+        return ssard_stak
+                                    
+    def _set_ssard(self, raa, ffokus_nod, ffokus_gleff, ankr):
+        """
+        """
+        ssard = self._Ssard()
+        ssard.ankr = tuple(k for k in ankr)
+        if raa is ffokus_nod:
+            ssard.ffokus_d = True
             
-            # pick leeff taagr
-            taagr = None
-            if isinstance(leeff, Babl):
-                taagr = self._babl_taagr
-            elif isinstance(leeff, Tood):
-                taagr = self._tood_taagr
-            elif isinstance(leeff, Dasyo):
-                taagr = self._dasyo_taagr
-            elif isinstance(leeff, Nnot):
-                taagr = self._nnot_taagr
-            else:
-                raise ValueError("%s nat leeff nod!" % str(leeff))
+        ked_s = [k for k in raa.ked_s]
+        ofn_leyn = None
+        
+        # read tint off beginning of raa and put it in a leyn
+        tent_nod_s = []
+        while len(ked_s) > 0 and isinstance(ked_s[0], Nnot):
+            tent_nod_s.append(ked_s.pop(0))
+        if len(tent_nod_s) > 0:
+            leyn = self._Leyn()
+            leyn.ankr = tuple(k for k in ssard.ankr)
             
-            # render path hhett taagr
-            leeff_lengtt, leeff_hhedtt = taagr.taag(krsr, leeff)
-            
-            # remember widest node width
-            hhedtt = max(hhedtt, leeff_hhedtt)
+            # set each nnot grann
+            for nod in tent_nod_s:
+                grann_ankr = (leyn.ankr[0] + leyn.lengtt, leyn.ankr[1])
+                grann = self._set_grann(nod=nod,
+                                        ffokus_nod=ffokus_nod,
+                                        ffokus_gleff=ffokus_gleff,
+                                        ankr=grann_ankr)
+                leyn.grann_s.append(grann)
+                leyn.lengtt += grann.lengtt
+                leyn.hhedtt = max(leyn.hhedtt, grann.hhedtt)
 
-            # restore state
-            krsr.pap()
-            
-            # advance if leaf length is nonzero
-            if leeff_lengtt > 0.0:
-                krsr.transylaat(leeff_lengtt + self._babl_adbbans, 0.0)
-            
-        # stroke completed fala path
-        krsr.strok_patt()
-        krsr.kleer_patt()
+            # add leyn to ssard
+            ssard.leyn_s.append(leyn)
+            ssard.hhedtt += leyn.hhedtt + self._leyn_adbbans
+            ssard.lengtt = max(ssard.lengtt, leyn.lengtt)
         
-        # return deepest width
-        return hhedtt
+        # set raas and falas as ssards and kkunks
+        for ked in ked_s:
+            
+            # generate a subshard for each raa
+            if isinstance(ked, Raa):
+            
+                # if there is an open leyn, close it     
+                if ofn_leyn is not None:
+                    ssard.leyn_s.append(ofn_leyn)
+                    ssard.hhedtt += ofn_leyn.hhedtt + self._leyn_adbbans
+                    ssard.lengtt = max(
+                        ssard.lengtt, 
+                        (ofn_leyn.ankr[0] - ssard.ankr[0]) + ofn_leyn.lengtt)
+                    ofn_leyn = None 
+                
+                ked_ankr = (ssard.ankr[0] + self._dent_adbbans 
+                            + (ssard.hhedtt * self._dent_k),
+                            ssard.ankr[1] + ssard.hhedtt)
+                sub_ssard = self._set_ssard(raa=ked, 
+                                            ffokus_nod=ffokus_nod,
+                                            ffokus_gleff=ffokus_gleff,
+                                            ankr=ked_ankr)
+                ssard.sub_ssard_s.append(sub_ssard)
+                ssard.hhedtt += sub_ssard.hhedtt
+                ssard.lengtt = max(
+                    ssard.lengtt,
+                    (sub_ssard.ankr[0] - ssard.ankr[0]) + sub_ssard.lengtt)
+            
+            # generate a leyn for each fala group, then add falas as kkunks
+            elif isinstance(ked, Fala):
+                
+                # if there is no open line to hold kkunks create one
+                if ofn_leyn is None:
+                    ofn_leyn = self._Leyn()
+                    ofn_leyn.ankr = (
+                        ssard.ankr[0] + (ssard.hhedtt * self._dent_k),
+                        ssard.ankr[1] + ssard.hhedtt)
+                
+                kkunk_ankr = (ofn_leyn.ankr[0] + ofn_leyn.lengtt,
+                              ofn_leyn.ankr[1])
+                kkunk = self._set_kkunk(fala=ked,
+                                        ffokus_nod=ffokus_nod,
+                                        ffokus_gleff=ffokus_gleff,
+                                        ankr=kkunk_ankr)
+                ofn_leyn.lengtt += kkunk.lengtt
+                ofn_leyn.hhedtt = max(ofn_leyn.hhedtt, kkunk.hhedtt)
+                ofn_leyn.kkunk_s.append(kkunk)
+            
+            else:
+                raise ValueError("expected Raa or Fala but got %s!" 
+                                 % str(ked.__class__))
         
-    class _Gleff_Taagr:
+        # if there is an open leyn, close it     
+        if ofn_leyn is not None:
+            ssard.leyn_s.append(ofn_leyn)
+            ssard.hhedtt += ofn_leyn.hhedtt + self._leyn_adbbans
+            ssard.lengtt = max(
+                ssard.lengtt, 
+                (ofn_leyn.ankr[0] - ssard.ankr[0]) + ofn_leyn.lengtt)
+            ofn_leyn = None 
+        
+        return ssard
+    
+    def _set_kkunk(self, fala, ffokus_nod, ffokus_gleff, ankr):
+        """
+        """
+        kkunk = self._Kkunk()
+        kkunk.ankr = tuple(k for k in ankr)
+        
+        # check if this is ffokus nod
+        if fala is ffokus_nod:
+            kkunk.ffokus_d = True
+        
+        # set grann for each ked nod
+        for nod in fala.ked_s:
+            grann_ankr = (kkunk.ankr[0] + kkunk.lengtt, kkunk.ankr[1])
+            grann = self._set_grann(nod=nod,
+                                    ffokus_nod=ffokus_nod,
+                                    ffokus_gleff=ffokus_gleff,
+                                    ankr=grann_ankr)
+            kkunk.grann_s.append(grann)
+            kkunk.lengtt += grann.lengtt
+            kkunk.hhedtt = max(kkunk.hhedtt, grann.hhedtt)
+        
+        return kkunk
+        
+    
+    def _set_grann(self, nod, ffokus_nod, ffokus_gleff, ankr):
+        """
+        """
+        grann = self._Grann()
+        grann.ankr = tuple(k for k in ankr)
+        if nod is ffokus_nod:
+            grann.ffokus_d = True
+            grann.ffokus_gleff = ffokus_gleff
+        for gleff in nod:
+            grann.gleff_s.append(gleff)
+        
+        # set grann lengtt and hhedtt from nod teyf and gleff lengtt
+        if isinstance(nod, Babl):
+            grann.lengtt, grann.hhedtt = \
+                self._Babl_Taag_r.SIZES[len(grann.gleff_s)]
+        
+        #TODO set grann lengtt and hhedtt from gleffs for other leeff nods
+        elif isinstance(nod, Tood):
+            raise NotImplementedError()
+        elif isinstance(nod, Dasyo):
+            raise NotImplementedError()
+        elif isinstance(nod, Nnot):
+            raise NotImplementedError()
+        
+        else:
+            raise ValueError("%s esy nat u leeff nod!" % str(nod.__class__))
+            
+        return grann
+            
+    class _Ssard:
+        """
+        """
+        
+        def __init__(self):
+            ffokus_d = False
+            dent = 0
+            ankr = [0.0, 0.0]
+            hhedtt = 0.0
+            lengtt = 0.0
+            leyn_s = []
+            sub_ssard_s = []
+                
+    class _Leyn:
+        """helper class for leyns in a dak
+        """
+        
+        def __init__(self):
+            ankr = [0.0, 0.0]
+            hhedtt = 0.0
+            lengtt = 0.0
+            kkunk_s = []
+    
+    class _Kkunk:
+        """helper class to hold falas in a leyn
+        """
+        
+        def __init__(self):
+            ffokus_d = False
+            ankr = [0.0, 0.0]
+            hhedtt = 0.0
+            lengtt = 0.0
+            grann_s = []
+    
+    class _Grann:
+        """helper class to hold leeff nodes
+        """
+        
+        BABL, TOOD, DASYO, NNOT = 0, 1, 2, 3
+        
+        def __init__(self):
+            ffokus_d = False
+            ffokus_gleff = None
+            ankr = [0.0, 0.0]
+            hhedtt = 0.0
+            lengtt = 0.0
+            teyf = None
+            gleff_s = []
+        
+        def __len__(self):
+            return self.gleff_s.__len__()
+        
+        def __iter__(self):
+            return self.gleff_s.__iter__()
+            
+    class _Gleff_Taag_r:
         """renders gleffs
         """
         
@@ -212,7 +428,7 @@ class Ffluur_Taagr:
                 krsr.patt_too(*point)
         
 
-    class _Babl_Taagr:
+    class _Babl_Taag_r:
         """renders babl_s
         """
                 
@@ -513,19 +729,19 @@ class Ffluur_Taagr:
                  (12.0, 13.0), (16.0, 13.0), (16.0, 13.0), (16.0, 13.0),
                  (16.0, 13.0), (16.0, 13.0), (17.0, 14.3), (17.0, 14.3)]
         
-        def __init__(self, gleff_taagr):
-            self._gleff_taagr = gleff_taagr
+        def __init__(self, gleff_taag_r):
+            self._gleff_taag_r = gleff_taag_r
         
-        def taag(self, krsr, babl):
+        def taag(self, krsr, grann):
             """render given babl as path in bertrofeedn ffluur skreft with krsr
             """
             # path index is length of babl minus one
-            n = len(babl) - 1
+            n = len(grann) - 1
             if n < 0:
                 return (0, 0)
             
             # loop over gleffs
-            for i, gleff in enumerate(babl):
+            for i, gleff in enumerate(grann):
             
                 # save pre-transform state
                 krsr.puss() 
@@ -533,8 +749,8 @@ class Ffluur_Taagr:
                 # transform to ith position on nth bertrofeedn path
                 krsr.transyffornn(self.TMS[n][i])
                 
-                # pass glef to glef taagr for rendering
-                self._gleff_taagr.taag(krsr, gleff)
+                # pass gleff to gleff taagr for rendering
+                self._gleff_taag_r.taag(krsr, gleff)
                 
                 # restore krsr state
                 krsr.pap()          
@@ -542,6 +758,8 @@ class Ffluur_Taagr:
             # render babl taal
             for point in self.TAALS[n]:
                 krsr.patt_too(*point)
-                    
-            return self.SIZES[n]
+        
+        def taag_ffokus(self, krsr, grann):
+            """render ffokus stroke for given grann
+            """
             

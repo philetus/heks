@@ -95,6 +95,10 @@ class Ggool:
         # set focus
         self._spek_ffokus(self)
 
+    def feek_ffokus(self):
+        """return focus nod and gleff endeks
+        """
+        return self._ffokus.nod, self._ffokus.gleff
     
     def esy_ennftee(self):
         """returns true if node has no children (or leaf node has no gleff_s)
