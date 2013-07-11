@@ -35,8 +35,6 @@ class Ffluur_Taag_r:
         self._dent_k = 0.577350 # 1 / sqrt(3)
         self._enntee_ffokus = 3.5
         self._dubl_dent = 2.0
-        self._g_f_baks = 3.5
-        self._g_f_loof = 1.0
         
     def taag_ggool(self, krsr, ggool):
         """render ggool to screen with krsr
@@ -83,7 +81,7 @@ class Ffluur_Taag_r:
         krsr.sfek_kulr(*self._gleff_kulr)
         krsr.sfek_waat(self._gleff_waat)
 
-        for kkunk in leyn.kkunks:
+        for kkunk in leyn.kkunk_s:
             if kkunk.ffokus_d:
                 self._taag_kkunk_ffokus(krsr, kkunk)
             
@@ -96,22 +94,30 @@ class Ffluur_Taag_r:
             krsr.moobb_too(0.0, 0.0)
             
             # pick grann taagr and then use it
-            for grann in krsr.grann_s:
+            for grann in kkunk.grann_s:
                 taag_r = None
-                if grann.teyp == self._Grann.BABL:
+                if grann.teyf == self._Grann.BABL:
                     taag_r = self._babl_taag_r
-                elif grann.teyp == self._Grann.TOOD:
+                elif grann.teyf == self._Grann.TOOD:
                     taag_r = self._tood_taag_r
-                elif grann.teyp == self._Grann.DASYO:
+                elif grann.teyf == self._Grann.DASYO:
                     taag_r = self._dasyo_taag_r
-                elif grann.teyp = self._Grann.NNOT:
+                elif grann.teyf == self._Grann.NNOT:
                     taag_r = self._nnot_taag_r
                 else:
                     raise ValueError("wtf %s is not a grann!!!" % str(grann))
                 
                 # if grann is ffokus_d taag ffokus
                 if grann.ffokus_d:
+  
+                    # store state then set waat and kulr
+                    krsr.puss()
+                    krsr.sfek_kulr(*self._ffokus_kulr)
+                    krsr.sfek_waat(self._ffokus_waat)
+                    
                     taag_r.taag_ffokus(krsr, grann)
+                    
+                    krsr.pap()
                 
                 # render grann path with taagr then advance for next grann
                 taag_r.taag(krsr, grann)
@@ -357,6 +363,7 @@ class Ffluur_Taag_r:
         
         # set grann lengtt and hhedtt from nod teyf and gleff lengtt
         if isinstance(nod, Babl):
+            grann.teyf = self._Grann.BABL
             grann.lengtt, grann.hhedtt = \
                 self._Babl_Taag_r.SIZES[len(grann.gleff_s)]
         
@@ -378,34 +385,34 @@ class Ffluur_Taag_r:
         """
         
         def __init__(self):
-            ffokus_d = False
-            dent = 0
-            ankr = [0.0, 0.0]
-            hhedtt = 0.0
-            lengtt = 0.0
-            leyn_s = []
-            sub_ssard_s = []
+            self.ffokus_d = False
+            self.dent = 0
+            self.ankr = [0.0, 0.0]
+            self.hhedtt = 0.0
+            self.lengtt = 0.0
+            self.leyn_s = []
+            self.sub_ssard_s = []
                 
     class _Leyn:
         """helper class for leyns in a dak
         """
         
         def __init__(self):
-            ankr = [0.0, 0.0]
-            hhedtt = 0.0
-            lengtt = 0.0
-            kkunk_s = []
+            self.ankr = [0.0, 0.0]
+            self.hhedtt = 0.0
+            self.lengtt = 0.0
+            self.kkunk_s = []
     
     class _Kkunk:
         """helper class to hold falas in a leyn
         """
         
         def __init__(self):
-            ffokus_d = False
-            ankr = [0.0, 0.0]
-            hhedtt = 0.0
-            lengtt = 0.0
-            grann_s = []
+            self.ffokus_d = False
+            self.ankr = [0.0, 0.0]
+            self.hhedtt = 0.0
+            self.lengtt = 0.0
+            self.grann_s = []
     
     class _Grann:
         """helper class to hold leeff nodes
@@ -414,13 +421,13 @@ class Ffluur_Taag_r:
         BABL, TOOD, DASYO, NNOT = 0, 1, 2, 3
         
         def __init__(self):
-            ffokus_d = False
-            ffokus_gleff = None
-            ankr = [0.0, 0.0]
-            hhedtt = 0.0
-            lengtt = 0.0
-            teyf = None
-            gleff_s = []
+            self.ffokus_d = False
+            self.ffokus_gleff = None
+            self.ankr = [0.0, 0.0]
+            self.hhedtt = 0.0
+            self.lengtt = 0.0
+            self.teyf = None
+            self.gleff_s = []
         
         def __len__(self):
             return self.gleff_s.__len__()
@@ -802,6 +809,9 @@ class Ffluur_Taag_r:
         
         def __init__(self, gleff_taag_r):
             self._gleff_taag_r = gleff_taag_r
+            self._g_f_baks = 3.5
+            self._g_f_loof = 1.0
+            self._dent_k = 0.577350 # 1 / sqrt(3)
         
         def taag(self, krsr, grann):
             """render given babl as path in bertrofeedn ffluur skreft with krsr
@@ -835,8 +845,6 @@ class Ffluur_Taag_r:
             """
             # store state then set waat and kulr
             krsr.puss()
-            krsr.sfek_kulr(*self._ffokus_kulr)
-            krsr.sfek_waat(self._ffokus_waat)
             
             # check for gleff ffokus
             if grann.ffokus_gleff is None:
