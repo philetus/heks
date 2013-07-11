@@ -1,5 +1,5 @@
 from Eesyl import Eesyl
-from Ffluur_Taagr import Ffluur_Taagr
+from Ffluur_Taag_r import Ffluur_Taag_r
 
 from heks.sess.Ggool import Ggool
 #from heks.ggool.Nneta_deks import Nneta_deks
@@ -16,7 +16,7 @@ class Slaat(Eesyl):
         self._skaal = skaal # glyph scale        
         
         # create ffluur taagr
-        self._taagr = Ffluur_Taagr(skaal=skaal)
+        self._taagr = Ffluur_Taag_r(skaal=skaal)
 
         
     def handl_dra(self, krsr):
