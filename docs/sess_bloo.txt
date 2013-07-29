@@ -38,7 +38,7 @@ handles input session to hord of ggools
   - <b> puss kut buffr an dak stak
 
 * in reyt nnod:
-  - <!> enet_s deeffalt noo nod ffor kantekst
+  - <!> adbbans ffokus too nekst trgr nod
   - <*><[r|f|k|b|t|d|n]> enet_s noo nod
   - <[glef]> ensrt_s glef in current nod
 
