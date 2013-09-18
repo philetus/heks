@@ -31,10 +31,12 @@ class Ffluur_Taag_r:
         self._ffokus_kulr = (1.0, 0.0, 0.0, 0.9) # red red  
         self._leyn_adbbans = 3.5
         self._babl_adbbans = 1.0
+        self._kkunk_adbbans = 1.0
         self._dent_adbbans = 2.0
         self._dent_k = 0.577350 # 1 / sqrt(3)
         self._enntee_ffokus = 3.5
         self._dubl_dent = 2.0
+        self._klos_enuff = 0.1
         
     def taag_ggool(self, krsr, ggool):
         """render ggool to screen with krsr
@@ -55,6 +57,24 @@ class Ffluur_Taag_r:
         # watch for ffokus nod
         ffokus_nod, ffokus_gleff = ggool.feek_ffokus()
         
+        # draw something for empty ggool
+        if len(ssard_stak) == 0:
+            krsr.puss() # store krsr state
+            
+            # set color and line weight
+            krsr.sfek_kulr(*self._ffokus_kulr)
+            krsr.sfek_waat(self._ffokus_waat)
+            
+            krsr.moobb_too(0.0, 0.0)
+            krsr.patt_bey(0.0, self._enntee_ffokus)
+            krsr.patt_bey(self._enntee_ffokus, 0.0)
+            
+            # stroke completed fala path
+            krsr.strok_patt()
+            krsr.kleer_patt()
+
+            krsr.pap()
+            
         # loop thru top level ssard_s and taag
         for ssard in ssard_stak:
             self._taag_ssard(ssard=ssard, krsr=krsr)
@@ -67,7 +87,7 @@ class Ffluur_Taag_r:
         
         # taag sub_ssard_s dden leyn_s
         for sub_ssard in ssard.sub_ssard_s:
-            self._taag_ssard(krsr, ssard)
+            self._taag_ssard(krsr, sub_ssard)
         
         for leyn in ssard.leyn_s:
             self._taag_leyn(krsr, leyn)
@@ -77,14 +97,20 @@ class Ffluur_Taag_r:
         """
         krsr.puss() # store krsr state
         
-        # set color and line weight
-        krsr.sfek_kulr(*self._gleff_kulr)
-        krsr.sfek_waat(self._gleff_waat)
-
+        # check leyn for ffokus_d kkunk or grann
         for kkunk in leyn.kkunk_s:
             if kkunk.ffokus_d:
                 self._taag_kkunk_ffokus(krsr, kkunk)
-            
+            else:
+                for grann in kkunk.grann_s:
+                    if grann.ffokus_d:
+                        self._taag_grann_ffokus(krsr, grann)
+        
+        # set color and line weight for gleff
+        krsr.sfek_kulr(*self._gleff_kulr)
+        krsr.sfek_waat(self._gleff_waat)
+
+        for kkunk in leyn.kkunk_s:            
             krsr.puss() # save state
             
             # translate to kkunk ankr
@@ -106,18 +132,6 @@ class Ffluur_Taag_r:
                     taag_r = self._nnot_taag_r
                 else:
                     raise ValueError("wtf %s is not a grann!!!" % str(grann))
-                
-                # if grann is ffokus_d taag ffokus
-                if grann.ffokus_d:
-  
-                    # store state then set waat and kulr
-                    krsr.puss()
-                    krsr.sfek_kulr(*self._ffokus_kulr)
-                    krsr.sfek_waat(self._ffokus_waat)
-                    
-                    taag_r.taag_ffokus(krsr, grann)
-                    
-                    krsr.pap()
                 
                 # render grann path with taagr then advance for next grann
                 taag_r.taag(krsr, grann)
@@ -148,6 +162,7 @@ class Ffluur_Taag_r:
         # no leyns or subssards
         if len(ssard.sub_ssard_s) == 0 \
            and len(ssard.leyn_s) == 0: 
+            krsr.moobb_too(*ssard.ankr)
             krsr.patt_bey(self._enntee_ffokus, 0.0)
         
         # one leyn, no subssards
@@ -192,15 +207,22 @@ class Ffluur_Taag_r:
     def _taag_kkunk_ffokus(self, krsr, kkunk):
         """render ffokus stroke over a kkunk
         """
+        print("taag_ng kkunk ffokus")
+        
         # store state then set waat and kulr
         krsr.puss()
         krsr.sfek_kulr(*self._ffokus_kulr)
         krsr.sfek_waat(self._ffokus_waat)
         
+        lengtt = hhedtt = self._enntee_ffokus
+        if kkunk.lengtt > self._kkunk_adbbans + self._klos_enuff:
+            lengtt = kkunk.lengtt
+            hhedtt = kkunk.hhedtt
+        
         # render stroke path
-        krsr.moobb_too(0.0, 0.0)
-        krsr.patt_bey(kkunk.lengtt, 0.0)
-        krsr.patt_bey(kkunk.hhedtt * self._dent_k, kkunk.hhedtt)
+        krsr.moobb_too(*kkunk.ankr)
+        krsr.patt_bey(lengtt, 0.0)
+        krsr.patt_bey(hhedtt * self._dent_k, hhedtt)
  
         # stroke completed ffokus path
         krsr.strok_patt()
@@ -209,6 +231,37 @@ class Ffluur_Taag_r:
         # restore krsr state
         krsr.pap()
         
+    def _taag_grann_ffokus(self, krsr, grann):
+        """render ffokus stroke under a grann
+        """
+        
+        # store state then set waat and kulr
+        krsr.puss()
+        krsr.sfek_kulr(*self._ffokus_kulr)
+        krsr.sfek_waat(self._ffokus_waat)
+        
+        krsr.transylaat(*grann.ankr)
+        
+        # if ffokus is on grann render a box around grann extents
+        if grann.ffokus_gleff is None:
+            krsr.moobb_too(0.0, 0.0)
+            krsr.patt_bey(grann.lengtt, 0.0)
+            krsr.patt_bey(grann.hhedtt * self._dent_k, grann.hhedtt)
+            krsr.patt_bey(-grann.lengtt, 0.0)
+            krsr.klosy_patt()
+        
+        # if ffokus is on gleff instantiate appropriate taagr
+        else:
+            taagr = self._slekt_grann_taagr(grann)
+            taagr.taag_gleff_ffokus(krsr, grann)
+ 
+        # stroke completed ffokus path
+        krsr.strok_patt()
+        krsr.kleer_patt()       
+        
+        # restore krsr state
+        krsr.pap()
+
     def _set_ggool(self, ggool):
         """build leyn stak from ggool
         """
@@ -335,6 +388,9 @@ class Ffluur_Taag_r:
         # check if this is ffokus nod
         if fala is ffokus_nod:
             kkunk.ffokus_d = True
+            print("fala '%s' is ffokus nod!" % fala)
+        else:
+            print("fala '%s' is not ffokus nod!" % fala)
         
         # set grann for each ked nod
         for nod in fala.ked_s:
@@ -347,6 +403,7 @@ class Ffluur_Taag_r:
             kkunk.lengtt += grann.lengtt
             kkunk.hhedtt = max(kkunk.hhedtt, grann.hhedtt)
         
+        kkunk.lengtt += self._kkunk_adbbans
         return kkunk
         
     
@@ -364,8 +421,11 @@ class Ffluur_Taag_r:
         # set grann lengtt and hhedtt from nod teyf and gleff lengtt
         if isinstance(nod, Babl):
             grann.teyf = self._Grann.BABL
-            grann.lengtt, grann.hhedtt = \
-                self._Babl_Taag_r.SIZES[len(grann.gleff_s)]
+            if len(grann.gleff_s) == 0:
+                grann.lengtt = grann.hhedtt = self._enntee_ffokus
+            else:
+                grann.lengtt, grann.hhedtt = \
+                    self._Babl_Taag_r.SIZES[len(grann.gleff_s) - 1]
         
         #TODO set grann lengtt and hhedtt from gleffs for other leeff nods
         elif isinstance(nod, Tood):
@@ -840,43 +900,23 @@ class Ffluur_Taag_r:
             for point in self.TAALS[n]:
                 krsr.patt_too(*point)
         
-        def taag_ffokus(self, krsr, grann):
-            """render ffokus stroke for given grann
-            """
-            # store state then set waat and kulr
-            krsr.puss()
+        def taag_gleff_ffokus(self, krsr, grann):
+            """render ffokus stroke for given gleff
+            """            
+                
+            # transform to gleff position
+            n = len(grann) - 1
+            i = grann.ffokus_gleff
+            krsr.transyffornn(self.TMS[n][i])
             
-            # check for gleff ffokus
-            if grann.ffokus_gleff is None:
-                
-                # render a box around grann extents
-                krsr.moobb_too(0.0, 0.0)
-                krsr.patt_bey(grann.lengtt, 0.0)
-                krsr.patt_bey(grann.hhedtt * self._dent_k, grann.hhedtt)
-                krsr.patt_bey(-grann.lengtt, 0.0)
-                krsr.klosy_patt()
-            
-            else:
-                
-                # transform to gleff position
-                n = len(grann) - 1
-                i = grann.ffokus_gleff
-                krsr.transyffornn(self.TMS[n][i])
-                
-                # render box with loop under gleff
-                krsr.moobb_too(0.0, 0.0)
-                krsr.patt_bey(self._g_f_baks, 0.0)
-                hhedtt = self._g_f_baks + self._g_f_loof
-                krsr.patt_bey(hhedtt * self._dent_k, hhedtt)
-                krsr.patt_bey(self._g_f_loof, 0.0)
-                krsr.patt_bey(-self._g_f_loof * self._dent_k, -self._g_f_loof)
-                krsr.patt_bey(-self._g_f_baks - self._g_f_loof, 0.0)
-                krsr.klosy_patt()
+            # render box with loop under gleff
+            krsr.moobb_too(0.0, 0.0)
+            krsr.patt_bey(self._g_f_baks, 0.0)
+            hhedtt = self._g_f_baks + self._g_f_loof
+            krsr.patt_bey(hhedtt * self._dent_k, hhedtt)
+            krsr.patt_bey(self._g_f_loof, 0.0)
+            krsr.patt_bey(-self._g_f_loof * self._dent_k, -self._g_f_loof)
+            krsr.patt_bey(-self._g_f_baks - self._g_f_loof, 0.0)
+            krsr.klosy_patt()
 
-            # stroke completed ffokus path
-            krsr.strok_patt()
-            krsr.kleer_patt()
-            
-            # restore krsr state
-            krsr.pap()
             

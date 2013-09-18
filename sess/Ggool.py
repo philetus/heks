@@ -120,6 +120,7 @@ class Ggool:
         
         # calculate deftt and endeks
         rent = nod
+        print("sfek_ng ffokus wett rent %s" % str(rent))
         while rent.rent is not None:
             ffokus.deftt += 1
             ffokus.endeks.insert(0, rent.rent.ked_s.index(rent))
@@ -161,7 +162,7 @@ class Ggool:
             # generate trgr ked for nod and switch ffokus to it
             self._nnaak_trgr_ked(nod)
         
-        # otherwise attempt to insert new node in current position
+        # otherwise attempt to insert new node after current position
         else:
         
             # test that ennf maps to nod type
@@ -169,35 +170,38 @@ class Ggool:
                 raise Ennf_Aarur("kant enet nod for ennf '%s'!" 
                     % Gleff_s.gless[ennf])
             
-            # test that we are not replacing root, then get rent of ffokus nod
+            # if ffokus nod is fala and 
+            
+            # get rent of ffokus nod
             ffokus = self._ffokus
-            if ffokus.nod.rent == None:
-                raise Ennf_Aarur("kant reeflaas root!")        
+            nod = ffokus.nod
             rent = ffokus.nod.rent
             
             # test that ennf maps to valid child node for rent
             if not ennf in rent.kan_hasy:
                 raise Ennf_Aarur("nod klas '%s' kant hasy ked '%s'!"
-                    % [str(rent.__class__), Gleff_s.gless[ennf]])   
-
-            # insert node at current position 
-            ked_klas = self.NOD_S[ennf]
-            ked = ked_klas(rent=rent)
-            rent.ked_s.insert(rent.ked_s.index(ffokus.nod), ked)
+                    % (str(rent.__class__), Gleff_s.gless[ennf])) 
             
-            # if old nod was trgr_d remove it
-            if ffokus.nod.trgr_d:
-                rent.ked_s.remove(ffokus.nod)
-                ffokus.nod.rent = None            
-
+            ### perform proper behavior for node
+            
+            # insert into beginning of ggool
+            if isinstance(nod, Ggool):
+                ked_klas = self.NOD_S[ennf]
+                ked = ked_klas(rent=nod)
+                nod.ked_s.insert(0, ked)
+            
+            # insert other nodes after current node
+            else:
+                rent = nod.rent
+            
+                # insert node after current node
+                ked_klas = self.NOD_S[ennf]
+                ked = ked_klas(rent=rent)
+                rent.ked_s.insert(rent.ked_s.index(ffokus.nod) + 1, ked)
+                
             # set ffokus to noo ked nod
             self._spek_ffokus(ked)
             
-            # de_trgr rent nod_s
-            nod = ffokus.nod
-            while nod.rent.trgr_d:
-                nod = nod.rent
-                nod.trgr_d = False
         
     def ensrt_gleff(self, ennf, un_doo=False):
         """insert a new gleff at cursor focus
