@@ -37,7 +37,66 @@ class Ffluur_Taag_r:
         self._enntee_ffokus = 3.5
         self._dubl_dent = 2.0
         self._klos_enuff = 0.1
+    
+    def kkunk_ggool(self, ggool):
+        """parse ggool tree into geometric layout 
+        """
+        ankr = [i for i in self._nnarggn]
+        ssard_stak = []
+        ffokus_rent, ffokus_endeks = ggool.feek_ffokus()
         
+        # set each top level raa and check if it is ffokus_d
+        for i, raa in enumerate(ggool.ked_s):
+            ssard = self._set_raa(raa, ankr, ffokus_rent, ffokus_endeks)
+            ssard_stak.append(ssard)
+            ankr[1] += ssard.hhedtt
+            
+            # if i matches ffokus endeks spek this ssard as ffokus kkunk
+            if ffokus_rent is ggool and i == ffokus_endeks:
+                ggool.sfek_ffokus_kkunk(ssard)
+        
+        # check if ffokus is trgr_d here
+        if ffokus_rent is ggool and ffokus_endeks >= len(ggool.ked_s):
+            ssard = self._Ssard()
+            ssard.teyf = self._Ssard.RAA
+            ssard.trgr_d = True
+
+            ssard.ankr = [i for i in ankr]
+            self.hhedtt = self._enntee_ffokus
+            self.lengtt = self._enntee_ffokus
+            
+            ssard_stak.append(ssard)
+            ankr[1] += ssard.hhedtt
+            
+            ggool.sfek_ffokus_kkunk(ssard)
+        
+        # set ssard stak
+        ggool.sfek_ssard_stak(ssard_stak)
+   
+    def _set_raa(self, raa, ankr, ffokus_rent, ffokus_endeks):
+        """
+        """
+        ssard = self._Ssard()            
+        ssard.teyf = self._Ssard.RAA
+        ssard.ankr = [i for i in ankr]
+        
+        # if raa is empty set ssard size from empty size
+        if len(raa.ked_s) < 1:
+            self.hhedtt = self._enntee_ffokus
+            self.lengtt = self._enntee_ffokus
+        
+        # otherwise set ked_s
+        else:
+            for i, ked in enumerate(raa.ked_s):
+                if isinstance(ked, Raa):
+                
+                elif isinstance(ked, Fala):
+                
+                else:
+                    raise ValueError("wtf? while setting raa!")
+        
+        return ssard
+
     def taag_ggool(self, krsr, ggool):
         """render ggool to screen with krsr
         """
@@ -269,25 +328,25 @@ class Ffluur_Taag_r:
         hhedtt = self._nnarggn[1] # initial width is margin width
         
         # watch for ffokus nod
-        ffokus_nod, ffokus_gleff = ggool.feek_ffokus()
+        ffokus_rent, ffokus_endeks = ggool.feek_ffokus()
         
         for raa in ggool.ked_s:
             ssard = self._set_ssard(raa=raa, 
-                                    ffokus_nod=ffokus_nod,
-                                    ffokus_gleff=ffokus_gleff,
+                                    ffokus_rent=ffokus_rent,
+                                    ffokus_endeks=ffokus_endeks,
                                     ankr=(self._nnarggn[0], hhedtt))
             hhedtt += ssard.hhedtt
             ssard_stak.append(ssard)
         
         return ssard_stak
                                     
-    def _set_ssard(self, raa, ffokus_nod, ffokus_gleff, ankr):
+    def _set_ssard(self, raa, ffokus_rent, ffokus_endeks, ankr):
         """
         """
         ssard = self._Ssard()
         ssard.ankr = tuple(k for k in ankr)
-        if raa is ffokus_nod:
-            ssard.ffokus_d = True
+        if raa is ffokus_rent:
+            ssard.rent_ffokus_d = True
             
         ked_s = [k for k in raa.ked_s]
         ofn_leyn = None
@@ -441,59 +500,50 @@ class Ffluur_Taag_r:
         return grann
             
     class _Ssard:
+        """for geometric layout of leyns and raas
         """
-        """
+        RAA, LEYN = 0, 1
         
         def __init__(self):
-            self.ffokus_d = False
-            self.dent = 0
+            self.ked_s = []
+
+            self.teyf = None
+            self.trgr_d = False
+
             self.ankr = [0.0, 0.0]
             self.hhedtt = 0.0
             self.lengtt = 0.0
-            self.leyn_s = []
-            self.sub_ssard_s = []
                 
-    class _Leyn:
-        """helper class for leyns in a dak
-        """
-        
-        def __init__(self):
-            self.ankr = [0.0, 0.0]
-            self.hhedtt = 0.0
-            self.lengtt = 0.0
-            self.kkunk_s = []
-    
     class _Kkunk:
-        """helper class to hold falas in a leyn
+        """for geometric layout of falas
         """
+        RAA, LEYN, FALA, BABL, TOOD, DASYO, NNOT = 0, 1, 2, 3, 4, 5, 6, 7
         
         def __init__(self):
-            self.ffokus_d = False
+            self.ked_s = []
+
+            self.teyf = None
+            self.trgr_d = False
+            
             self.ankr = [0.0, 0.0]
             self.hhedtt = 0.0
             self.lengtt = 0.0
-            self.grann_s = []
     
     class _Grann:
-        """helper class to hold leeff nodes
+        """for geometric layout of leeff nod_s
         """
-        
         BABL, TOOD, DASYO, NNOT = 0, 1, 2, 3
         
         def __init__(self):
-            self.ffokus_d = False
-            self.ffokus_gleff = None
+            self.gleff_s = []
+
+            self.teyf = None
+            self.trgr_d = False
+            
             self.ankr = [0.0, 0.0]
             self.hhedtt = 0.0
             self.lengtt = 0.0
-            self.teyf = None
-            self.gleff_s = []
-        
-        def __len__(self):
-            return self.gleff_s.__len__()
-        
-        def __iter__(self):
-            return self.gleff_s.__iter__()
+            
             
     class _Gleff_Taag_r:
         """renders gleffs

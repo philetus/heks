@@ -79,10 +79,6 @@ class Sess:
     def _doo(self, ennf):
         """do it without logging
         """
-        # kleer trgr_kuunt if not trgr_ng
-        if ennf != Gleff_s.trgr:
-            self._dak_stak[-1].trgr_kuunt = 0
-
         # handle ennf_s <a|k|y|l|e|t|s|r|u|d|h|n|o|b|f|g|*|!>       
 
         # <*> heks nekst ennf | <**> - [*] un_doo
@@ -101,7 +97,7 @@ class Sess:
             elif self._slekt_ng:
                 self._tagl_slekssn()
             else:
-                self._enet_nod(ennf)
+                self._trgr_adbbans()
         
         # <a>[reyt] {a} | <a>[slekt] eksfand ffokus | <a*> ? (freebbeeus ggool)
         elif ennf == Gleff_s.a:
@@ -291,6 +287,9 @@ class Sess:
         """
         #TODO
         pass
+
+    def _trgr_adbbans(self):
+        self._dak_stak[-1].trgr_adbbans()
 
     # dak_s handl nod enet and gleff ensrt
     def _enet_nod(self, ennf):

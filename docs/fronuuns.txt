@@ -4,18 +4,20 @@ like the time penguin silently endured confrontation in the morning, and only as
 
 *> tng [thing] all-encompassing, nuetral
 
-> leegg [foliage] raw nature - plants, rocks, dirt, etc
+> korn [unicorn] imaginary, non-extant thing
 
-> syen [poison] 
+> leegg [foliage] raw nature - plants, rocks, dirt, etc
 
 > faf [popsicle] (manufactured object, pejorative)
 
 > spok [spoke] bespoke object, 
 
-> krep [manuscript] (data storage device, ie usb stick, book)
+> krept [manuscript] data storage device (ie usb stick, book)
 
-> elk [milk] (nourishment/fuel)
+> nnlk [milk] nourishment/fuel
 
-> man [daemon] (intentional artifact/creature)
+> gent [agent] simple algorithm-following artifact/creature (possibly pejorative)
 
-> sol [soul]
+> nnon [daemon] intentional artifact/creature
+
+> sol [soul] self-filtering meme vector (ie person, strong ai, uplifted creature)
