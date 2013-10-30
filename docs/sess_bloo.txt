@@ -1,44 +1,52 @@
 sess
 ====
 
-handles input session to hord of ggools
+handles input session to heerd of ggools
 
-* taak_s u streenn ubb ennf_s asy enfut <a|k|y|l|e|t|s|r|u|b|h|n|o|d|f|g|*|!>
+* taak_sh u streenn ubb ennf_s asy enfut <a|k|w|l|e|t|s|r|u|d|h|f|i|b|n|g|*|!>
 
-* dak stak has nnetadeks at taf, deks, ggools, kut buffr, kut ggool
+* dak stak has nnet_a_deks at taf, deks, ggool_sh, kut_buff_r, kut_ggool
 
 * constant ennf controls:
   - <*><*> undo
   - <*><!> redo
-  - <*><y> pap dak stak
-  - <*><s> tagl slekt nnod
+  - <*><w> pap dak stak
   - <*><h> tagl helf nnod
   - <*><g> puss noo ggool (context sensitive) antoo dak stak
-  - <*><l> lag sess (bring up log buffr to commit current changes)
+  - <*><l> lag sess (bring up lag_buff_r to commit current changes)
 
   (previous and next are defined in relation to containing deks)
-  - <*><a> freebbeeus ggool
+  - <a> frii_bbii_us ggool
   - <*><o> nekst ggool
   - <*><e> back in time (version)
   - <*><u> forward in time (version)
 
 * in slekt nnod:
-  - <a> eksfand_ffokus
-  - <e> raasy_ffokus
-  - <u> lour_ffokus
-  - <o> kontrakt_ffokus
+  - <*><a> eksfand_ffokus
+  - <*><e> raasy_ffokus
+  - <*><u> lour_ffokus
+  - <*><i> kontrakt_ffokus
 
-  - <!> tagl_slekssn
-  - <k> kut
-  - <d> doof
-  - <f> faast
-  - <n> nnakk (select by matching top of kut buffr)    
-  - <r> fuss lenk target an dak stak  
+  - <*><s> tagl_slekssn
+  - <*><k> kut
+  - <*><d> doof
+  - <*><f> faast
+  - <*><n> nnakk (select by matching top of kut buffr)    
+  - <*><t> fuss lenk target an dak stak  
   - <y> kleer_slekssn  
-  - <b> puss kut buffr an dak stak
+  - <*><b> puss kut buffr an dak stak
 
-* in reyt nnod:
-  - <!> adbbans ffokus too nekst trgr nod
+k|w|l|t|s|r|d|h|f|b|n|g
+
+* in rit nneed:
+  - need_sh:
+    > raa
+    > fa_la
+    > bab_l
+    > tuud
+    > dash_ee
+    > nneet
+  - <!> end kur_nt need
   - <*><[r|f|k|b|t|d|n]> enet_s noo nod
   - <[glef]> ensrt_s glef in current nod
 

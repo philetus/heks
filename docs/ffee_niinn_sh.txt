@@ -1,27 +1,25 @@
-glyphs
-------
-
-(glyphs represent both letters and numbers)
-
-0x0 - {a} - 'at'    - <hole>
-0x1 - {k} - 'kak'   - <bullet>
-0x2 - {y} - 'yaa'   - <chains>
-0x3 - {l} - 'la'    - <bud>
-0x4 - {e} - 'ek'    - <skull>
-0x5 - {t} - 'tat'   - <horns>
-0x6 - {s} - 'ses'   - <tongue>
-0x7 - {r} - 'raft'  - <wing>
-0x8 - {u} - 'ug'    - <cup>
-0x9 - {b} - 'babl'  - <tower>
-0xa - {h} - 'ha'  - <flame> 
-0xb - {n} - 'nann'  - <mountain>
-0xc - {o} - 'os'    - <tear>
-0xd - {d} - 'do'    - <hammer>
-0xe - {f} - 'faff'  - <flower>
-0xf - {g} - 'gee'   - <eruption>
-
-phonemes 
+gleff_sh
 --------
+
+0x0 - {a} - 'at'    - <hol>
+0x1 - {k} - 'kkak'  - <bul_et>
+0x2 - {w} - 'wannf' - <kkaan_sh>
+0x3 - {l} - 'la'    - <bud>
+0x4 - {e} - 'ek'    - <skul>
+0x5 - {t} - 'tat'   - <horns>
+0x6 - {s} - 'ses'   - <tung>
+0x7 - {r} - 'raft'  - <wng>
+0x8 - {u} - 'ug'    - <kup>
+0x9 - {d} - 'dee'   - <hann_r>
+0xa - {h} - 'ha'    - <flame> 
+0xb - {f} - 'feff'  - <ffleew_r>
+0xc - {i} - 'i_ii'  - <tiir>
+0xd - {b} - 'babbl' - <teew_r>
+0xe - {n} - 'nann'  - <nneewnt_n>
+0xf - {g} - 'gee'   - <ii_ruf_ssn>
+
+ffee_niinn_sh
+-------------
 
 <phoneme and frequency data references:
   http://myweb.tiscali.co.uk/wordscape/wordlist/phonfreq.html

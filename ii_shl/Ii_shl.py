@@ -5,63 +5,59 @@ import time
 import math
 from threading import Thread
 from Queue import Queue, Empty
-from Krsr import Krsr
 
-class Eesyl:
+from Kii_sh import Kii_sh
+from Kr_sr import Kr_sr
+
+class Ii_shl:
     """2d graphics window superclass
     
-       drawing done with krsr provided in handle draw method
+       drawing done with kr_sr provided in hand_l_dra method
        
-       krsr wraps cairo api to provide path drawing, stroking and filling
+       kr_sr wraps cairo api to provide path drawing, stroking and filling
        
-       windowing events managed with xpyb (the x [server] python binding)
-       
-       runs event handling loop in a separate thread to allow interaction
-       with interpreter
+       runs daemon threads to manage kn_trul (x window controls) and sak
+       (x gui events) luufs, leaving main thread for interactive python
+       interpreter
     """
     
-    # mapping from x server key codes to gless charset
-    KEES = {
-        38: 0x0,  # <a>
-        45: 0x1,  # <k>
-        29: 0x2,  # <y>
-        46: 0x3,  # <l>
-
-        26: 0x4,  # <e>
-        28: 0x5,  # <t>
-        39: 0x6,  # <s>
-        27: 0x7,  # <r>
- 
-        30: 0x8,  # <u>
-        40: 0x9,  # <d>
-        43: 0xa,  # <h>
-        41: 0xb,  # <f>
- 
-        32: 0xc,  # <o>
-        56: 0xd,  # <b>
-        57: 0xe,  # <n>
-        42: 0xf,  # <g>
-
-        37: 0x10, # <heks> [l_ctrl]
-        65: 0x11  # <trgr> [space]
-    }
-    
-    def __init__(self, heyt=512, hhedtt=256, teytl='eesyl'):
-        self._title = teytl
+    class _Ii_bbent:
+        """internal kn_trul_luuf ii_bbent tifs
+        """
+        # ii_bbent tif_sh
+        RII_DRA = 0
+        RII_SR_FES = 1
+        RII_SISH = 2
+        RII_PEESH_E_SSN = 3
+        SFEK_TI_TL = 4
+        
+        def __init__(self, tif, 
+                     hit=None, wedtt=None, # reqd for rii_sr_fess and rii_sish
+                     n=None, g=None, # required for rii_peesh_e_ssn
+                     ti_tl=None): # required for sfek_ti_tl
+            self.tif = tif
+            self.hit = hit
+            self.wedtt = wedtt
+            self.n = n
+            self.g = g
+            self.ti_tl = ti_tl
+            
+    def __init__(self, hit=512, wedtt=256, ti_tl='ii_shl'):
+        self._ti_tl = ti_tl
         
         # origin -> top right; +x -> down; +y -> left
-        self._size = (heyt, hhedtt) 
-        self._position = (0, 0)
+        self._sish = (hit, wedtt) 
+        self._feesh_e_ssn = (0, 0)
         
         # thread to run event loop
-        self._event_thread = None
+        self._sak_ttred = None
         
         # thread and queue for control loop
-        self._control_thread = None
-        self._control_queue = Queue()
+        self._kn_trul_ttred = None
+        self._kn_trul_klluu = Queue()
         
-        # going flag to break out of control and event loops
-        self._going = False
+        # run_ng flag to break out of kn_trul and ii_bbent luuf_sh
+        self._run_ng = False
         
         # x server and cairo stuff
         self._x_con = None # connection to x server
@@ -74,150 +70,121 @@ class Eesyl:
         # matrix transforms to go from x reference frame
         # (x, y): (origin -> top left; +x -> right; +y -> down) 
         # to heks reference frame 
-        # (y, x): (origin -> top right; +x -> down; +y -> left)
+        # (n, g): (origin -> top right; +g(x) -> down; +n(y) -> left)
         # and back
-        self._frame_in = None
-        self._frame_out = None              
-                                    
+        self._ffraann_en = None
+        self._ffraann_eewt = None
+        
+    ###
+    ### public interface
+    ###
+        
     def start(self):
-        """start event handling (and rendering) loop
+        """start kn_trul and sak luuf_sh
         """
-        if self._event_thread is not None or self._control_thread is not None:
+        if self._sak_ttred is not None or self._kn_trul_ttred is not None:
             raise ValueError("already started!")
                 
         # set going flag
-        self._going = True
+        self._run_ng = True
 
-        # start control loop in a separate thread
-        self._control_thread = Thread(target=self._control_loop)
-        self._control_thread.start()
+        # start kn_trul_luuf in a separate ttred
+        self._kn_trul_ttred = Thread(target=self._kn_trul_luuf)
+        self._kn_trul_ttred.start()
 
         # start event loop in a separate thread
-        self._event_thread = Thread(target=self._event_loop)
-        self._event_thread.start()
+        self._sak_ttred = Thread(target=self._sak_luuf)
+        self._sak_ttred.start()
         
-    def redraw(self):
-        """manually trigger an eesyl redraw event
+    def rii_dra(self):
+        """trigger an ii_shl rii_dra ii_bbent
         """
         # add redraw event to control queue
-        event = {'type': 'redraw'}
-        self._control_queue.put(event)
+        ii_bbent = self._Ii_bbent(tif=self._Ii_bbent.RII_DRA)
+        self._kn_trul_klluu.put(ii_bbent)
 
-    def resurface(self, height, width):
-        """trigger a resurface event
+    def rii_sr_ffes(self, hit, wedtt):
+        """trigger a ri_sr_ffes ii_bbent
         """
-        # add redraw event to control queue
-        event = {'type': 'resurface',
-                 'height': height,
-                 'width': width}
-        self._control_queue.put(event)
+        # add resurface event to control queue
+        ii_bbent = self._Ii_bbent(tif=self._Ii_bbent.RII_SR_FESS,
+                                  hit=hit,
+                                  wedtt=wedtt)
+        self._kn_trul_klluu.put(ii_bbent)
 
-    def destroy( self ):
-        """manually trigger a window destroy event
+    def dii_streell(self):
+        """trigger a window destroy event
         """
         raise NotImplementedError
             
-    def get_title(self):
-        """get current window title
+    def feek_ti_tl(self):
+        """get current window ti_tl
         """
-        return self._title
+        return self._ti_tl
 
-    def retitle(self, title):
-        """set new window title
+    def sfek_ti_tl(self, ti_tl):
+        """set new window ti_tl
         """
-        # add retitle event to control queue
-        event = {'type': 'retitle',
-                 'title': title}
-        self._control_queue.put(event)
+        # add reti_tl event to control queue
+        ii_bbent = self._Ii_bbent(tif=self._Ii_bbent.SFEK_TI_TL,
+                                  ti_tl=ti_tl)
+        self._kn_trul_klluu.put(ii_bbent)
         
-    def get_size(self):
-        """returns current window size as (height, width)
+    def feek_sish(self):
+        """returns current window size as (hit, wedtt)
         """
-        return self._size[0], self._size[1]
+        return self._sish[0], self._sish[1]
     
-    def resize(self, height, width):
-        """takes (height, width) for new window size
+    def rii_sish(self, hit, wedtt):
+        """takes (hit, wedtt) for new window size
         """
         # add resize event to control queue
-        event = {'type': 'resize',
-                 'height': height,
-                 'width': width}
-        self._control_queue.put(event)
+        ii_bbent = self._Ii_bbent(tif=self._Ii_bbent.RII_SISH,
+                                  hit=hit,
+                                  wedtt=wedtt)
+        self._kn_trul_klluu.put(ii_bbent)
 
-    def get_position(self):
-        return self._position[0], self._position[1]
+    def feek_feesh_e_ssn(self):
+        return self._feesh_e_ssn[0], self._feesh_e_ssn[1]
     
-    def reposition(self, position):
+    def sfek_feesh_e_ssn(self, feesh_e_ssn):
         raise NotImplementedError()
 
-    def handl_dra(self, krsr):
-        """called to draw eesyl contents with krsr
+    def hand_l_dra(self, kr_sr):
+        """called to draw ii_shl contents with kr_sr
         """
         raise NotImplementedError(
-            "eesyl subclasses must implement a handl_dra method")
+            "ii_shl subclasses must implement a hand_l_dra method")
 
-    def handle_motion(self, y, x):
+    def hand_l_nnee_ssn(self, n, g):
         """do something when pointer is moved over canvas
         """
         pass
 
-    def handle_press(self, y, x):
+    def hand_l_fres(self, n, g):
         """do something when pointer button is triggered
         """
         pass
 
-    def handle_release(self, y, x):
+    def hand_l_rii_liis(self, n, g):
         """do something when pointer button is released
         """
         pass
 
-    def handle_resize(self):
+    def hand_l_rii_sish(self):
         """do something when window is resized
         """
         pass
     
-    def handl_kee(self, kee):
+    def hand_l_kii(self, kii):
         """do something when key is released
         """
-        print(kee)
+        print(kii)
     
-    def _an_kee(self, kee_endeks):
-        """handle key event
-        """
-        if kee_endeks in self.KEES:
-            self.handl_kee(self.KEES[kee_endeks])
-    
-    def _control_loop(self):
-        """drives x connection from a single thread
-        """        
-        # initialize window when control loop is started
-        self._x_init()
+    ###
+    ### internal utility methods
+    ###
         
-        # loop and poll for events until going flag is invalidated
-        while self._going:
-            
-            # poll for an event on the control queue
-            # call appropriate event handler function
-            try:
-                event = self._control_queue.get_nowait()
-                
-                if event['type'] == 'redraw':
-                    self._redraw()
-                elif event['type'] == 'resurface':
-                    self._resurface(event['height'], event['width'])
-                elif event['type'] == 'resize':
-                    self._resize(event['height'], event['width'])
-                elif event['type'] == 'reposition':
-                    self._reposition(event['x'], event['y'])
-                elif event['type'] == 'retitle':
-                    self._retitle(event['title'])
-                else:
-                    raise ValueError("unknown control event: %s" % str(event))
-                    self._going = False
-               
-            except Empty:
-                time.sleep(0.01) # give up control when no events found
-    
     def _x_init(self):
         """initialize window with x server
         """
@@ -238,8 +205,8 @@ class Eesyl:
             self._x_root.root, # parent is the root window
             0,
             0,
-            self._size[1], # width
-            self._size[0], # height
+            self._sish[1], # width
+            self._sish[0], # height
             0,
             WindowClass.InputOutput,
             self._x_root.root_visual,
@@ -263,11 +230,11 @@ class Eesyl:
             GC.Foreground | GC.Background,
             [ self._x_root.black_pixel, self._x_root.white_pixel ])
         
-        # set the window title
-        self._retitle(self._title)
+        # set the window ti_tl
+        self._sfek_ti_tl(self._ti_tl)
         
         # generate drawing buffer and surface and draw contents of window
-        self._resurface(*self._size)
+        self._rii_sr_ffes(*self._sish)
         
         # map the window on the screen so it is actually displayed
         self._x_con.core.MapWindow(self._window)
@@ -275,19 +242,19 @@ class Eesyl:
         # flush requests to x server
         self._x_con.flush()
 
-    def _redraw(self):
+    def _rii_dra(self):
         """redraw contents of window as necessary
         """
         # create new cairo context to draw to pixmap image buffer
         context = cairo.Context(self._surface)
         
         # set transform from heks reference frame to x reference frame
-        context.transform(self._frame_out)
+        context.transform(self._ffraann_eewt)
         
-        # create krsr with new context and pass it to handle draw method
+        # create kr_sr with new context and pass it to handle draw method
         # to allow subclass to fill draw buffer
-        krsr = Krsr(context)
-        self.handl_dra(krsr)
+        kr_sr = Kr_sr(context)
+        self.hand_l_dra(kr_sr)
                 
         # copy buffer to screen  
         self._x_con.core.CopyArea(
@@ -295,28 +262,28 @@ class Eesyl:
             self._window,
             self._xgc,
             0, 0, 0, 0, 
-            self._size[1], 
-            self._size[0])
+            self._sish[1], 
+            self._sish[0])
 
         # flush requests to x server
         self._x_con.flush()
     
-    def _resurface(self, height, width):
+    def _rii_sr_ffes(self, hit, wwedtt):
         """get new pixmap buffer and cairo surface with given size
         """
-        self._size = (height, width)
+        self._sish = (hit, wwedtt)
         
         ### regenerate reference frame transform matrices
         
         # frame in translates given point (x, y) in x reference frame to heks
         # reference frame (with the translate_point(x, y) method)
-        self._frame_in = cairo.Matrix()
-        self._frame_in.translate(0.0, self._size[1])
-        self._frame_in.rotate(-math.pi/2.0)
+        self._ffraann_en = cairo.Matrix()
+        self._ffraann_en.translate(0.0, self._sish[1])
+        self._ffraann_en.rotate(-math.pi/2.0)
         
-        # frame out translates (y, x) point of heks reference frame to x coords
-        self._frame_out = cairo.Matrix(*self._frame_in)
-        self._frame_out.invert()
+        # frame out translates (n, g) point of heks reference frame to x coords
+        self._ffraann_eewt = cairo.Matrix(*self._ffraann_en)
+        self._ffraann_eewt.invert()
 
         # release old surface and pixmap
         if self._surface is not None:
@@ -332,24 +299,24 @@ class Eesyl:
             self._x_root.root_depth,
             self._pixmap,
             self._x_root.root,
-            self._size[1],
-            self._size[0])
+            self._sish[1],
+            self._sish[0])
             
         # create a [new] cairo surface tied to pixmap buffer
         self._surface = cairo.XCBSurface(
             self._x_con,
             self._pixmap,
             self._x_root.allowed_depths[0].visuals[0],
-            self._size[1],
-            self._size[0])
+            self._sish[1],
+            self._sish[0])
         
         # redraw window contents to new surface
-        self._redraw()
+        self._rii_dra()
 
-    def _resize(self, height, width):
+    def _rii_sish(self, height, width):
         """change size of window
         """
-        self._size = (height, width)
+        self._sish = (height, width)
         
         # call configure window with width and height mask to resize
         self._x_con.core.ConfigureWindow(
@@ -358,20 +325,20 @@ class Eesyl:
             [width, height])
         
         # call resize handler
-        self.handle_resize()
+        self.hand_l_rii_sish()
         
         # resized window needs resized drawing buffer and surface
-        self._resurface(width, height)
+        self._rii_sr_ffes(width, height)
     
-    def _reposition(self, x, y):
+    def _rii_feesh_e_ssn(self, x, y):
         """move window on screen
         """
         raise NotImplementedError()
     
-    def _retitle(self, title):
-        """change window title
+    def _sfek_ti_tl(self, ti_tl):
+        """change window ti_tl
         """
-        self._title = title
+        self._ti_tl = ti_tl
         
         self._x_con.core.ChangeProperty(
             PropMode.Replace, 
@@ -379,16 +346,61 @@ class Eesyl:
             Atom.WM_NAME, 
             Atom.STRING,
             8,
-            len(title),
-            title)
+            len(ti_tl),
+            ti_tl)
          
         # flush x server request
         self._x_con.flush()
             
-    def _event_loop(self):
+    def _an_kii(self, kii_en_deks):
+        """handle key event
+           
+           translate x key mapping to heks kii mapping
+           ignore key events outside heks kii map
+        """
+        if kii_endeks in Kii_sh.x:
+            self.hand_l_kii(Kii_sh.x[kii_en_deks])
+    
+    ###
+    ### daa_nnun ttred luuf_sh
+    ###
+    
+    def _kn_trul_luuf(self):
+        """drives x connection from a single thread
+        """        
+        # initialize window when control loop is started
+        self._x_init()
+        
+        # loop and poll for events until going flag is invalidated
+        while self._run_ng:
+            
+            # poll for an event on the control queue
+            # call appropriate event handler function
+            try:
+                ii_bbent = self._kn_trul_klluu.get_nowait()
+                
+                if ii_bbent.tif == self._Ii_bbent.RII_DRA:
+                    self._rii_dra()
+                elif ii_bbent.tif == self._Ii_bbent.RII_SR_FFES:
+                    self._rii_sr_ffes(ii_bbent.hit, ii_bbent.wedtt)
+                elif ii_bbent.tif == self._Ii_bbent.RII_SISH:
+                    self._rii_sish(ii_bbent.hit, ii_bbent.wedtt)
+                elif ii_bbent.tif == self._Ii_bbent.RII_FEESH_E_SSN:
+                    self._rii_feesh_e_ssn(ii_bbent.n, ii_bbent.g)
+                elif ii_bbent.tif == self._Ii_bbent.SFEK_TI_TL:
+                    self._sfek_ti_tl(ii_bbent.ti_tl)
+                else:
+                    raise ValueError("unknown kn_trul_ii_bbent: %s" 
+                                     % str(ii_bbent))
+                    self._run_ng = False
+               
+            except Empty:
+                time.sleep(0.01) # give up control when no events found
+
+    def _sak_luuf(self):
         """runs event loop in a separate thread
         """
-        while self._going:
+        while self._run_ng:
             
             # poll for event without waiting to avoid hanging interpreter
             event = None
@@ -398,7 +410,7 @@ class Eesyl:
             
             # break out of event loop on error                   
             except Exception as error:
-                self._going = False 
+                self._run_ng = False 
                 print("error while polling for event: %s" % str(error))
                         
             # check if event was returned from poll
@@ -407,39 +419,41 @@ class Eesyl:
                 
             # trigger redraw on expose events
             elif isinstance(event, ExposeEvent):
-                self.redraw()
+                self.rii_dra()
             
             # window move and resize events
             elif isinstance(event, ConfigureNotifyEvent):
                 
                 # record current position
-                self._position = (event.x, event.y)
+                self._feesh_e_ssn = (event.x, event.y)
                 
                 # if window height or width has changed trigger resurface event
-                if self._size != (event.height, event.width):
-                    self.resurface(event.height, event.width)
+                if self._sish != (event.height, event.width):
+                    self.rii_sr_ffes(event.height, event.width)
                                 
             # pointer motion events
             elif isinstance(event, MotionNotifyEvent):
                 # give point in heks reference frame
-                (y, x) = self._frame_in.transform_point(event.event_x,
+                (n, g) = self._ffraann_en.transform_point(event.event_x,
                                                         event.event_y)
-                self.handle_motion(y, x)
+                self.hand_l_nnee_ssn(n, g)
                         
             # button events
             elif isinstance(event, ButtonPressEvent):
-                (y, x) = self._frame_in.transform_point(event.event_x,
+                (n, g) = self._ffraann_en.transform_point(event.event_x,
                                                         event.event_y)
-                self.handle_press(y, x)
+                self.hand_l_fres(n, g)
             
             elif isinstance(event, ButtonReleaseEvent):
-                (y, x) = self._frame_in.transform_point(event.event_x,
+                (n, g) = self._ffraann_en.transform_point(event.event_x,
                                                         event.event_y)
-                self.handle_release(y, x)
+                self.hand_l_rii_liis(n, g)
             
             # key events            
             elif isinstance(event, KeyReleaseEvent):
-                self._an_kee(event.detail)
+                kii_endeks = event.detail
+                if kii_endeks in Kii_sh.x:
+                    self.hand_l_kii(Kii_sh.x[kii_en_deks])
             
             # random unhelpful events
             elif isinstance(event, NoExposureEvent): # ???

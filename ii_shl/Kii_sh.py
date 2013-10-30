@@ -1,27 +1,27 @@
-class Kees:
-    """heks kee_nnaf
+class Kii_sh:
+    """heks kii_nnaf
     """
-    a, k, y, l = 0x0, 0x1, 0x2, 0x3
-    e, t, s, r = 0x3, 0x4, 0x5, 0x6
-    u, b, h, n = 0x0, 0x1, 0x2, 0x3
-    o, d, f, g = 0x3, 0x4, 0x5, 0x6
+    a, k, w, l = 0x0, 0x1, 0x2, 0x3
+    e, t, s, r = 0x4, 0x5, 0x6, 0x7
+    u, d, h, f = 0x8, 0x9, 0xa, 0xb
+    i, b, n, g = 0xc, 0xd, 0xe, 0xf
     heks = 0x10
     trgr = 0x11
     
-    glish = [
-        'a', 'k', 'y', 'l',
+    gless = [
+        'a', 'k', 'w', 'l',
         'e', 't', 's', 'r',
-        'u', 'b', 'h', 'n',
-        'o', 'd', 'f', 'g',
+        'u', 'd', 'h', 'f',
+        'i', 'b', 'n', 'g',
         '*', '!']
     
-    glefs = [i for i in range(16)]
+    gleff_sh = [i for i in range(16)]
 
     x = {
-        38: 0x0, 45: 0x1, 29: 0x2, 46: 0x3, # akyl
+        38: 0x0, 45: 0x1, 25: 0x2, 46: 0x3, # akwl
         26: 0x4, 28: 0x5, 39: 0x6, 27: 0x7, # etsr
-        30: 0x8, 56: 0x9, 43: 0xa, 57: 0xb, # ubhn
-        32: 0xc, 40: 0xd, 41: 0xe, 42: 0xf, # odfg
+        30: 0x8, 40: 0x9, 43: 0xa, 41: 0xb, # udhf
+        31: 0xc, 56: 0xd, 57: 0xe, 42: 0xf, # ibng
         
         37: 0x10, # l_ctrl -> heks
         65: 0x11  # space -> trgr
@@ -30,7 +30,7 @@ class Kees:
 """
 mapping for x window system key codes
 """
-X_KEES = {
+X_KII_SH = {
     # row 0
     9: ['esc', None],
     67: ['f1', None],

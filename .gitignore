@@ -1,0 +1,2 @@
+# ignore python partial compiles
+*.pyc
