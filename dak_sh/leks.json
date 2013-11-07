@@ -1,0 +1,93 @@
+[
+    /*** senses ***/
+    
+    /* motes / raw senses of gleffs */
+    {"@s":"sens", "@s_gliibb_sh":"@a", "@s_rent":"@a"}, // hole/not/no/false/minus/despair
+    {"@s":"sens", "@s_gliibb_sh":"@k", "@s_rent":"@a"}, // bullet/or/either/free
+    {"@s":"sens", "@s_gliibb_sh":"@w", "@s_rent":"@a"}, // chains/and/compulsory
+    
+    {"@s":"sens", "@s_gliibb_sh":"@l", "@s_rent":"@a"}, // sense/insight/medicine
+    
+    {"@s":"sens", "@s_gliibb_sh":"@e", "@s_rent":"@a"}, // skull/it/thing/death
+    {"@s":"sens", "@s_gliibb_sh":"@t", "@s_rent":"@a"}, // hat/role/gint/anointed
+    {"@s":"sens", "@s_gliibb_sh":"@s", "@s_rent":"@a"}, // tongue/name/meme/vek
+    
+    {"@s":"sens", "@s_gliibb_sh":"@r", "@s_rent":"@a"}, // wing/action/travel/message
+    
+    {"@s":"sens", "@s_gliibb_sh":"@u", "@s_rent":"@a"}, // cup/milk
+    {"@s":"sens", "@s_gliibb_sh":"@d", "@s_rent":"@a"}, // hammer/spoke/hand/tool/work/resistance/success
+    
+    {"@s":"sens", "@s_gliibb_sh":"@h", "@s_rent":"@a"}, // fire/anger/hate
+    {"@s":"sens", "@s_gliibb_sh":"@f", "@s_rent":"@a"}, // flower/appreciation/desire
+    
+    {"@s":"sens", "@s_gliibb_sh":"@o", "@s_rent":"@a"}, // tear/sadness/time/failure
+    {"@s":"sens", "@s_gliibb_sh":"@b", "@s_rent":"@a"}, // tower/place/city/category/box/type
+    {"@s":"sens", "@s_gliibb_sh":"@n", "@s_rent":"@a"}, // mountain/mystery/inquiry/wilderness
+    {"@s":"sens", "@s_gliibb_sh":"@g", "@s_rent":"@a", "@s_hent_sh":"@a"}, // eruption/joy/truth/affirmative
+
+    /* number */
+    {"@s":"sens", "@s_gliibb_sh":"@l_nul", "@s_rent":"@a"}, // null/empty set
+    {"@s":"sens", "@s_gliibb_sh":"@l_niik", "@s_rent":"@k"}, // unique/singular
+    {"@s":"sens", "@s_gliibb_sh":"@l_llang", "@s_rent":"@w"}, // pair/opposed
+    {"@s":"sens", "@s_gliibb_sh":"@l_liigg", "@s_rent":"@e_llang", "@k_hent_sh":["@e_llang", "@e_llang"]}, // 4/many/legion
+    
+        
+    /* pronouns */
+    
+    {"@b":"sens", "@k_gliibb_sh":"@l_et", "@k_rent":"@e"},  // we
+    
+    // veks
+    {"@b":"sens", "@k_gliibb_sh":"@l_wii", "@k_rent":"@a"},  // we
+    {"@b":"sens", "@k_gliibb_sh":"@l_llal", "@k_rent":"@a"}, // yall
+    {"@b":"sens", "@k_gliibb_sh":"@l_ddenn", "@k_rent":"@a"}, // them
+    
+    // gints
+    {"@b":"sens", "@k_gliibb_sh":"@e_llent", "@k_rent":"@e_llal", "@k_hent_sh":[""]}, // yint
+    {"@b":"sens", "@k_gliibb_sh":"@e_ddent", "@k_rent":"@a"}, // thent
+
+    // spokes
+    
+    // milk
+    
+    
+    /* queries */
+    // what (what thing)
+    // who (what vek)
+    // haant (what gint)
+    // hoke (what spoke)
+    // wilk (what milk)
+    // where (what place)
+    // when (what time)
+    // why (what meme/reason)
+
+    /* things */
+    
+    {"@b":"sens", "@k_gliibb_sh":"@s", "@k_rent":"@a"} // name/tongue
+    // meme / reason
+    
+    // beast
+    // nit
+    // bird
+    // snake
+    // bot
+    // vek (liigg bots/soul/meme vector)
+    
+    /* feelings */
+    {"@b":"sens", "@k_gliibb_sh":"@i", "@k_rent":"@a"} // tear / sad
+    {"@b":"sens", "@k_gliibb_sh":"@f", "@k_rent":"@a"} // 
+    {"@b":"sens", "@k_gliibb_sh":"@h", "@k_rent":"@a"} // hate/anger/fire
+    
+    /* states */
+    // gint
+    {"@b":"sens", "@k_gliibb_sh":"@e", "@k_rent":"@a"} // dead
+    
+    /* actions */
+    
+    /*** roles ***/
+    {"@b":"reel", "@k_gliibb_sh":"@t_free_neewn", "@k_rent":"@t", "@k_lenk":""},
+    
+
+    /*** falas ***/
+    {"@b":"fala", "@k_gliibb_sh":"", "@k_reel":"", "@k_sens":""},
+    {}
+]

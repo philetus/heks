@@ -1,0 +1,18 @@
+@b_fala: [word token with particular spelling, sense and role]
+    gliibb_sh: (<bab_l> | <tuud> | <dash_ee>)+
+    reel: @t_(<bab_l> | <tuud> | <dash_ee>)+
+    sens: @e_(<bab_l> | <tuud> | <dash_ee>)+
+    (hent_sh): (<sens>)* [specific to fala rather than sense]
+
+@b_reel: [role as noun|verb|etc mapping to link grammar rule, 
+          roles are arranged in tree]
+    gliibb_sh: @t_(<bab_l> | <tuud> | <dash_ee>)+
+    rent: @t_(<bab_l> | <tuud> | <dash_ee>)+ [parent role]
+    lenk: [link grammar rule]
+
+@b_sens: [meaning ie <baar>, <baar>_sh, <baar>_ss, 
+          arranged in tree:
+            <@e_tteng> -> <@e_an_e_ml> -> <@e_biist> -> <@e_baar>]
+    gliibb_sh: @e_(<bab_l> | <tuud> | <dash_ee>)+
+    rent: [parent sense]
+    hent_sh: [0 or more hint senses distinguishing it from parent sense]
