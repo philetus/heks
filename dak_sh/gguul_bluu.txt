@@ -1,0 +1,125 @@
+gguul
+=====
+
+* atomic document, digital equivalent of something between a page and a tweet
+  - other atomic docs are deks (index of docs) and fanl (graphics/video)
+  - collection of atomic docs is a hord
+
+* contains:
+
+  raa
+  fala
+  hent
+
+gguul:
+
+  @e (hed_r):
+    # @s (naann): [<rent><ked>]
+    # @t (taf_ek): <raa>+
+    # @d (sess)
+    * @b (baks)
+  
+  @u (bad_ii):
+    * @r (raa):
+      ? @n (nneet): [a-g]{0x0..0xf}
+      * [
+          @r (raa):
+            ...
+        |
+          @f (fala):
+            * [
+                @b (bab_l): [a-g]{0x0..0xf}
+              |
+                @t (tuud): [a-g]{0x0..0xf}
+              |
+                @d (dash_ee): [a-g]{0x0..0xf}
+              |
+                @n (nneet): [a-g]{0x0..0xf}
+              ]
+        ]
+
+******
+
+['gguul'
+    <'raa'>*
+]
+
+['raa'
+  <hent>?
+  (<raa>|<fala>)*
+]
+
+******
+
+['gguul'
+  ['raa'
+    ['fala' ['bab_l' 'i'] ['bab_l' 'nn']]
+    ['fala' ['bab_l' 'gun'] ['bab_l' 'u']]
+    ['raa'
+      ['raa' 
+        ['fala' ['bab_l' 'iit']]
+        ['fala' ['bab_l' 'lleer']]
+        ['fala' ['bab_l' 'braan'] ['bab_l' 'sh']]
+      ]
+      ['fala' ['bab_l' 'and']]
+      ['raa' 
+        ['fala' ['bab_l' 'steel']]
+        ['fala' ['bab_l' 'lleer']]
+        ['fala' ['bab_l' 'nal'] ['bab_l' 'gg']]
+      ]
+    ]
+  ]
+]
+
+******
+
+g
+
+ e
+  sa
+  oa
+  ta
+  da
+ a
+ 
+ u
+  r
+   f ki wnn a
+   f lgun ku a
+   r
+    r
+     f leet a
+     f tlleer a
+     f tbraan wsh a
+    a
+    f land a
+    r
+     f tsteel a
+     f tlleer a
+     f lnal wgg a
+    a
+   a
+  a
+ a
+ 
+a
+
+******
+
+hent:
+h [k-i][a-k] {raa/fala}
+
+******
+
+fala:
+
+* {n} wild - a series of fetl_sh of size [k-i] terminated with {a}
+f n tbraan wsh a
+
+* {b} struct - follow named pattern defined in header freet_ee
+{freet_ee} f [namesize][a-k]{namesize} i[repeatnumtimes]..g l[a-k]
+  - kwant freet_ee:
+    f kk lw ls a
+  - gguul_naann freet_ee:
+    f wsg il la g a
+

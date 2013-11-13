@@ -7,10 +7,44 @@ handles input session to heerd of ggools
 
 * dak stak has nnet_a_deks at taf, deks, ggool_sh, kut_buff_r, kut_ggool
 
+* heerd contains names <s> / sess_sh <o> / and boxes <b>
+* editing must happen within a sess
+
+* gliiff nneed kan_trul_sh:
+- <!> close current node / kleer s_lek_ssn / move to end of gguul
+- <*> accept suggested node
+- <a-g> en_srt gleff
+
+* gliiff nneed kan_trul_sh:
+- <!> close current node / clear selection
+- <*> kut / reduce
+# kr_sr
+- <a> eksfand_ffokus
+- <e> raasy_ffokus
+- <u> lour_ffokus
+- <i> kontrakt_ffokus
+# open nodes
+- <h> hent nekst need
+- <r> ee_fen raa need
+- <f> ee_fen fal_a need
+
+- <b>
+
+# s_lekt/kut/faast
+- <t> s_lekt (tagl)
+- <w> doof
+- <l> nnakk (select by matching top of kut buff_r) 
+- <d> faast
+
+- <g> fuss (sess/lenk/nekst)
+- <k> puss/pap kut buff_r
+- <s> puss/pap fred buff_r (ent_r_pret_r)
+- <n> tagl helf need
+
 * constant ennf controls:
   - <*><*> undo
   - <*><!> redo
-  - <*><w> pap dak stak
+  - <*><w> 
   - <*><h> tagl helf nnod
   - <*><g> puss noo ggool (context sensitive) antoo dak stak
   - <*><l> lag sess (bring up lag_buff_r to commit current changes)
@@ -22,16 +56,12 @@ handles input session to heerd of ggools
   - <*><u> forward in time (version)
 
 * in slekt nnod:
-  - <*><a> eksfand_ffokus
-  - <*><e> raasy_ffokus
-  - <*><u> lour_ffokus
-  - <*><i> kontrakt_ffokus
 
-  - <*><s> tagl_slekssn
-  - <*><k> kut
-  - <*><d> doof
-  - <*><f> faast
-  - <*><n> nnakk (select by matching top of kut buffr)    
+  - <*><s> 
+  - <*><k> 
+  - <*><d> 
+  - <*><f> 
+  - <*><n>  
   - <*><t> fuss lenk target an dak stak  
   - <y> kleer_slekssn  
   - <*><b> puss kut buffr an dak stak
