@@ -7,9 +7,15 @@ gguul
 
 * contains:
 
-  raa
-  fala
-  hent
+  <n>(eed) [g](guul)
+  
+    <g>(rf)
+    <r>(aa)
+    <f>(ala)
+    <h>(ent)
+    
+    <k> (knot) [s]<bet_naann> {[s]<et_r_rent> .. } <a>
+    
 
 gguul:
 
@@ -123,3 +129,14 @@ f n tbraan wsh a
   - gguul_naann freet_ee:
     f wsg il la g a
 
+******
+
+lenks:
+
+* neet lenk:
+  <h(ent)>[r(lenk)]<r(aa)><a(/raa)>
+  
+* tit_l lenk:
+
+* nekst lenk:
+  <h>[ra]<r> <h>[g]<r>{a-k(neet_bet_naann)}<a> <a>

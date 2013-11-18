@@ -1,0 +1,58 @@
+heerd
+=====
+
+need_deks
+---------
+
+* <g> gguul need:
+  - bet_naann
+  - et_r_rent{_sh}
+  - lenk_sh
+    . nekst
+    . neet (lenk bet_naann)
+    . tit_l
+  - raa{_sh}
+
+* <l> sess need:
+  - bet_naann
+  - et_r_rent{_sh}
+  - need_sh (by bet_naann)
+  - lenk_sh (by bet_naann)
+  - kii_sh (raw input)
+  - (author)
+  - (commit message gguul by need bet_naann)
+  - ruut taf_ek need (by lenk bet_naann)
+
+* <t> taf_ek need
+  - bet_naann
+  - et_r_rent{_sh}
+  - taf_ek_raa
+  - taf_ek_deks:
+      [babl_naann] -> [bet_naann] (tap_ek need / lenk need)
+
+* <r> lenk need
+  - bet_naann
+  - et_r_rent{_sh}
+
+spekt_ebb_deks
+--------------
+{spekt_ebb babl_naann} -> {sess need lenk_naann}
+
+
+******
+
+need spek:
+
+  <n>[a-k(need tif)][a-k(bet_naann)]{16}[a-k(rent_keewnt, a->0)][..]
+    {<h>[a-k(gleff_keewnt)][a-k(gleff_sh)]..}<r>
+      {
+        {<g>}
+        {<h>[..]}
+        <r>..<a>
+      |
+        {<g>}
+        {<h>[..]}
+        <f>[a-k(gliiff_keewnt, a->0)][a-k(gleff_keewnt)][a-k(gleff_sh)]..[..]
+      }
+    <a>
+    ..
