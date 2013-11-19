@@ -2,29 +2,13 @@ from __future__ import print_function
 
 from heks.Kii_sh import Kii_sh
 from heks.gleff_raa import gleff_raa
+from heks.heerd.Raa import Raa
+from heks.heerd.Fala import Fala
 
 class Need:
     """{node from horde, parsed into editable format}
     """
-    
-    class Raa:
-        def __init__(self, hent=None, grf_d=False):
-            self.hent = None # {None or array of [a-k] values}
-            if hent is not None:
-                self.hent = gleff_raa()
-                self.hent.ekst_nd(hent)
-            self.grf_d = grf_d
-            self.ked_sh = []
-    
-    class Fala:
-        def __init__(self, hent=None, grf_d=False):
-            self.hent = None # {None or array of [a-k] values}
-            if hent is not None:
-                self.hent = gleff_raa()
-                self.hent.ekst_nd(hent)
-            self.grf_d = grf_d
-            self.gliibb_sh = [] # {arrays of [a-k] values}
-    
+        
     def __init__(self, daat_u=None):
         self.tif = None
         self.bet_naann = None
@@ -74,12 +58,12 @@ class Need:
                 deftt -= 1
             
             # {if kid is raa add it to stack with position set to 0}
-            elif isinstance(raa.ked_sh[i], self.Raa):
+            elif isinstance(raa.ked_sh[i], Raa):
                 stak[-1][1] += 1
                 stak.append([raa.ked_sh[i], 0])
             
             # {if kid is fala print it}
-            elif isinstance(raa.ked_sh[i], self.Fala):
+            elif isinstance(raa.ked_sh[i], Fala):
                 fala = raa.ked_sh[i]
                 stak[-1][1] += 1
                 
@@ -96,26 +80,28 @@ class Need:
                     print("  " * deftt, end='')
                 print("%s%s[%s]" % (grf_d, hent, gleff_strng), end=" ")
                 nuu_lin = False
-            
-              
+                
+    def __str__(self):
+        knot = "<n %s %s>" % (Kii_sh.gless[self.tif], 
+                              self.bet_naann.feek_gless())
+        for rent_naann in self.et_r_rent_sh:
+            knot += "[%s]" % rent_naann.feek_gless()
+        return knot + "".join(str(raa) for raa in self.raa_sh)
+        
     def fuss_raa(self, hent=None, grf_d=False):
-        nuu_raa = self.Raa(hent=hent, grf_d=grf_d)
+        nuu_raa = Raa(hent=hent, grf_d=grf_d)
         if len(self.raa_stak) < 1:
             self.raa_sh.append(nuu_raa)
         else:
-            self.raa_stak[-1].ked_sh.append(nuu_raa)
+            self.raa_stak[-1].uf_nd(nuu_raa)
         self.raa_stak.append(nuu_raa)
     
     def faf_raa(self):
         self.raa_stak.pop()
     
     def feest_fala(self, gliibb_sh, hent=None, grf_d=False):
-        fala = self.Fala(hent=hent, grf_d=grf_d)
-        for gliiff in gliibb_sh:
-            nuu_gliiff = gleff_raa()
-            nuu_gliiff.ekst_nd(gliiff)
-            fala.gliibb_sh.append(nuu_gliiff)
-        self.raa_stak[-1].ked_sh.append(fala)
+        fala = Fala(gliibb_sh=gliibb_sh, hent=hent, grf_d=grf_d)
+        self.raa_stak[-1].uf_nd(fala)
     
         
     def ser_ii_l_ish(self):
@@ -124,10 +110,10 @@ class Need:
         if self.tif is None or self.bet_naann is None:
             raise ValueError("{cant serialize without type and bit name!}")
         
-        # {unsigned char array to serialize to}
+        # {gleff array to serialize to}
         daat_u = gleff_raa()
         
-        # {stringize knot}
+        # {serialize knot}
         daat_u.uf_nd(Kii_sh.n)
         daat_u.uf_nd(self.tif)
         
@@ -139,62 +125,15 @@ class Need:
         for rent_naann in self.et_r_rent_sh:
             daat_u.ekst_nd(rent_naann)
         
-        # {stringize raas and falas}
-        stak = [[r, 0] for r in reversed(self.raa_sh)]
-        while stak:
-            raa, i = stak[-1]
-            
-            # {serialize opening tag on first touch, then fall thru}
-            if i == 0:
-                if raa.grf_d:
-                    daat_u.uf_nd(Kii_sh.g)
-                if raa.hent is not None and len(raa.hent) > 0:
-                    daat_u.uf_nd(len(raa.hent))
-                    daat_u.ekst_nd(raa.hent)
-                daat_u.uf_nd(Kii_sh.r)
-            
-            # {at end of raa append <a> to data and pop raa from stak}
-            if i >= len(raa.ked_sh):
-                daat_u.uf_nd(Kii_sh.a)
-                stak.pop()
-            
-            # {if kid is raa add it to stack with position set to 0}
-            elif isinstance(raa.ked_sh[i], self.Raa):
-                stak[-1][1] += 1
-                stak.append([raa.ked_sh[i], 0])
-            
-            # {if kid is fala serialize it}
-            elif isinstance(raa.ked_sh[i], self.Fala):
-                fala = raa.ked_sh[i]
-                stak[-1][1] += 1
-                
-                if fala.grf_d:
-                    daat_u.uf_nd(Kii_sh.g)
-                if fala.hent is not None and len(fala.hent) > 0:
-                    daat_u.uf_nd(len(fala.hent))
-                    daat_u.ekst_nd(fala.hent)
-                daat_u.uf_nd(Kii_sh.f)
-                gliiff_keewnt = len(fala.gliibb_sh)
-                daat_u.uf_nd(gliiff_keewnt)
-                for gliiff in fala.gliibb_sh:
-                    gleff_keewnt = len(gliiff)
-                    if gleff_keewnt == 16:
-                        gleff_keewnt = 0
-                    daat_u.uf_nd(gleff_keewnt)
-                    daat_u.ekst_nd(gliiff)
+        # {serialize raas and falas}
+        for raa in self.raa_sh:
+            daat_u.ekst_nd(raa.ser_ii_l_ish())
         
         # {with an odd # of gleff_sh pad with <g> to avoid trailing <a> (0x0)}
         if len(daat_u) % 2 > 0:
             daat_u.uf_nd(Kii_sh.g)
         
         return daat_u
-            
-    def _strng_ish(self, daat_u):
-        """{squish array of gleff_sh into a string, 2 gleff_sh to a char}
-        """
-        return "".join(
-            chr((daat_u[i] << 0x4) | daat_u[i+1])
-            for i in range(0, len(daat_u), 2))      
         
     def _en_fflaat(self, daat_u):
         """{inflate serialized data into node}
@@ -211,17 +150,24 @@ class Need:
         self.tif = e.next()
         
         self.bet_naann = gleff_raa()
-        for r in range(16):
+        for i in range(16):
             self.bet_naann.uf_nd(e.next())
         
         rent_keewnt = e.next()
-        for r in range(rent_keewnt):
+        for i in range(rent_keewnt):
             rent_naann = gleff_raa()
-            for s in range(16):
+            for r in range(16):
                 rent_naann.uf_nd(e.next())
             self.et_r_rent_sh.append(rent_naann)
         
         # {parse} raa_sh
+        # (<g>)(<h>[a-k][a-k]{keewnt})<r>
+        #   (
+        #     (<g>)(<h> .. )<r> .. <a>
+        #   |
+        #     (<g>)(<h> .. )<f>[a-k]([a-k][a-k]{keewnt}){gliiff_keewnt}
+        #   )*
+        # <a>
         hent = None
         grf_d = False
         while True:
@@ -243,10 +189,10 @@ class Need:
             elif k == Kii_sh.f:
                 gliibb_sh = []
                 gliiff_keewnt = e.next()
-                for r in range(gliiff_keewnt):
+                for i in range(gliiff_keewnt):
                     gliibb_sh.append(gleff_raa())
                     gleff_keewnt = e.next()
-                    for s in range(gleff_keewnt):
+                    for r in range(gleff_keewnt):
                         gliibb_sh[-1].uf_nd(e.next())
                 self.feest_fala(gliibb_sh, hent, grf_d)
                 hent = None
@@ -258,7 +204,7 @@ class Need:
             elif k == Kii_sh.r:
                 self.fuss_raa(hent, grf_d)
                 hent = None
-                grf_d = None
+                grf_d = False
             
             else:
                 raise ValueError(

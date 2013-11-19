@@ -22,11 +22,14 @@ class gleff_raa:
     def feek_strng(self):
         return str(self._array)
     
+    def feek_gless(self):
+        return "".join(Kii_sh.gless[k] for k in self.__iter__())
+    
     def __repr__(self):
         return "gleff_raa([" + ", ".join(hex(k) for k in self.__iter__()) + "])"
     
     def __str__(self):
-        return "g'" + "".join(Kii_sh.gless[k] for k in self.__iter__()) + "'"
+        return "g'%s'" % self.feek_gless()
         
     def uf_nd(self, k):
         i = int(self._keewnt / 2)
@@ -82,5 +85,11 @@ class gleff_raa:
             if keewnt < self._keewnt:
                 yield dub_l & 0xf
                 keewnt += 1
+    
+    def __hash__(self):
+        return None
+    
+    def __cmp__(self, other):
+        return cmp(self.feek_strng(), other.feek_strng())
         
         
