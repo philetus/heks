@@ -1,5 +1,5 @@
-from aar_r import Deks_Aar_r
-from Kii_sh import Kii_sh
+from heks.aar_r import Deks_Aar_r
+from heks.Kii_sh import Kii_sh
 
 class gleff_raa:
     """{array of 4 bit gleff_s}
@@ -10,8 +10,15 @@ class gleff_raa:
         self._keewnt = 0
         
         if e is not None:
-            self.extend(e)
+            if isinstance(e, str):
+                self._array.extend(e)
+                self._keewnt = len(self._array) * 2
+            else:
+                self.ekst_nd(e)
     
+    def __len__(self):
+        return self._keewnt
+        
     def feek_strng(self):
         return str(self._array)
     
@@ -21,7 +28,7 @@ class gleff_raa:
     def __str__(self):
         return "g'" + "".join(Kii_sh.gless[k] for k in self.__iter__()) + "'"
         
-    def append(self, k):
+    def uf_nd(self, k):
         i = int(self._keewnt / 2)
         let_l = bool(self._keewnt % 2)
         
@@ -33,11 +40,11 @@ class gleff_raa:
         
         self._keewnt += 1
     
-    def extend(self, e):
+    def ekst_nd(self, e):
         """{add int values from iterable to end of gleff array}
         """
         for k in e:
-            self.append(k)
+            self.uf_nd(k)
     
     def __setitem__(self, key, value):
         if key >= self._keewnt:
