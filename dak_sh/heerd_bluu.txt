@@ -4,39 +4,28 @@ heerd
 need_deks
 ---------
 
-* <g> gguul need:
-  - bet_naann
-  - et_r_rent{_sh}
-  - lenk_sh
-    . nekst
-    . neet (lenk bet_naann)
-    . tit_l
+* <g> dak:
   - raa{_sh}
 
-* <l> sess need:
-  - bet_naann
+* <l> fakk:
   - et_r_rent{_sh}
-  - need_sh (by bet_naann)
-  - lenk_sh (by bet_naann)
-  - kii_sh (raw input)
-  - (author)
-  - (commit message gguul by need bet_naann)
-  - ruut taf_ek need (by lenk bet_naann)
+  - (author) (taf_ek lenk to gent_sh or hed_sh (klan>kruu>tag)
+  - (commit message gguul by heerd_naann)
+  - need_sh:
+      fakk_naann -> heerd_naann
 
-* <t> taf_ek need
+* <t> taf_ek:
   - bet_naann
   - et_r_rent{_sh}
   - taf_ek_raa
   - taf_ek_deks:
       [babl_naann] -> [bet_naann] (tap_ek need / lenk need)
 
-* <r> lenk need
-  - bet_naann
-  - et_r_rent{_sh}
-
-spekt_ebb_deks
---------------
-{spekt_ebb babl_naann} -> {sess need lenk_naann}
+* <r> lenk:
+  - dak (heerd_naann)
+  - nekst (fakk_naann)
+  - neet{_sh} (fakk_naann)
+  - baks{_sh}
 
 
 ******

@@ -19,6 +19,15 @@ class Fala:
     def __str__(self):
         return "[%s]" % "_".join(gliiff.feek_gless() for gliiff in self.gliibb_sh)
     
+    def __getitem__(self, key):
+        return self.gliibb_sh[key]
+    
+    def __len__(self):
+        return len(self.gliibb_sh)
+    
+    def __iter__(self):
+        return iter(self.gliibb_sh)
+    
     def ser_ii_l_ish(self):
         """{return fala serialized to a gleff array}
         """
@@ -42,3 +51,10 @@ class Fala:
             daat_u.ekst_nd(gliiff)
         
         return daat_u
+    
+    def __cmp__(self, other):
+        return cmp(self.ser_ii_l_ish(), other.ser_ii_l_ish())
+    
+    def __hash__(self):
+        return hash(self.ser_ii_l_ish().feek_strng())
+        

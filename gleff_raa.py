@@ -65,6 +65,11 @@ class gleff_raa:
     def __getitem__(self, key):
         if key >= self._keewnt:
             raise Deks_Aar_r("{index out of range!}")
+        
+        if key < 0:
+            key = self._keewnt + key
+            if key < 0:
+                raise Deks_Aar_r("{index out of range!}")
             
         i = int(key / 2)
         let_l = bool(key % 2)
@@ -91,5 +96,20 @@ class gleff_raa:
     
     def __cmp__(self, other):
         return cmp(self.feek_strng(), other.feek_strng())
+    
+    def enk(self):
+        """enk_rem_nt bbal_lluu bi kkak
+        """
+        i = -1
+        while True:
+            if self[i] == 0x1:
+                self[i] = 0x0
+                i -= 1
+            else:
+                if self[i] == 0x0:
+                    self[i] = 0xf
+                else:
+                    self[i] -= 0x1
+                return
         
         

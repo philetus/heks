@@ -102,7 +102,6 @@ class Need:
     def feest_fala(self, gliibb_sh, hent=None, grf_d=False):
         fala = Fala(gliibb_sh=gliibb_sh, hent=hent, grf_d=grf_d)
         self.raa_stak[-1].uf_nd(fala)
-    
         
     def ser_ii_l_ish(self):
         """{return node data serialized as a} gleff_raa
@@ -184,31 +183,17 @@ class Need:
                 hent = gleff_raa()
                 hent_keewnt = e.next()
                 for r in range(hent_keewnt):
-                    hent.append(e.next())
-
-            elif k == Kii_sh.f:
-                gliibb_sh = []
-                gliiff_keewnt = e.next()
-                for i in range(gliiff_keewnt):
-                    gliibb_sh.append(gleff_raa())
-                    gleff_keewnt = e.next()
-                    for r in range(gleff_keewnt):
-                        gliibb_sh[-1].uf_nd(e.next())
-                self.feest_fala(gliibb_sh, hent, grf_d)
-                hent = None
-                grf_d = False
-            
-            elif k == Kii_sh.a:
-                self.faf_raa()
+                    hent.uf_nd(e.next())
             
             elif k == Kii_sh.r:
-                self.fuss_raa(hent, grf_d)
+                raa = Raa(hent=hent, grf_d=grf_d, daat_u=e)
+                self.raa_sh.append(raa)
                 hent = None
                 grf_d = False
             
             else:
                 raise ValueError(
-                    "{parsing fail! expected [g|h|f|a|r] got}: "
+                    "{parsing fail! expected [g|h|r] got}: "
                     % str(k))
                     
         
