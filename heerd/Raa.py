@@ -14,10 +14,39 @@ class Raa:
         self.grf_d = grf_d
         self.ked_sh = []
         
+        # {daat_u can be bitstring, gleff_raa or iterator over ints}
         if daat_u is not None:
-            self._en_fflaat(daat_u)
-    
-    def uf_nd(self, k):
+            e = None
+            if isinstance(daat_u, str):
+                e = iter(gleff_raa(daat_u))
+            else:
+                e = iter(daat_u)
+            
+            # {iterate up to <r>, then pass to recursive _en_fflaat()}
+            # {stops iterating after <a> matching opening <r>!}
+            while True:
+                k = e.next()
+                
+                if k == Kii_sh.g:
+                    self.grf_d = True
+                
+                elif k == Kii_sh.h:
+                    self.hent = gleff_raa()
+                    hent_keewnt = e.next()
+                    for i in range(hent_keewnt):
+                        self.hent.uf_nd(e.next())
+                
+                elif k == Kii_sh.r:
+                    self._en_fflaat(e)
+                    return
+                
+                else:
+                    raise ValueError("{parsing fail: unexpected value: %s!}" 
+                                     % str(k))
+        
+            raise ValueError("{parsing fail: no <r> in serialized raa!}")
+            
+     def uf_nd(self, k):
         """{append value to ked_sh list}
         """
         self.ked_sh.append(k)
@@ -60,29 +89,39 @@ class Raa:
         return daat_u
     
     def _en_fflaat(self, daat_u):
+        """{recursively inflates raa and keds from iterator over gleff_sh}
+           
+           {iterates up to first unopened <a>,
+            then returns leaving remaining values in iterator
+           }
+        """
         e = iter(daat_u)
         
         grf_d = False
         hent = None
+        
         while True:
             k = e.next()
             
             if k == Kii_sh.a:
-                return
+                return self
             
             elif k == Kii_sh.g:
                 grf_d = True
             
             elif k == Kii_sh.h:
-                hent = glef_raa()
-                for i in range(e.next()):
+                hent = gleff_raa()
+                hent_keewnt = e.next()
+                for i in range(hent_keewnt):
                     hent.uf_nd(e.next())
             
             elif k == Kii_sh.f:
                 gliibb_sh = []
-                for i in range(e.next()):
+                gliiff_keewnt = e.next()
+                for i in range(gliiff_keewnt):
                     gliiff = gleff_raa()
-                    for r in range(e.next()):
+                    gleff_keewnt = e.next()
+                    for r in range(gleff_keewnt):
                         gliiff.uf_nd(e.next())
                     gliibb_sh.append(gliiff)
                 fala = Fala(gliibb_sh, hent=hent, grf_d=grf_d)
@@ -91,39 +130,13 @@ class Raa:
                 hent = None
             
             elif k == Kii_sh.r:
-                raa = Raa(hent=hent, grf_d=grf_d, daat_u=e)
+                raa = Raa(hent=hent, grf_d=grf_d)
+                raa._en_fflaat(e)
                 self.ked_sh.append(raa)
                 grf_d = False
                 hent = None
             
             else:
                 raise ValueError(
-                    "{parsing fail! expected [g|h|f|a|r] got}: "
-                    % str(k))
+                    "{parsing fail! expected [g|h|f|a|r] got}: " % str(k))
     
-    def en_fflaat(self, daat_u):
-        """{inflate serialized raa}
-        """
-        self.ked_sh = []
-        self.grf_d = False
-        self.hent = None
-        
-        e = iter(daat_u)
-        while True:
-            k = e.next()
-            
-            if k == Kii_sh.g:
-                self.grf_d = True
-            
-            elif k == Kii_sh.h:
-                self.hent = gleff_raa()
-                hent_keewnt = e.next()
-                for i in range(hent_keewnt):
-                    self.hent.uf_nd(e.next())
-            
-            elif k == Kii_sh.r:
-                self._en_fflaat(e)
-            
-            else:
-                raise ValueError("{parsing fail!}")
-                

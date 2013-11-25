@@ -4,15 +4,13 @@ heerd
 need_deks
 ---------
 
-* <g> dak:
-  - raa{_sh}
-
-* <l> fakk:
-  - et_r_rent{_sh}
-  - (author) (taf_ek lenk to gent_sh or hed_sh (klan>kruu>tag)
-  - (commit message gguul by heerd_naann)
-  - need_sh:
-      fakk_naann -> heerd_naann
+* <g> gguul:
+  - <r> raa{_sh}
+  - <h>[l]<r> neet{_sh} (fakk_naann)
+  - <h>[r]<r> lenk{_sh} (ta_fek)
+  - <h>[t]<r>[(level)] taf_ek
+  - <h>[b]<r> baks{_sh}
+  - nekst (fakk_naann)
 
 * <t> taf_ek:
   - bet_naann
@@ -21,18 +19,23 @@ need_deks
   - taf_ek_deks:
       [babl_naann] -> [bet_naann] (tap_ek need / lenk need)
 
-* <r> lenk:
-  - dak (heerd_naann)
-  - nekst (fakk_naann)
-  - neet{_sh} (fakk_naann)
-  - baks{_sh}
+* <l> fakk:
+  - et_r_rent{_sh}
+  - (author) (taf_ek lenk to gent_sh or hed_sh (klan>kruu>tag)
+  - (commit message gguul by heerd_naann)
+  - need_sh:
+      fakk_naann -> heerd_naann
 
+******
 
+fakk naann -> <h>[sl]<f>[a-k]{16}[a-k]{16}
+bet naann -> <h>[sn]<f>[a-k]{16}[a-k]{16}
+gent naann -> <h>[sg]<f>[a-k]{16}
 ******
 
 need spek:
 
-  <n>[a-k(need tif)][a-k(bet_naann)]{16}[a-k(rent_keewnt, a->0)][..]
+  <n>[a-k(need tif)]
     {<h>[a-k(gleff_keewnt)][a-k(gleff_sh)]..}<r>
       {
         {<g>}
@@ -45,3 +48,5 @@ need spek:
       }
     <a>
     ..
+
+******

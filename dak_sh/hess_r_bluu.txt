@@ -3,53 +3,8 @@ hess_r
 
 manages hord sess input
 
-hord:
-  
-  > sfekt_bb_sh:
-    {
-      <bab_l_naann>:
-        {
-          "taf_sess": <sess_bet_naann>,
-          "babl_naann_deks":
-        }
-    }
-  
-  > sess_sh:
-    {
-      <bet_naann>: <sess>,
-      ...
-    }
+******
 
+interface
+---------
 
-
-
-
-
-
-babl_naann:
-
-gguul taab_l:
-{
-    <bet_naannn>: {
-                    
-                  }
-
-}
-    kii: bet_naann 
-    bbal:
-        
-
-sess:
- 
-  > kii_lag: [!-k]+
-  
-  > tukk_d naann_sh:
-    
-    > gguul:
-      
-      - ked > {gguul}
-      - neet_sh > 
-
-data types:
-  > gguul
-  
