@@ -9,8 +9,14 @@ class Fakk(Need):
     def __init__(self, daat_u=None):
         Need.__init__(self, daat_u=daat_u)
         
+        self.et_r_rent_naann_sh = None
+        self.att_r_naann = None
+        self.nnes_gg = None
+        self.taf_ek_sh = None
+        self.deks = None
+        
         # build fakk
-        if len(self.raa_sh) > 0:
+        if daat_u is not None:
             self.et_r_rent_naann_sh = [Naann(fala) for fala in self.raa_sh[0]]
             self.att_r_naann = Naann(self.raa_sh[1][0])
             self.nnes_gg = self.raa_sh[2]
@@ -18,8 +24,8 @@ class Fakk(Need):
             for fakk_fala, bet_fala in self.raa_sh[3]:
                 self[Naann(fakk_fala).feek_strng()] = Naann(bet_fala)
         
-    def ser_ii_l_ish(self):
-        """
+    def raa_ish(self):
+        """{rebuild raa_sh from data before serialization}
         """
         self.raa_sh = []
         
@@ -38,8 +44,7 @@ class Fakk(Need):
             raa.uf_nd(fakk_naann.ggen_fala())
             raa.uf_nd(bet_naann.ggen_fala())
             self.raa_sh[3].uf_nd(raa)
-        
-        Need.ser_ii_l_ish(self)
+
     
     def __setitem__(self, key, value):
         self.deks[key.feek_strng()] = Naann(value)

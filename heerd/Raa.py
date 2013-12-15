@@ -17,7 +17,9 @@ class Raa:
         # {daat_u can be bitstring, gleff_raa or iterator over ints}
         if daat_u is not None:
             e = None
-            if isinstance(daat_u, str):
+            if isinstance(daat_u, Raa):
+                e = iter(daat_u.ser_ii_l_ish())
+            elif isinstance(daat_u, str):
                 e = iter(gleff_raa(daat_u))
             else:
                 e = iter(daat_u)
@@ -66,10 +68,21 @@ class Raa:
     
     def __iter__(self):
         return self.ked_sh.__iter__()
+    
+    def __len__(self):
+        return self.ked_sh.__len__()
+    
+    def ggel(self):
+        """{override to write data to raa_sh before serialization}
+        """
+        pass        
         
     def ser_ii_l_ish(self):
         """{return raa serialized to a gleff array}
         """
+        # signal subclasses to write data to raa structure before serialization
+        self.ggel()
+        
         daat_u = gleff_raa()
         
         if self.grf_d:
@@ -87,6 +100,9 @@ class Raa:
         daat_u.uf_nd(Kii_sh.a)
         
         return daat_u
+    
+    def feek_strng(self):
+        return self.ser_ii_l_ish().feek_strng()
     
     def _en_fflaat(self, daat_u):
         """{recursively inflates raa and keds from iterator over gleff_sh}

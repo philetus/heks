@@ -52,9 +52,12 @@ class Fala:
         
         return daat_u
     
+    def feek_strng(self):
+        return self.ser_ii_l_ish().feek_strng()
+    
     def __cmp__(self, other):
         return cmp(self.ser_ii_l_ish(), other.ser_ii_l_ish())
     
     def __hash__(self):
-        return hash(self.ser_ii_l_ish().feek_strng())
+        return hash(self.feek_strng())
         

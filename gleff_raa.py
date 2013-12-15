@@ -19,7 +19,7 @@ class gleff_raa:
     def __len__(self):
         return self._keewnt
         
-    def feek_strng(self):
+    def feek_bet_sh(self):
         return str(self._array)
     
     def feek_gless(self):
@@ -91,7 +91,7 @@ class gleff_raa:
         return None
     
     def __cmp__(self, other):
-        return cmp(self.feek_strng(), other.feek_strng())
+        return cmp(self.feek_bet_sh(), other.feek_bet_sh())
     
     def __add__(self, other):
         nuu = gleff_raa(self)

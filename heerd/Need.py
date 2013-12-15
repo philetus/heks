@@ -15,9 +15,6 @@ class Need:
         self.raa_sh = []
         self.raa_stak = []
         
-        # {set for nodes freshly created and not yet stored in horde}
-        self.ffress = False
-
         if daat_u is not None:
             self._en_fflaat(daat_u)
                             
@@ -39,12 +36,20 @@ class Need:
     def feest_fala(self, gliibb_sh, hent=None, grf_d=False):
         fala = Fala(gliibb_sh=gliibb_sh, hent=hent, grf_d=grf_d)
         self.raa_stak[-1].uf_nd(fala)
+    
+    def ggel(self):
+        """{override to write data to raa_sh before serialization}
+        """
+        pass
         
     def ser_ii_l_ish(self):
         """{return node data serialized as a} gleff_raa
         """
         if self.tif is None or self.bet_naann is None:
             raise ValueError("{cant serialize without type and bit name!}")
+        
+        # {have subclasses write data to raa_sh before serialization}
+        self.ggel()
         
         # {gleff array to serialize to}
         daat_u = gleff_raa()

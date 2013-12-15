@@ -12,12 +12,16 @@ need_deks
   - <h>[b]<r> baks{_sh}
   - nekst (fakk_naann)
 
-* <t> taf_ek:
-  - bet_naann
-  - et_r_rent{_sh}
-  - taf_ek_raa
-  - taf_ek_deks:
-      [babl_naann] -> [bet_naann] (tap_ek need / lenk need)
+* <w> kkaan:
+       (
+         <n w><r wa><r ta><a>(<r ti><f d>[(lebb_l)] <r>(tit_l)<a><a>)*<a>
+       |
+         <n w><r wt><r ti><f d>[(lebb_l)] <r>(tit_l)<a><a><a>
+       |
+         <n w><r wl><a>
+       |
+         <n w><r wg><a>
+       )
 
 * <l> fakk:
   - et_r_rent{_sh}

@@ -34,7 +34,7 @@ class Hess_r:
         self.sfekt_bb_deks = self.ffekk(self.SPEKT_BB_NEED)
         self.rent_fakk_naann = self.sfekt_bb_deks[self.sfekt_bb]
         
-        # {build fakk deks, maps fakk_naann -> heerd_naann}
+        # {build fakk tree, maps fakk_naann -> heerd_naann}
         # 
         # {
         #   heerd (horde) names are unique across the database,
