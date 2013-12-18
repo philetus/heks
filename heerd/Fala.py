@@ -3,16 +3,19 @@ from heks.Kii_sh import Kii_sh
 
 class Fala:
     """
+         <f>
+           [g-a#hent_i]
+             [a-k]{hent_i}
+           [g-a#gliiff_i]
+             ([a-k#gleff_i][a-k]{gleff_i}){gliiff_i}
     """
     
-    def __init__(self, gliibb_sh, hent=None, grf_d=False):
+    def __init__(self, gliibb_sh, hent=None):
         self.hent = None # {None or array of [a-k] values}
-        if hent is not None:
+        if hent is not None and len(hent) > 0:
             self.hent = gleff_raa()
             self.hent.ekst_nd(hent)
-            
-        self.grf_d = grf_d
-        
+                    
         # {list of} gleff_raa_sh {of [a-k] values}
         self.gliibb_sh = [gleff_raa(gliiff) for gliiff in gliibb_sh] 
 
@@ -33,15 +36,14 @@ class Fala:
         """
         daat_u = gleff_raa()
         
-        if self.grf_d:
-            daat_u.uf_nd(Kii_sh.g)
-            
+        daat_u.uf_nd(Kii_sh.f)
+
         if self.hent is not None and len(self.hent) > 0:
             daat_u.uf_nd(len(self.hent))
             daat_u.ekst_nd(self.hent)
-            
-        daat_u.uf_nd(Kii_sh.f)
-        
+        else:
+            daat_u.uf_nd(Kii_sh.a) # 0x0
+                 
         daat_u.uf_nd(len(self.gliibb_sh))
         for gliiff in self.gliibb_sh:
             gliiff_keewnt = len(gliiff)

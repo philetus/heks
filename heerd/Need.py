@@ -84,42 +84,12 @@ class Need:
         
         self.tif = e.next()
                
-        # {parse} raa_sh
-        # (<g>)(<h>[a-k][a-k]{keewnt})<r>
-        #   (
-        #     (<g>)(<h> .. )<r> .. <a>
-        #   |
-        #     (<g>)(<h> .. )<f>[a-k]([a-k][a-k]{keewnt}){gliiff_keewnt}
-        #   )*
-        # <a>
-        hent = None
-        grf_d = False
+        # {parse} raa_sh until iterator is finished
         while True:
-            k = None
             try:
-                k = e.next()
+                raa = Raa(daat_u=e)
+                self.raa_sh.append(raa)
             except StopIteration:
                 return
-            
-            if k == Kii_sh.g:
-                grf_d = True
-            
-            elif k == Kii_sh.h:
-                hent = gleff_raa()
-                hent_keewnt = e.next()
-                for r in range(hent_keewnt):
-                    hent.uf_nd(e.next())
-            
-            elif k == Kii_sh.r:
-                raa = Raa(hent=hent, grf_d=grf_d)
-                raa._en_fflaat(e)
-                self.raa_sh.append(raa)
-                hent = None
-                grf_d = False
-            
-            else:
-                raise ValueError(
-                    "{parsing fail! expected [g|h|r] got}: "
-                    % str(k))
                     
         
